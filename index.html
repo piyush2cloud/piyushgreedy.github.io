@@ -16,6 +16,13 @@
 
 <script src="bower_components/angular-scroll-animate/dist/angular-scroll-animate.js"></script>
 
+<script src="bower_components/angular-flippy/dist/js/angular-flippy.js"></script>
+<link rel="stylesheet" href="bower_components/angular-flippy/dist/css/angular-flippy-fancy.min.css">
+<link rel="stylesheet" href="bower_components/angular-flippy/dist/css/angular-flippy-fancy.css">
+
+
+
+
 <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
 <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.min.css">
 <link rel="stylesheet" href="bower_components/bootstrap-sidebar/dist/css/sidebar.css">
@@ -25,7 +32,25 @@
 
 <link rel="stylesheet" href="css/style.css">
 
-<body ng-controller="myCtrl">
+<body scroll ng-controller="myCtrl">
+
+<div class="flip" style="position: fixed;z-index:10">
+    <div class="card" ng-class="{'flipped':isFlipped}" ng-click="isFlipped=!isFlipped">
+
+        <div class="face front">
+          <img src="{{imagechangepath}}" style="height:100%;width:100%">
+        </div>
+
+        <div class="face back" style="padding-top: 30px">
+            Change is rule of life! So why same questions, why repetition.
+            Face challenging new problems every day, hand crafted,
+            brain stormed by our experts for those who seek study adventures!
+        </div>
+
+    </div>
+</div>
+
+
 
 
 <div class="navbar navbar-fixed-top" style="background-color: #5585B5">
@@ -33,10 +58,8 @@
     <div class="navbar-header" style="margin-left: 10px;margin-top: 15px">
            <span style="color: white;font-size:16px;
            font-family: Helvetica, sans-serif;font-weight:500;letter-spacing:0.5px">
-
-            Quintify Education.
-
-          </span>
+               Quintify Education.
+           </span>
     </div>
 
     <button type="button" class="navbar-toggle toggle-right" style="background-color: #2E3842" data-toggle="sidebar"
@@ -82,9 +105,9 @@
 
 
 
-           <span class="onlinetesttext" ng-class="{onlinetesttextchange:onlinetesttextchange}">
+         <span class="onlinetesttext" ng-class="{onlinetesttextchange:onlinetesttextchange}">
              An online test and assessment platform.
-           </span>
+         </span>
 
 
         <div class="row" style="margin-top: 70px">
@@ -174,6 +197,7 @@
     <div class="text-center" style="background-color: #2E3842;width: 100%;height: 100px;padding-top:40px">
         <span style="color: white;font-size: 30px;">
             Footer
+
         </span>
     </div>
 
