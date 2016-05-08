@@ -10,13 +10,12 @@ app.directive("scroll", function ($window) {
                 scope.imagechangepath = 'images/f1.jpg';
             }
 
-            if (this.pageYOffset >= 760 && this.pageYOffset <= 1177) {
+            if (this.pageYOffset >= 760 && this.pageYOffset <= 1077) {
                 scope.imagechangepath = 'images/f2.png';
 
             }
 
-            if (this.pageYOffset >= 1177 && this.pageYOffset <= 1817) {
-                scope.boolChangeClass = true;
+            if (this.pageYOffset >= 1077 && this.pageYOffset <= 1817) {
                 scope.imagechangepath = 'images/f3.jpg';
             }
 
