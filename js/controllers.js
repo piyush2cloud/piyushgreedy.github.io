@@ -19,47 +19,47 @@ angular.module('quintify.controllers', [])
 
         $timeout(function () {
             $scope.animatelinechange = 1;
-        }, 1000);
+        }, 1500);
 
         $timeout(function () {
             $scope.onlinetesttextchange = 1;
-        }, 1400);
-
-        $timeout(function () {
-            $scope.firstgifboxfade = 1;
         }, 2500);
 
         $timeout(function () {
-            $scope.secondgifboxfade = 1;
+            $scope.firstgifboxfade = 1;
         }, 3500);
 
         $timeout(function () {
-            $scope.thirdgifboxfade = 1;
+            $scope.secondgifboxfade = 1;
         }, 4500);
 
         $timeout(function () {
-            $scope.fourgifboxfade = 1;
+            $scope.thirdgifboxfade = 1;
         }, 5500);
+
+        $timeout(function () {
+            $scope.fourgifboxfade = 1;
+        }, 6500);
 
 
         $timeout(function () {
             $scope.fivegifboxfade = 1;
-        }, 6500);
-
-        $timeout(function () {
-            $scope.sixgifboxfade = 1;
         }, 7500);
 
         $timeout(function () {
-            $scope.sevengifboxfade = 1;
+            $scope.sixgifboxfade = 1;
         }, 8500);
+
+        $timeout(function () {
+            $scope.sevengifboxfade = 1;
+        }, 9500);
 
 
         $timeout(function () {
             $scope.eightgifboxfade = 1;
             $scope.onlyplacetolearnfade = 1;
 
-        }, 9500);
+        }, 10500);
 
 
         $scope.animateElementIn = function ($el) {
