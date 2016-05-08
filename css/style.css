@@ -1,0 +1,148 @@
+body {
+    padding-top: 50px;
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+.timeline-hidden {
+    visibility: hidden;
+}
+
+.animatelinedeafult {
+    background-color: white;
+    height: 1px;
+    width: 0px;
+    -webkit-transition: all 2s linear;
+    transition: all 2s;
+}
+
+.animatelinechange {
+    width: 250px
+}
+
+.onlinetesttext {
+    color: #f5a623;
+    font-size: 25px;
+    font-family: Helvetica, sans-serif -webkit-transition : all 2 s linear;
+    transition: all 2s;
+    opacity: 0;
+}
+
+.onlinetesttextchange {
+    opacity: 1;
+}
+
+.firstgifbox {
+    -webkit-transition: all 2s;
+    transition: all 2s;
+    width: 60px;
+    opacity: 0;
+}
+
+.secondgifbox {
+    -webkit-transition: all 2s;
+    transition: all 2s;
+    width: 330px;
+    margin-left: 20px;
+    margin-top: 10px;
+    opacity: 0;
+}
+
+.thirdgifbox {
+    -webkit-transition: all 2s;
+    transition: all 2s;
+    margin-top: 10px;
+    opacity: 0;
+    width: 130px;
+    margin-left: 20px
+}
+
+.fourgifbox {
+    width: 100px;
+    -webkit-transition: all 2s;
+    transition: all 2s;
+    opacity: 0;
+}
+
+.fivegifbox {
+    width: 100px;
+    -webkit-transition: all 2s;
+    transition: all 2s;
+    opacity: 0;
+}
+
+.sixgifbox {
+    width: 50px;
+    -webkit-transition: all 2s;
+    transition: all 2s;
+    opacity: 0;
+}
+
+.sevengifbox {
+    width: 100px;
+    -webkit-transition: all 2s;
+    transition: all 2s;
+    opacity: 0;
+}
+
+.eightgifbox {
+    width: 110px;
+    -webkit-transition: all 2s;
+    transition: all 2s;
+    opacity: 0;
+}
+
+.onlyplacetolearn {
+    font-family: Helvetica, sans-serif;
+    color: #f5a623;
+    font-size: 20px;
+    -webkit-transition: all 2s;
+    transition: all 2s;
+    opacity: 0;
+}
+
+.firstgifboxfade {
+    opacity: 1;
+}
+
+.secondgifboxfade {
+    opacity: 1;
+
+}
+
+.thirdgifboxfade {
+    opacity: 1;
+
+}
+
+.fourgifboxfade {
+    opacity: 1;
+
+}
+
+.fivegifboxfade {
+    opacity: 1;
+
+}
+
+.sixgifboxfade {
+    opacity: 1;
+
+}
+
+.sevengifboxfade {
+    opacity: 1;
+
+}
+
+.eightgifboxfade {
+    opacity: 1;
+
+}
+
+.onlyplacetolearnfade {
+    opacity: 1;
+
+}

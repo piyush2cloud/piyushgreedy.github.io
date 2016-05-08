@@ -1,1 +1,185 @@
-"Hello World" 
+<!DOCTYPE html>
+<html ng-app="quintify">
+
+<script src="bower_components/angular/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="bower_components/bootstrap-sidebar/dist/js/sidebar.js"></script>
+<script src="js/app.js"></script>
+<script src="js/controllers.js"></script>
+
+
+<link rel="stylesheet" href="bower_components/angular-timeline/dist/angular-timeline.css"/>
+<link rel="stylesheet" href="bower_components/angular-timeline/dist/angular-timeline-animations.css"/>
+<link rel="stylesheet" href="bower_components/angular-timeline/dist/angular-timeline-bootstrap.css"/>
+<script src="bower_components/angular-timeline/dist/angular-timeline.js"></script>
+
+<script src="bower_components/angular-scroll-animate/dist/angular-scroll-animate.js"></script>
+
+<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.min.css">
+<link rel="stylesheet" href="bower_components/bootstrap-sidebar/dist/css/sidebar.css">
+
+<script src="js/app.js"></script>
+<script src="js/controllers.js"></script>
+
+<link rel="stylesheet" href="css/style.css">
+
+<body ng-controller="myCtrl">
+
+
+<div class="navbar navbar-fixed-top" style="background-color: #5585B5">
+
+    <div class="navbar-header" style="margin-left: 10px;margin-top: 15px">
+           <span style="color: white;font-size:16px;
+           font-family: Helvetica, sans-serif;font-weight:500;letter-spacing:0.5px">
+
+            Quintify Education.
+
+          </span>
+    </div>
+
+    <button type="button" class="navbar-toggle toggle-right" style="background-color: #2E3842" data-toggle="sidebar"
+            data-target=".sidebar-right">
+        <span style="background-color: white" class="icon-bar"></span>
+        <span style="background-color: white" class="icon-bar"></span>
+        <span style="background-color: white" class="icon-bar"></span>
+    </button>
+</div>
+
+
+<!-- Begin page content -->
+<div class="container-fluid" ng-controller="myCtrl" style="padding-left:0px;padding-right:0px">
+
+    <div class="row">
+        <div class="col-xs-7 col-sm-3 col-md-3 sidebar sidebar-right sidebar-animate"
+             style="background-color:#5585B5">
+
+
+            <ul class="nav navbar-stacked">
+                <li class="active">
+                    <a href="#" style="color:white">Home</a>
+                </li>
+                <li>
+                    <a href="#about" style="color:white">About</a>
+                </li>
+                <li>
+                    <a href="#contact" style="color:white">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="text-center"
+         style="height: 520px;width: 100%;background-color: #2E3842;padding-top:20px;border-bottom:1px solid black">
+
+
+        <hr class="animatelinedeafult" ng-class="{animatelinechange:animatelinechange}" style="margin-bottom:8px">
+          <span style="color: white;font-size:25px;font-family: Helvetica, sans-serif">
+            Quintify Education.
+          </span>
+        <hr class="animatelinedeafult" ng-class="{animatelinechange:animatelinechange}" style="margin-top:8px">
+
+
+
+           <span class="onlinetesttext" ng-class="{onlinetesttextchange:onlinetesttextchange}">
+             An online test and assessment platform.
+           </span>
+
+
+        <div class="row" style="margin-top: 70px">
+
+            <div class="col-md-6 col-lg-6" style="padding-right:0px">
+                <img src="gifimages/graphics-student-832304.gif" class="firstgifbox"
+                     ng-class="{firstgifboxfade:firstgifboxfade}">
+                <img src="gifimages/school20.gif" class="secondgifbox" ng-class="{secondgifboxfade:secondgifboxfade}">
+                <img src="gifimages/school19.gif" class="thirdgifbox" ng-class="{thirdgifboxfade:thirdgifboxfade}">
+            </div>
+
+            <div class="col-md-3 col-lg-3" style="">
+                <img src="gifimages/school3.gif" class="fourgifbox" ng-class="{fourgifboxfade:fourgifboxfade}">
+                <img src="gifimages/school34.gif" class="fivegifbox" ng-class="{fivegifboxfade:fivegifboxfade}">
+            </div>
+
+            <div class="col-md-3 col-lg-" style="">
+
+                <img src="gifimages/school17.gif" class="sixgifbox" ng-class="{sixgifboxfade:sixgifboxfade}">
+                <img src="gifimages/graphics-student-118345.gif" class="sevengifbox"
+                     ng-class="{sevengifboxfade:sevengifboxfade}">
+            </div>
+        </div>
+
+
+        <div class="row" style="margin-top: 70px">
+            <img src="gifimages/sc27.gif" class="eightgifbox" ng-class="{eightgifboxfade:eightgifboxfade}">
+            <span class="onlyplacetolearn" ng-class="{onlyplacetolearnfade:onlyplacetolearnfade}">
+                Quintify: The Only Place to Test and Learn
+            </span>
+        </div>
+
+    </div>
+
+    <div class="row text-center" style="padding-top: 20px;background-color:whitesmoke">
+    <span class="onlyplacetolearn" style="opacity:1;font-weight:700;font-family: Helvetica, sans-serif;font-size:25px
+    ;color:#2E3842">
+                Quintify: The Only Place to Test and Learn is the Best Parent's and Coaching Institute's Choice!
+    </span>
+    </div>
+
+    <div class="row text-center">
+    <span class="onlyplacetolearn"
+          style="opacity:1;display: block;font-weight: 700;font-size:25px;font-family: Helvetica, sans-serif">
+        So Don't Wait and Hurry Up for Better Tomorrow
+    </span>
+    </div>
+
+
+    <div class="text-center" style="height: 100%;width: 100%;margin-top:35px">
+        <!-- view -->
+        <timeline>
+            <!-- can also hard-code to side="left" or side="right" -->
+            <timeline-event ng-repeat="event in events" class="timeline-hidden"
+                            when-visible="animateElementIn" when-not-visible="animateElementOut">
+                <!-- uses angular-scroll-animate to give it some pop -->
+                <timeline-badge class="{{event.badgeClass}} timeline-hidden"
+                                when-visible="animateElementIn" when-not-visible="animateElementOut">
+                    <i class="glyphicon {{event.badgeIconClass}}"></i>
+                </timeline-badge>
+
+                <!-- uses angular-scroll-animate to give it some pop -->
+                <timeline-panel class="{{event.badgeClass}} timeline-hidden text-center"
+                                when-visible="animateElementIn" when-not-visible="animateElementOut"
+                                style=";padding-left:60px" ng-style="{'background-color':'{{event.colorback}}'}">
+
+                    <timeline-heading style="text-align: justify;
+                     text-justify: inter-word;color: white">
+
+                        <h4>{{event.title}}</h4>
+                        {{event.content}}
+                    </timeline-heading>
+
+                    <timeline-footer ng-if="event.footerContentHtml">
+                        <span ng-bind-html="event.footerContentHtml"></span>
+                    </timeline-footer>
+
+
+                </timeline-panel>
+
+
+            </timeline-event>
+        </timeline>
+
+    </div>
+
+    <div class="text-center" style="background-color: #2E3842;width: 100%;height: 100px;padding-top:40px">
+        <span style="color: white;font-size: 30px;">
+            Footer
+        </span>
+    </div>
+
+
+</div>
+
+
+</body>
+</html>
