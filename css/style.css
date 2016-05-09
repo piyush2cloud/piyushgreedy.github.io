@@ -145,11 +145,14 @@ body {
 .onlyplacetolearnfade {
     opacity: 1;
 
+
 }
 .flip {
     -webkit-perspective: 800;
     width: 300px;
     height: 200px;
+    opacity:0;
+    display:none;
 }
 .flip .card.flipped {
     -webkit-transform: rotatex(-180deg);
@@ -181,4 +184,17 @@ body {
     background: white;
     color: black;
     cursor: pointer;
+}
+
+.appeardivdefault{
+    display:none; !important;
+}
+
+.disappeardiv{
+    position: fixed; !important;
+    z-index:10;
+    display: initial; !important;
+    height:150px;
+    width:100%;
+
 }

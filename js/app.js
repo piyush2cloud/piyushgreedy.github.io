@@ -1,13 +1,18 @@
-var app = angular.module("quintify", ['quintify.controllers','angular-timeline','angular-scroll-animate','angular-flippy']);
+var app = angular.module("quintify", ['quintify.controllers', 'angular-timeline', 'angular-scroll-animate', 'angular-flippy']);
 
 
 app.directive("scroll", function ($window) {
-    return function(scope, element, attrs) {
+    return function (scope, element, attrs) {
 
-        angular.element($window).bind("scroll", function() {
+        angular.element($window).bind("scroll", function () {
             console.log(this.pageYOffset);
-            if (this.pageYOffset <= 760) {
+            if (this.pageYOffset <= 553) {
                 scope.imagechangepath = 'images/f1.jpg';
+            }
+
+            if (this.pageYOffset >= 553) {
+                scope.disappeardiv = 1;
+                scope.appeardivdefault = 0;
             }
 
             if (this.pageYOffset >= 760 && this.pageYOffset <= 1077) {
@@ -17,6 +22,8 @@ app.directive("scroll", function ($window) {
 
             if (this.pageYOffset >= 1077 && this.pageYOffset <= 1817) {
                 scope.imagechangepath = 'images/f3.jpg';
+
+
             }
 
             if (this.pageYOffset >= 1817 && this.pageYOffset <= 2937) {

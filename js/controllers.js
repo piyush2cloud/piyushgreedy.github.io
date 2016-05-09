@@ -2,10 +2,10 @@ angular.module('quintify.controllers', [])
 
     .controller("myCtrl", function ($scope, $timeout, $window) {
 
-
-
-
         $scope.imagechangepath = 'images/f1.jpg';
+
+        $scope.disappeardiv=0;
+        $scope.appeardivdefault=1;
 
         $scope.animatelinechange = 0;
         $scope.onlinetesttextchange = 0;
