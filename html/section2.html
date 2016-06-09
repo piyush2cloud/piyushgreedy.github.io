@@ -1,0 +1,215 @@
+<div class="row sectiontwo" ng-if="showbrowsertrue"
+     id="section-2" ng-class="{makebodyblur:makebodyblur}">
+
+    <div class="col-md-6 col-lg-6 col-sm-6 col-xs-6 splitsettledefaultbackground"
+         ng-mouseenter="StartTimerSettle()"
+         ng-mouseleave="StopTimerSettle()"
+         ng-class="{splitsettlefadebackground:splitsettlefade}">
+
+        <div class="row text-center">
+            <a class="splitandsettletext" style="text-decoration:none"
+               ng-class="{splitandsettletextchange:splitandsettletextchange}">
+                Split & Settle
+            </a>
+        </div>
+
+        <div class="row">
+
+            <div class="col-md-5 col-lg-5 col-sm-6 col-xs-6 text-center splitsettleleftsection">
+
+                <div class="containerdiv mobilebodywrapper">
+                    <img src="images/Phone.png"
+                         alt="img" class="changewr mobilebodywrapper">
+
+
+                    <img ng-src="images/Split%20&%20Settle/Split%20&%20Settle/SnS_1.png"
+                         class="splitsettleimagedefault"
+                         ng-class="{splitsettleimageonefade:splitsettleimageonefading}">
+
+                    <img ng-src="images/Split%20&%20Settle/Split%20&%20Settle/SnS_2.png" class="splitsettleimagedefault"
+                         ng-class="{splitsettleimagetwofade:splitsettleimagetwofading}">
+
+                    <img ng-src="images/Split%20&%20Settle/Split%20&%20Settle/SnS_3.png" class="splitsettleimagedefault"
+                         ng-class="{splitsettleimagethreefade:splitsettleimagethreefading}">
+
+                    <img ng-src="images/Split%20&%20Settle/Split%20&%20Settle/SnS_4.png" class="splitsettleimagedefault"
+                         ng-class="{splitsettleimagefourfade:splitsettleimagefourfading}">
+
+                    <div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-7 col-lg-7 col-sm-6 col-xs-6 text-center splitsettlerightsection"
+                 style="padding-right:10%">
+
+
+                <span>
+
+                    <i class="ion-bag iconzoom" ng-class="{iconzoominitial:iconzoominitial,
+                    iconzoominitialtextone:iconzoominitialtextone}"></i>
+
+                    <i class="ion-ios-people iconzoom" style="margin-left:3%"
+                       ng-class="{iconzoominitialtextwo :iconzoominitialtextwo }"></i>
+
+                    <i class="ion-speedometer iconzoom"
+                       ng-class="{iconzoominitialtexthree:iconzoominitialtexthree}"
+                       style="margin-left:3%"></i>
+
+                    <i class="ion-ios-briefcase iconzoom"
+                       ng-class="{iconzoominitialtextfour:iconzoominitialtextfour}"
+                       style="margin-left:3%"></i>
+                </span>
+
+                   <span class="splitsettletextdefault"
+                         ng-class="{splitsettletextonefade:splittextone,splitsettletextonedefault:splitsettletextonedefault}">
+
+                        Put in a purpose and amount
+
+                    </span>
+
+                    <span class="splitsettletextdefault"
+                          ng-class="{splitsettletexttwofade:splittexttwo}">
+                         Split among your group of<br> friends
+                    </span>
+
+                    <span class="splitsettletextdefault"
+                          ng-class="{splitsettletexttwofade:splittextthree}">
+                        Track and remind the group<br> members
+                    </span>
+
+                    <span class="splitsettletextdefault"
+                          ng-class="{splitsettletexttwofade:splittextfour}">
+                       Get the money directly in your<br> bank
+                     </span>
+
+            </div>
+        </div>
+    </div>
+
+
+    <div class="col-md-6 col-lg-6 col-sm-6 col-xs-6 planplaydefaultbackground"
+         ng-mouseenter="StartTimerPlay()"
+         ng-mouseleave="StopTimerPlay()" ng-class="{planplayfadebackground:planplayfade}">
+        <div class="row text-center">
+
+            <a class="planandplaytext" style="text-decoration:none"
+               ng-class="{planandplaytextchange:planandplaytextchange}">
+                Plan & Pay
+                </button>
+            </a>
+
+        </div>
+
+        <div class="row">
+
+            <div class="col-md-5 col-lg-5 col-sm-6 col-xs-6 text-center planplayleftsection" >
+
+                <div class="containerdiv mobilebodywrapper">
+                    <img src="images/Phone.png"
+                         alt="img" class="mobilebodywrapper">
+
+                    <img ng-src="images/Plan%20&%20Pay/Plan%20&%20Pay/PnP_1.png" class="planimagedefault"
+                         ng-class="{planimageonefade:planimageonefading}">
+                    <img ng-src="images/Plan%20&%20Pay/Plan%20&%20Pay/PnP_2.png" class="planimagedefault"
+                         ng-class="{planimagetwofade:planimagetwofading}">
+                    <img ng-src="images/Plan%20&%20Pay/Plan%20&%20Pay/PnP_3.png" class="planimagedefault"
+                         ng-class="{planimagethreefade:planimagethreefading}">
+                    <img ng-src="images/Plan%20&%20Pay/Plan%20&%20Pay/PnP_4.png" class="planimagedefault"
+                         ng-class="{planimagefourfade:planimagefourfading}">
+
+                </div>
+
+            </div>
+
+            <div class="col-md-7 col-lg-7 col-sm-6 col-xs-6 text-center planplayrightsection" style="padding-right:10%">
+
+                <span>
+
+                    <i class="ion-android-cart iconzoom" ng-class="{iconzoominitialplay:iconzoominitialplay,
+                    iconzoominitialtextoneplay:iconzoominitialtextoneplay}"></i>
+
+                    <i class="ion-person-stalker iconzoom" style="margin-left: 3%;" ng-class="{iconzoominitialtextwoplay:
+                    iconzoominitialtextwoplay}"></i>
+
+                    <i class="ion-clock iconzoom" style="margin-left: 3%;" ng-class="{iconzoominitialtexthreeplay:iconzoominitialtexthreeplay}"></i>
+
+                    <i class="ion-cash iconzoom" style="margin-left: 3%;" ng-class="{iconzoominitialtextfourplay:iconzoominitialtextfourplay}"></i>
+
+                </span>
+
+
+                    <span class="plantextdefault"
+                          ng-class="{plantextonefade:plantextone,plantextonefadebackground:plantextonefadebackground}">
+                       Choose from our collection or <br>start your own plan
+                    </span>
+
+                    <span class="plantextdefault"
+                          ng-class="{plantexttwofade:plantexttwo}">
+                       Add your friends who would like<br> to go along
+                    </span>
+
+                    <span class="plantextdefault"
+                          ng-class="{plantexttwofade:plantextthree}">
+                         Keep a track on who is in and <br> who is out
+                    </span>
+
+                    <span class="plantextdefault"
+                          ng-class="{plantexttwofade:plantextfour}">
+                          Spend the money directly online <br>or get it into your account
+                     </span>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+<div class="row text-center mobilesplitandplan" ng-if="showmobiletrue">
+
+    <div ng-init="StartTimerSettle()" class="text-center mobilesplitandplaytext">
+
+        <h4>Split & Settle</h4>
+
+        <img src="images/Phone.png" class="outer-mobile-body">
+
+        <img src="images/Split%20&%20Settle/Split%20&%20Settle/SnS_1.png" class="inner-mobilebody"
+             ng-class="{splitsettleimageonefade:splitsettleimageonefading}">
+
+        <img src="images/Split%20&%20Settle/Split%20&%20Settle/SnS_2.png" class="inner-mobilebody"
+             ng-class="{splitsettleimagetwofade:splitsettleimagetwofading}">
+
+        <img src="images/Split%20&%20Settle/Split%20&%20Settle/SnS_3.png" class="inner-mobilebody"
+             ng-class="{splitsettleimagethreefade:splitsettleimagethreefading}">
+
+        <img src="images/Split%20&%20Settle/Split%20&%20Settle/SnS_4.png" class="inner-mobilebody"
+             ng-class="{splitsettleimagefourfade:splitsettleimagefourfading}">
+
+    </div>
+
+
+
+</div>
+
+<div class="row text-center mobilesplitandplan" ng-if="showmobiletrue">
+
+    <div class="text-center mobilesplitandplaytext" ng-init="StartTimerPlay()">
+        <h4>Plan & Play</h4>
+
+        <img src="images/Phone.png" class="outer-mobile-body">
+
+        <img src="images/Plan%20&%20Pay/Plan%20&%20Pay/PnP_1.png" class="inner-mobilebody"
+             ng-class="{planimageonefade:planimageonefading}">
+
+        <img src="images/Plan%20&%20Pay/Plan%20&%20Pay/PnP_2.png" class="inner-mobilebody"
+             ng-class="{planimagetwofade:planimagetwofading}">
+
+        <img src="images/Plan%20&%20Pay/Plan%20&%20Pay/PnP_3.png" class="inner-mobilebody"
+             ng-class="{planimagethreefade:planimagethreefading}">
+
+        <img src="images/Plan%20&%20Pay/Plan%20&%20Pay/PnP_4.png" class="inner-mobilebody"
+             ng-class="{planimagefourfade:planimagefourfading}">
+    </div>
+
+
+</div>

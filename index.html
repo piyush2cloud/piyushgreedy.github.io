@@ -1,299 +1,70 @@
 <!DOCTYPE html>
-<html ng-app="quintify">
+<html ng-app="poolin" xmlns:font-family="http://www.w3.org/1999/xhtml">
 
+<head>
+    <!-- Meta Tags -->
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta http-equiv="Cache-Control" content="max-age=604800, must-revalidate"/>
+    <title>Mypoolin - Payments made fun</title>
+    <meta name="viewport" content="width=device-width, initial-scale=0.95"/>
+
+    <!-- Favicon etc -->
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <link rel="image_src" href="images/logo.png"/>
+    <link rel="alternate" href="android-app://com.app.mypoolin/http:/www.mypoolin.com"/>
+    <meta property="al:android:url" content="mypoolin://">
+    <meta property="al:android:package" content="com.app.mypoolin">
+    <meta property="al:android:app_name" content="Mypoolin">
+
+
+
+    <meta name="description" content="The fastest and most convenient way to share money with friends. You can also chat and pay as a group for anything - gifts, parties, events, movies and outings! Invite along your friends, colleagues or anyone to share money and discuss together. Collected money can be cashed out directly into any bank account or redeemed directly in the form of cards, vouchers and tickets. Gift cards and vouchers are available across multiple brands and can be redeemed both online and offline. Explore our collection of 90+ partner brands like Amazon, Flipkart, MakeMyTrip, Myntra, Jabong, ITC, Dineout, PVR, BookMyShow and more! Or simply transfer money to any bank account just by using your phonebook"/>
+
+    <meta itemprop="keywords" content="plan and pay with friends, settling bill money with friends, group gift cards india, gift cards friends, share money friends india, splitting bill app friends, settle bill friends, group gift for wedding, send money friends, request money friends, office party money collect, money sharing friends, P2P money transfer"/>
+
+    <meta name="twitter:title" content="Mypoolin : Payments made Fun - Discover, Chat together, Pay and request money"/>
+    <meta name="google" content="notranslate"/>
+    <meta name="copyright" content="Mypoolin : Payments made Fun - Discover, Chat together, Pay and request money. Copyright - InfinyPool Online Payments"/>
+
+    <!-- Mobile Specifics -->
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="MobileOptimized" content="320"/>
+    <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+
+
+
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="bower_components/bootstrap-sidebar/dist/css/sidebar.css">
+    <link rel="stylesheet" href="poolincss/style.css">
+    <link rel="stylesheet" href="bower_components/Ionicons/css/ionicons.css">
+    <link rel="stylesheet" href="bower_components/ng-dialog/css/ngDialog.min.css">
+    <link rel="stylesheet" href="bower_components/ng-dialog/css/ngDialog-theme-default.min.css">
+
+</head>
+
+<body ng-controller="indexCtrl" ng-class="{mainbody:mainbody,splashbackground:splashbackground}">
+
+<div ng-view></div>
+
+
+<!-- Essential for Bootstrap to work-->
+<script src="bower_components/jquery/dist/jquery.js"></script>
+<!-- Including Angular js Scripts -->
 <script src="bower_components/angular/angular.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+<script src="bower_components/angular-route/angular-route.min.js"></script>
+<!--including bootstrap scripts -->
 <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<!--including Sidebar -->
 <script src="bower_components/bootstrap-sidebar/dist/js/sidebar.js"></script>
+<!-- Include angular scroll for scrolling -->
+<script src="bower_components/angular-scroll/angular-scroll.min.js"></script>
+<!--including app.js -->
 <script src="js/app.js"></script>
 <script src="js/controllers.js"></script>
-
-
-<link rel="stylesheet" href="bower_components/angular-timeline/dist/angular-timeline.css"/>
-<link rel="stylesheet" href="bower_components/angular-timeline/dist/angular-timeline-animations.css"/>
-<link rel="stylesheet" href="bower_components/angular-timeline/dist/angular-timeline-bootstrap.css"/>
-<script src="bower_components/angular-timeline/dist/angular-timeline.js"></script>
-
-<script src="bower_components/angular-scroll-animate/dist/angular-scroll-animate.js"></script>
-
-<script src="bower_components/angular-flippy/dist/js/angular-flippy.js"></script>
-<link rel="stylesheet" href="bower_components/angular-flippy/dist/css/angular-flippy-fancy.min.css">
-<link rel="stylesheet" href="bower_components/angular-flippy/dist/css/angular-flippy-fancy.css">
-
-
-
-
-<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
-<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.min.css">
-<link rel="stylesheet" href="bower_components/bootstrap-sidebar/dist/css/sidebar.css">
-
-<script src="js/app.js"></script>
-<script src="js/controllers.js"></script>
-
-<link rel="stylesheet" href="css/style.css">
-
-<body scroll ng-controller="myCtrl">
-
-<div class="text-center" ng-class="{disappeardiv:disappeardiv,appeardivdefault:appeardivdefault}" >
-<img src="{{imagechangepath}}" style="width:600px;height:100%">
-</div>
-
-<div class="navbar navbar-fixed-top" style="background-color: #5585B5">
-
-    <div class="navbar-header" style="margin-left: 10px;margin-top: 15px">
-           <span style="color: white;font-size:16px;
-           font-family: Helvetica, sans-serif;font-weight:500;letter-spacing:0.5px">
-               Quintify Education.{{disappeardiv}}{{appeardivdefault}}
-           </span>
-    </div>
-
-    <button type="button" class="navbar-toggle toggle-right" style="background-color: #2E3842" data-toggle="sidebar"
-            data-target=".sidebar-right">
-        <span style="background-color: white" class="icon-bar"></span>
-        <span style="background-color: white" class="icon-bar"></span>
-        <span style="background-color: white" class="icon-bar"></span>
-    </button>
-</div>
-
-
-<!-- Begin page content -->
-<div class="container-fluid" ng-controller="myCtrl" style="padding-left:0px;padding-right:0px">
-
-    <div class="row">
-        <div class="col-xs-7 col-sm-3 col-md-3 sidebar sidebar-right sidebar-animate"
-             style="background-color:#5585B5">
-
-
-            <ul class="nav navbar-stacked">
-                <li class="active">
-                    <a href="#" style="color:white">Home</a>
-                </li>
-                <li>
-                    <a href="#about" style="color:white">About</a>
-                </li>
-                <li>
-                    <a href="#contact" style="color:white">Contact</a>
-                </li>
-            </ul>
-        </div>
-    </div>
-
-    <div class="text-center"
-         style="height: 520px;width: 100%;background-color: #2E3842;padding-top:20px;border-bottom:1px solid black">
-
-
-        <hr class="animatelinedeafult" ng-class="{animatelinechange:animatelinechange}" style="margin-bottom:8px">
-          <span style="color: white;font-size:25px;font-family: Helvetica, sans-serif">
-            Quintify Education.
-          </span>
-        <hr class="animatelinedeafult" ng-class="{animatelinechange:animatelinechange}" style="margin-top:8px">
-
-
-
-         <span class="onlinetesttext" ng-class="{onlinetesttextchange:onlinetesttextchange}">
-             An online test and assessment platform.
-         </span>
-
-
-        <div class="row" style="margin-top: 70px">
-
-            <div class="col-md-6 col-lg-6" style="padding-right:0px">
-                <img src="gifimages/graphics-student-832304.gif" class="firstgifbox"
-                     ng-class="{firstgifboxfade:firstgifboxfade}">
-                <img src="gifimages/school20.gif" class="secondgifbox" ng-class="{secondgifboxfade:secondgifboxfade}">
-                <img src="gifimages/school19.gif" class="thirdgifbox" ng-class="{thirdgifboxfade:thirdgifboxfade}">
-            </div>
-
-            <div class="col-md-3 col-lg-3" style="">
-                <img src="gifimages/school3.gif" class="fourgifbox" ng-class="{fourgifboxfade:fourgifboxfade}">
-                <img src="gifimages/school34.gif" class="fivegifbox" ng-class="{fivegifboxfade:fivegifboxfade}">
-            </div>
-
-            <div class="col-md-3 col-lg-" style="">
-
-                <img src="gifimages/school17.gif" class="sixgifbox" ng-class="{sixgifboxfade:sixgifboxfade}">
-                <img src="gifimages/graphics-student-118345.gif" class="sevengifbox"
-                     ng-class="{sevengifboxfade:sevengifboxfade}">
-            </div>
-        </div>
-
-
-        <div class="row" style="margin-top: 70px">
-            <img src="gifimages/sc27.gif" class="eightgifbox" ng-class="{eightgifboxfade:eightgifboxfade}">
-            <span class="onlyplacetolearn" ng-class="{onlyplacetolearnfade:onlyplacetolearnfade}">
-                Quintify: The Only Place to Test and Learn
-            </span>
-        </div>
-
-    </div>
-
-    <div class="row text-center" style="padding-top: 20px;background-color:whitesmoke">
-    <span class="onlyplacetolearn" style="opacity:1;font-weight:700;font-family: Helvetica, sans-serif;font-size:25px
-    ;color:#2E3842">
-                Quintify: The Only Place to Test and Learn is the Best Parent's and Coaching Institute's Choice!
-    </span>
-    </div>
-
-    <div class="row text-center">
-    <span class="onlyplacetolearn"
-          style="opacity:1;display: block;font-weight: 700;font-size:25px;font-family: Helvetica, sans-serif">
-        So Don't Wait and Hurry Up for Better Tomorrow
-    </span>
-    </div>
-
-    <div style="margin-top: 20px" class="panel panel-primary timeline-hidden" when-visible="animateElementIn" when-not-visible="animateElementOut">
-        <div class="panel-heading timeline-hidden" when-visible="animateElementIn" when-not-visible="animateElementOut">
-            In Depth Assessment
-        </div>
-        <div class="panel-body row timeline-hidden" when-visible="animateElementIn" when-not-visible="animateElementOut">
-            <div class="col-md-6 col-lg-6">
-                'Learnign by experience is still one of the most effective ways to learn and retain a knowledge as it has experience to it. We prepare tests for both collective and individual assessment so that students can easily figure out their key to success..'
-            </div>
-            <div class="col-md-6 col-lg-6">
-                <img src="images/f1.jpg" style="width:200px">
-            </div>
-        </div>
-    </div>
-
-    <div class="panel panel-danger timeline-hidden" when-visible="animateElementIn" when-not-visible="animateElementOut">
-        <div class="panel-heading timeline-hidden" when-visible="animateElementIn" when-not-visible="animateElementOut">
-            In Depth Assessment
-        </div>
-        <div class="panel-body row timeline-hidden" when-visible="animateElementIn" when-not-visible="animateElementOut">
-            <div class="col-md-6 col-lg-6">
-                'Learnign by experience is still one of the most effective ways to learn and retain a knowledge as it has experience to it. We prepare tests for both collective and individual assessment so that students can easily figure out their key to success..'
-            </div>
-            <div class="col-md-6 col-lg-6">
-                <img src="images/f8.png" style="width:200px">
-            </div>
-        </div>
-    </div>
-
-
-    <div class="panel panel-primary timeline-hidden" when-visible="animateElementIn" when-not-visible="animateElementOut">
-        <div class="panel-heading timeline-hidden" when-visible="animateElementIn" when-not-visible="animateElementOut">
-            In Depth Assessment
-        </div>
-        <div class="panel-body row timeline-hidden" when-visible="animateElementIn" when-not-visible="animateElementOut">
-            <div class="col-md-6 col-lg-6">
-                'Learnign by experience is still one of the most effective ways to learn and retain a knowledge as it has experience to it. We prepare tests for both collective and individual assessment so that students can easily figure out their key to success..'
-            </div>
-            <div class="col-md-6 col-lg-6">
-                <img src="images/f2.png" style="width:200px">
-            </div>
-        </div>
-    </div>
-
-
-    <div class="panel panel-danger timeline-hidden" when-visible="animateElementIn" when-not-visible="animateElementOut">
-        <div class="panel-heading timeline-hidden" when-visible="animateElementIn" when-not-visible="animateElementOut">
-            In Depth Assessment
-        </div>
-        <div class="panel-body row timeline-hidden" when-visible="animateElementIn" when-not-visible="animateElementOut">
-            <div class="col-md-6 col-lg-6">
-                'Learnign by experience is still one of the most effective ways to learn and retain a knowledge as it has experience to it. We prepare tests for both collective and individual assessment so that students can easily figure out their key to success..'
-            </div>
-            <div class="col-md-6 col-lg-6">
-                <img src="images/f3.jpg" style="width:200px">
-            </div>
-        </div>
-    </div>
-
-
-    <div class="panel panel-danger timeline-hidden" when-visible="animateElementIn" when-not-visible="animateElementOut">
-        <div class="panel-heading timeline-hidden" when-visible="animateElementIn" when-not-visible="animateElementOut">
-            In Depth Assessment
-        </div>
-        <div class="panel-body row timeline-hidden" when-visible="animateElementIn" when-not-visible="animateElementOut">
-            <div class="col-md-6 col-lg-6">
-                'Learnign by experience is still one of the most effective ways to learn and retain a knowledge as it has experience to it. We prepare tests for both collective and individual assessment so that students can easily figure out their key to success..'
-            </div>
-            <div class="col-md-6 col-lg-6">
-                <img src="images/f4.jpg" style="width:200px">
-            </div>
-        </div>
-    </div>
-
-
-    <div class="panel panel-info timeline-hidden" when-visible="animateElementIn" when-not-visible="animateElementOut">
-        <div class="panel-heading timeline-hidden" when-visible="animateElementIn" when-not-visible="animateElementOut">
-            In Depth Assessment
-        </div>
-        <div class="panel-body row timeline-hidden" when-visible="animateElementIn" when-not-visible="animateElementOut">
-            <div class="col-md-6 col-lg-6">
-                'Learnign by experience is still one of the most effective ways to learn and retain a knowledge as it has experience to it. We prepare tests for both collective and individual assessment so that students can easily figure out their key to success..'
-            </div>
-            <div class="col-md-6 col-lg-6">
-                <img src="images/f5.png" style="width:200px">
-            </div>
-        </div>
-    </div>
-
-
-    <div class="panel panel-warning timeline-hidden" when-visible="animateElementIn" when-not-visible="animateElementOut">
-        <div class="panel-heading timeline-hidden" when-visible="animateElementIn" when-not-visible="animateElementOut">
-            In Depth Assessment
-        </div>
-        <div class="panel-body row timeline-hidden" when-visible="animateElementIn" when-not-visible="animateElementOut">
-            <div class="col-md-6 col-lg-6">
-                'Learnign by experience is still one of the most effective ways to learn and retain a knowledge as it has experience to it. We prepare tests for both collective and individual assessment so that students can easily figure out their key to success..'
-            </div>
-            <div class="col-md-6 col-lg-6">
-                <img src="images/f6.png" style="width:200px">
-            </div>
-        </div>
-    </div>
-
-
-
-
-    <div class="text-center" style="height: 100%;width: 100%;margin-top:205px">
-        <!-- view -->
-        <timeline>
-            <!-- can also hard-code to side="left" or side="right" -->
-            <timeline-event ng-repeat="event in events" class="timeline-hidden"
-                            when-visible="animateElementIn" when-not-visible="animateElementOut">
-                <!-- uses angular-scroll-animate to give it some pop -->
-                <timeline-badge class="{{event.badgeClass}} timeline-hidden"
-                                when-visible="animateElementIn" when-not-visible="animateElementOut">
-                    <i class="glyphicon {{event.badgeIconClass}}"></i>
-                </timeline-badge>
-
-                <!-- uses angular-scroll-animate to give it some pop -->
-                <timeline-panel class="{{event.badgeClass}} timeline-hidden text-center"
-                                when-visible="animateElementIn" when-not-visible="animateElementOut"
-                                style=";padding-left:60px" ng-style="{'background-color':'{{event.colorback}}'}">
-
-                    <timeline-heading style="text-align: justify;
-                     text-justify: inter-word;color: white">
-
-                        <h4>{{event.title}}</h4>
-                        {{event.content}}
-                    </timeline-heading>
-
-                    <timeline-footer ng-if="event.footerContentHtml">
-                        <span ng-bind-html="event.footerContentHtml"></span>
-                    </timeline-footer>
-
-
-                </timeline-panel>
-
-
-            </timeline-event>
-        </timeline>
-
-    </div>
-
-    <div class="text-center" style="background-color: #2E3842;width: 100%;height: 100px;padding-top:40px">
-        <span style="color: white;font-size: 30px;">
-            Footer
-
-        </span>
-    </div>
-
-
-</div>
-
+<script src="bower_components/ng-dialog/js/ngDialog.min.js"></script>
+<!--contains controllers part -->
 
 </body>
 </html>

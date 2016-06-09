@@ -1,0 +1,27 @@
+<div scroll ng-controller="myCtrl">
+    
+<div ng-include="'html/navbar.html'"></div>
+<!-- This is the Navbar which also includes sidebar-->
+
+<!-- Begin page content -->
+<div class="container-fluid containerfluidwrapper" ng-click="makebackgroundnormal()">
+
+    <div ng-if="showAccount" ng-include="'html/account.html'"></div>
+    <!-- This section is to toggle account section-->
+    <div ng-include="'html/section1.html'"></div>
+    <!-- This section is the topmost section which contains getlink of the app -->
+    <div ng-include="'html/section2.html'"></div>
+    <!--This section shows how thw app works-->
+    <div ng-include="'html/section3.html'"></div>
+    <!-- This section shows how to get start with mypoolin -->
+    <div ng-include="'html/section4.html'"></div>
+    <!-- This section shows the feedbacks and press -->
+    <div ng-include="'html/footer.html'"></div>
+    <!-- This is the Footer -->
+    <my-directive></my-directive>
+    <!-- This is to check the width of the screen dynamically -->
+</div>
+
+</div>
+
+

@@ -83,9 +83,9 @@ module.exports = function (grunt) {
         csslintrc: 'less/.csslintrc'
       },
       src: [
-        'dist/css/bootstrap.css',
-        'dist/css/bootstrap-theme.css',
-        'docs/assets/css/docs.css',
+        'dist/poolincss/bootstrap.css',
+        'dist/poolincss/bootstrap-theme.css',
+        'docs/assets/poolincss/docs.css',
         'docs/examples/**/*.css'
       ]
     },
@@ -159,7 +159,7 @@ module.exports = function (grunt) {
           sourceMap: true,
           outputSourceFiles: true,
           sourceMapURL: '<%= pkg.name %>.css.map',
-          sourceMapFilename: 'dist/css/<%= pkg.name %>.css.map'
+          sourceMapFilename: 'dist/poolincss/<%= pkg.name %>.css.map'
         },
         files: {
           'dist/css/<%= pkg.name %>.css': 'less/bootstrap.less'
@@ -171,7 +171,7 @@ module.exports = function (grunt) {
           sourceMap: true,
           outputSourceFiles: true,
           sourceMapURL: '<%= pkg.name %>-theme.css.map',
-          sourceMapFilename: 'dist/css/<%= pkg.name %>-theme.css.map'
+          sourceMapFilename: 'dist/poolincss/<%= pkg.name %>-theme.css.map'
         },
         files: {
           'dist/css/<%= pkg.name %>-theme.css': 'less/theme.less'
@@ -183,8 +183,8 @@ module.exports = function (grunt) {
           report: 'min'
         },
         files: {
-          'dist/css/<%= pkg.name %>.min.css': 'dist/css/<%= pkg.name %>.css',
-          'dist/css/<%= pkg.name %>-theme.min.css': 'dist/css/<%= pkg.name %>-theme.css'
+          'dist/css/<%= pkg.name %>.min.css': 'dist/poolincss/<%= pkg.name %>.css',
+          'dist/css/<%= pkg.name %>-theme.min.css': 'dist/poolincss/<%= pkg.name %>-theme.css'
         }
       }
     },
@@ -193,15 +193,15 @@ module.exports = function (grunt) {
       compress: {
         options: {
           keepSpecialComments: '*',
-          noAdvanced: true, // turn advanced optimizations off until the issue is fixed in clean-css
+          noAdvanced: true, // turn advanced optimizations off until the issue is fixed in clean-poolincss
           report: 'min',
           selectorsMergeMode: 'ie8'
         },
         src: [
-          'docs/assets/css/docs.css',
-          'docs/assets/css/pygments-manni.css'
+          'docs/assets/poolincss/docs.css',
+          'docs/assets/poolincss/pygments-manni.css'
         ],
-        dest: 'docs/assets/css/docs.min.css'
+        dest: 'docs/assets/poolincss/docs.min.css'
       }
     },
 
@@ -213,10 +213,10 @@ module.exports = function (grunt) {
         },
         files: {
           src: [
-            'dist/css/<%= pkg.name %>.css',
-            'dist/css/<%= pkg.name %>.min.css',
-            'dist/css/<%= pkg.name %>-theme.css',
-            'dist/css/<%= pkg.name %>-theme.min.css'
+            'dist/poolincss/<%= pkg.name %>.css',
+            'dist/poolincss/<%= pkg.name %>.min.css',
+            'dist/poolincss/<%= pkg.name %>-theme.css',
+            'dist/poolincss/<%= pkg.name %>-theme.min.css'
           ]
         }
       }
@@ -228,8 +228,8 @@ module.exports = function (grunt) {
       },
       dist: {
         files: {
-          'dist/css/<%= pkg.name %>.css': 'dist/css/<%= pkg.name %>.css',
-          'dist/css/<%= pkg.name %>-theme.css': 'dist/css/<%= pkg.name %>-theme.css'
+          'dist/css/<%= pkg.name %>.css': 'dist/poolincss/<%= pkg.name %>.css',
+          'dist/css/<%= pkg.name %>-theme.css': 'dist/poolincss/<%= pkg.name %>-theme.css'
         }
       },
       examples: {
@@ -250,8 +250,8 @@ module.exports = function (grunt) {
         expand: true,
         cwd: './dist',
         src: [
-          '{css,js}/*.min.*',
-          'css/*.map',
+          '{poolincss,js}/*.min.*',
+          'poolincss/*.map',
           'fonts/*'
         ],
         dest: 'docs/dist'
@@ -370,7 +370,7 @@ module.exports = function (grunt) {
   var testSubtasks = [];
   // Skip core tests if running a different subset of the test suite
   if (!process.env.TWBS_TEST || process.env.TWBS_TEST === 'core') {
-    testSubtasks = testSubtasks.concat(['dist-css', 'csslint', 'jshint', 'jscs', 'qunit', 'build-customizer-html']);
+    testSubtasks = testSubtasks.concat(['dist-poolincss', 'csslint', 'jshint', 'jscs', 'qunit', 'build-customizer-html']);
   }
   // Skip HTML validation if running a different subset of the test suite
   if (!process.env.TWBS_TEST || process.env.TWBS_TEST === 'validate-html') {
@@ -389,13 +389,13 @@ module.exports = function (grunt) {
   grunt.registerTask('dist-js', ['concat', 'uglify']);
 
   // CSS distribution task.
-  grunt.registerTask('dist-css', ['less', 'cssmin', 'csscomb', 'usebanner']);
+  grunt.registerTask('dist-poolincss', ['less', 'cssmin', 'csscomb', 'usebanner']);
 
   // Docs distribution task.
   grunt.registerTask('dist-docs', 'copy:docs');
 
   // Full distribution task.
-  grunt.registerTask('dist', ['clean', 'dist-css', 'copy:fonts', 'dist-js', 'dist-docs']);
+  grunt.registerTask('dist', ['clean', 'dist-poolincss', 'copy:fonts', 'dist-js', 'dist-docs']);
 
   // Default task.
   grunt.registerTask('default', ['test', 'dist', 'build-glyphicons-data', 'build-customizer', 'update-shrinkwrap']);

@@ -1,0 +1,2299 @@
+.taglinefade {
+    -webkit-transition: opacity 0.5s; /* For Safari 3.1 to 6.0 */
+    transition: opacity 0.5s;
+    opacity: 0;
+}
+
+.taglineshow {
+    opacity: 1;
+}
+
+.splashbody {
+    transition: all 4s ease-in-out;
+    -moz-transition: all 4s ease-in-out;
+    -webkit-transition: all 4s ease-in-out;
+    background-color: #181616;
+    visibility: visible;
+}
+
+.fadesplash {
+    visibility: hidden;
+    background-color: white;
+}
+
+button:focus {
+    outline: 0;
+}
+
+.centeringelement {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+}
+
+.centeringbelowelement {
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-80%);
+}
+
+.dotted-spaced {
+    background-image: linear-gradient(to right, #333 10%, rgba(255, 255, 255, 0) 0%);
+    background-position: top;
+    background-size: 5px 1px;
+    background-repeat: repeat-x;
+}
+
+/* Large desktops and laptops */
+@media (min-width: 1200px) {
+
+    .mobilebodywrapper {
+        width: 180px;
+    !important;
+        position: absolute;
+    !important;
+    }
+
+    .payu-paytm {
+        width: 56px;
+        margin-left: 1%;
+        cursor: pointer;
+    }
+
+    .mobi-paypal {
+        width: 75px;
+        margin-left: 1%;
+        cursor: pointer;
+    }
+
+    .horizontalline {
+        margin-top: 10px;
+    }
+
+    .splitsettleimagedefault {
+        width: 163px;
+        top: 33px;
+        margin-left: 8px;
+    }
+
+    .startnowbutton {
+        background-color: #f7941d;
+        border: none;
+        height: 50px;
+        width: 300px;
+        font-family: 'Titillium Web', sans-serif;
+        font-size: 1.4em;
+        zoom: 1.005;
+        color: white;
+        border-radius: 10px;
+    }
+
+    .sectionseperator:after {
+        content: "............................................................";
+        letter-spacing: 3px; /* Use letter-spacing to increase space between dots*/
+    }
+
+    .planimagedefault {
+        width: 163px;
+        top: 33px;
+        margin-left: 8px;
+    }
+
+    .mobileviewtransition {
+        display: none;
+    }
+
+    .startonwebbutton {
+        background-color: #f7941d;
+        height: 50px;
+        width: 390px;
+        color: white;
+        font-family: 'Titillium Web', sans-serif;
+        letter-spacing: 1px;
+        font-size: 1.2em;
+        border-radius: 10px;
+        zoom: 1.007;
+
+    }
+
+    .paddingleftinput {
+        padding-left: 52%;
+    !important;
+    }
+
+    .paddingstorelogo {
+        padding-left: 52%;
+    !important;
+    }
+
+    #phoneNumber {
+        text-align: center;
+        width: 170px;
+        height: 48px;
+        border-radius: 5px;
+        color: #0c77ad;
+        font-family: 'titillium web', sans-serif;
+    }
+
+    .outer-mobile-body {
+        width: 100px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .inner-mobilebody {
+        width: 90px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: none;
+    }
+
+    .linkbuttonforapp {
+        background-color: #f7941d;
+        height: 48px;
+        width: 170px;
+        border-radius: 10px;
+        color: white;
+        font-family: 'Titillium Web', sans-serif;
+        font-size: 1.2em;
+        border: none;
+        zoom: 1.007;
+        letter-spacing: 1px;
+
+    }
+
+    .storebuttonwrapper .googlestoreimage {
+        width: 170px;
+    }
+
+    .storebuttonwrapper .appstoreimage {
+        width: 170px;
+    }
+
+    .startthewebdesktop {
+        padding-left: 7%;
+        padding-right: 7%;
+        border: 3px solid white;
+        background-color: #2E3842;
+        height: 50px;
+    }
+
+    .startwebmarginleft {
+        margin-left: 10%;
+    }
+
+    .inputmargindesktop {
+        margin-left: 55%;
+    }
+
+    .input-email {
+        margin-right: 10px;
+        font-family: 'Titillium Web', sans-serif;
+        line-height: 2.8em;
+        width: 35%;
+        color: #0c77ad;
+        padding-left: 10px;
+        background-color: #ecf0f7;
+        border: none;
+        border-radius: 5px;
+
+    }
+
+    .input-phone {
+        margin-left: 10px;
+        font-family: 'Titillium Web', sans-serif;
+        line-height: 2.8em;
+        width: 35%;
+        color: #0c77ad;
+        padding-left: 10px;
+        background-color: #ecf0f7;
+        border: none;
+        border-radius: 5px;
+
+    }
+
+    .input-password {
+        margin-right: 10px;
+        font-family: 'Titillium Web', sans-serif;
+        line-height: 2.8em;
+        width: 35%;
+        color: #0c77ad;
+        padding-left: 10px;
+        background-color: #ecf0f7;
+        border: none;
+        border-radius: 5px;
+
+    }
+
+    .margintop2per {
+        margin-top: 0%;
+    }
+
+    .social-facebook-center {
+        padding-top: 5px;
+        padding-left: 12px;
+    }
+
+    .social-twitter-center {
+        padding-top: 5px;
+        padding-left: 10px;
+    }
+
+    .social-youtube-center {
+        padding-top: 5px;
+        padding-left: 7px;
+    }
+}
+
+/* Landscape tablets and medium desktops */
+@media (min-width: 992px) and (max-width: 1199px) {
+
+    .mobileview {
+        display: none;
+    }
+
+    .mobilebodywrapper {
+        width: 150px;
+    !important;
+        position: absolute;
+    !important;
+    }
+
+    .startnowbutton {
+        background-color: #f7941d;
+        border: none;
+        height: 50px;
+        width: 300px;
+        font-family: 'Titillium Web', sans-serif;
+        font-size: 1.4em;
+        zoom: 1.005;
+        color: white;
+        border-radius: 10px;
+    }
+
+    .payu-paytm {
+        width: 50px;
+        margin-left: 1%;
+        cursor: pointer;
+    }
+
+    .mobi-paypal {
+        width: 70px;
+        margin-left: 1%;
+        cursor: pointer;
+    }
+
+    .splitsettleimagedefault {
+        width: 136px;
+        top: 28px;
+        margin-left: 7px;
+    }
+
+    .planimagedefault {
+        width: 136px;
+        top: 28px;
+        margin-left: 7px;
+
+    }
+
+    .mobileviewtransition {
+        display: none;
+    }
+
+    .sectionseperator:after {
+        content: "............................................................";
+        letter-spacing: 3px; /* Use letter-spacing to increase space between dots*/
+        border-top: 1px solid white;
+    }
+
+    .outer-mobile-body {
+        width: 100px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .inner-mobilebody {
+        width: 90px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: none;
+    }
+
+    #phoneNumber {
+        text-align: center;
+        width: 165px;
+        height: 48px;
+        border-radius: 5px;
+        color: #0c77ad;
+        font-family: 'titillium web', sans-serif;
+    }
+
+    .linkbuttonforapp {
+        background-color: #f7941d;
+        height: 48px;
+        width: 165px;
+        border-radius: 10px;
+        color: white;
+        font-family: 'Titillium Web', sans-serif;
+        font-size: 1.2em;
+        border: none;
+        zoom: 1.007;
+        letter-spacing: 1px;
+
+    }
+
+    .storebuttonwrapper .googlestoreimage {
+        width: 165px;
+    }
+
+    .storebuttonwrapper .appstoreimage {
+        width: 165px;
+    }
+
+    .startonwebbutton {
+        background-color: #f7941d;
+        height: 50px;
+        width: 430px;
+        color: white;
+        font-family: 'Titillium Web', sans-serif;
+        letter-spacing: 1px;
+        font-size: 1.2em;
+        border-radius: 10px;
+        zoom: 1.007;
+    }
+
+    .margintop2per {
+        margin-top: 0%;
+    }
+
+    .paddingleftinput {
+        padding-left: 3%;
+    !important;
+    }
+
+    .startthewebmargintop {
+        margin-top: 10px;
+        text-align: center;
+    }
+
+    .startthewebdesktop {
+        padding-left: 7%;
+        padding-right: 7%;
+        border: 3px solid white;
+        background-color: #2E3842;
+        height: 50px;
+    }
+
+    .inputmarginmobile {
+        text-align: center;
+    }
+
+    .input-email {
+        margin-right: 10px;
+        font-family: 'Titillium Web', sans-serif;
+        line-height: 2.8em;
+        width: 34%;
+        color: #0c77ad;
+        padding-left: 10px;
+        background-color: #ecf0f7;
+        border: none;
+        border-radius: 5px;
+
+    }
+
+    .input-phone {
+        margin-left: 10px;
+        font-family: 'Titillium Web', sans-serif;
+        line-height: 2.8em;
+        width: 34%;
+        color: #0c77ad;
+        padding-left: 10px;
+        background-color: #ecf0f7;
+        border: none;
+        border-radius: 5px;
+
+    }
+
+    .input-password {
+        margin-right: 10px;
+        font-family: 'Titillium Web', sans-serif;
+        line-height: 2.8em;
+        width: 34%;
+        color: #0c77ad;
+        padding-left: 10px;
+        background-color: #ecf0f7;
+        border: none;
+        border-radius: 5px;
+
+    }
+
+    .profile-logo-margintop {
+        margin-top: 5px;
+    }
+
+    .social-facebook-center {
+        padding-top: 5px;
+        padding-left: 12px;
+    }
+
+    .social-twitter-center {
+        padding-top: 5px;
+        padding-left: 10px;
+    }
+
+    .social-youtube-center {
+        padding-top: 5px;
+        padding-left: 7px;
+    }
+
+    .lele {
+        background-color: grey;
+    }
+}
+
+/* Portrait tablets and small desktops */
+@media (min-width: 768px) and (max-width: 991px) {
+
+    .margintop2per {
+        margin-top: 2%;
+    }
+
+    .paddingleftinput {
+        padding-left: 3%;
+    !important;
+    }
+
+    .startnowbutton {
+        background-color: #f7941d;
+        border: none;
+        height: 50px;
+        width: 280px;
+        font-family: 'Titillium Web', sans-serif;
+        font-size: 1.4em;
+        zoom: 1.005;
+        color: white;
+        border-radius: 10px;
+    }
+
+    .payu-paytm {
+        width: 40px;
+        margin-left: 1%;
+        cursor: pointer;
+    }
+
+    .mobi-paypal {
+        width: 60px;
+        margin-left: 1%;
+        cursor: pointer;
+    }
+
+    .startthewebmargintop {
+        margin-top: 10px;
+        text-align: center;
+    }
+
+    .startthewebdesktop {
+        padding-left: 7%;
+        padding-right: 7%;
+        border: 3px solid white;
+        background-color: #2E3842;
+        height: 50px;
+    }
+
+    .startonwebbutton {
+
+        background-color: #f7941d;
+        height: 50px;
+        width: 190px;
+        color: white;
+        font-family: 'Titillium Web', sans-serif;
+        letter-spacing: 1px;
+        font-size: 1.2em;
+        border-radius: 10px;
+        zoom: 1.007;
+    }
+
+    .sectionseperator:after {
+        content: "...........................";
+        letter-spacing: 3px; /* Use letter-spacing to increase space between dots*/
+        border-top: 1px solid white;
+    }
+
+    #phoneNumber {
+        text-align: center;
+        width: 190px;
+        height: 48px;
+        border-radius: 5px;
+        color: #0c77ad;
+        font-family: 'titillium web', sans-serif;
+    }
+
+    .linkbuttonforapp {
+        background-color: #f7941d;
+        height: 48px;
+        width: 190px;
+        border-radius: 10px;
+        color: white;
+        font-family: 'Titillium Web', sans-serif;
+        font-size: 1.2em;
+        border: none;
+        zoom: 1.007;
+        letter-spacing: 1px;
+
+    }
+
+    .storebuttonwrapper .googlestoreimage {
+        width: 190px;
+    }
+
+    .storebuttonwrapper .appstoreimage {
+        width: 190px;
+    }
+
+    .browserviewtransition {
+        display: none;
+    }
+
+    .inputmarginmobile {
+        text-align: center;
+    }
+
+    .input-email {
+        margin-right: 10px;
+        font-family: 'Titillium Web', sans-serif;
+        line-height: 2.8em;
+        width: 50%;
+        color: #0c77ad;
+        padding-left: 10px;
+        background-color: #ecf0f7;
+        border: none;
+        border-radius: 5px;
+
+    }
+
+    .input-phone {
+        margin-left: 10px;
+        font-family: 'Titillium Web', sans-serif;
+        line-height: 2.8em;
+        width: 34%;
+        color: #0c77ad;
+        padding-left: 10px;
+        background-color: #ecf0f7;
+        border: none;
+        border-radius: 5px;
+
+    }
+
+    .input-password {
+        margin-right: 10px;
+        font-family: 'Titillium Web', sans-serif;
+        line-height: 2.8em;
+        width: 34%;
+        color: #0c77ad;
+        padding-left: 10px;
+        background-color: #ecf0f7;
+        border: none;
+        border-radius: 5px;
+
+    }
+
+    .profile-logo-margintop {
+        margin-top: 15px;
+    }
+
+    .webview {
+        display: none;
+    }
+
+    .outer-mobile-body {
+        width: 100px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .inner-mobilebody {
+        width: 90px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: none;
+    }
+
+    .martop5px {
+        margin-top: 15px;
+    }
+
+    .martop3per {
+        margin-top: 4%;
+    }
+
+    .social-facebook-center {
+        padding-top: 5px;
+    }
+
+    .social-twitter-center {
+        padding-top: 5px;
+    }
+
+    .social-youtube-center {
+        padding-top: 5px;
+        padding-left: 3px;
+    }
+
+    .lele {
+        background-color: yellow;
+    }
+
+}
+
+/* Landscape phones and portrait tablets */
+@media (max-width: 767px) {
+
+    .webview {
+        display: none;
+    }
+
+    .margintop2per {
+        margin-top: 2%;
+    }
+
+    .paddingleftinput {
+        padding-left: 3%;
+    !important;
+    }
+
+    .startnowbutton {
+        background-color: #f7941d;
+        border: none;
+        height: 50px;
+        width: 280px;
+        font-family: 'Titillium Web', sans-serif;
+        font-size: 1.4em;
+        zoom: 1.005;
+        color: white;
+        border-radius: 10px;
+    }
+
+    .payu-paytm {
+        width: 40px;
+        margin-left: 1%;
+        cursor: pointer;
+    }
+
+    .mobi-paypal {
+        width: 60px;
+        margin-left: 1%;
+        cursor: pointer;
+    }
+
+    .startthewebmargintop {
+        margin-top: 10px;
+        text-align: center;
+    }
+
+    .browserviewtransition {
+        display: none;
+    }
+
+    .sectionseperator:after {
+        content: "..........................";
+        letter-spacing: 3px; /* Use letter-spacing to increase space between dots*/
+        border-top: 1px solid white;
+    }
+
+    #phoneNumber {
+        text-align: center;
+        width: 180px;
+        height: 48px;
+        border-radius: 5px;
+        color: #0c77ad;
+        font-family: 'titillium web', sans-serif;
+    }
+
+    .linkbuttonforapp {
+        background-color: #f7941d;
+        height: 48px;
+        width: 180px;
+        border-radius: 10px;
+        color: white;
+        font-family: 'Titillium Web', sans-serif;
+        font-size: 1.2em;
+        border: none;
+        zoom: 1.007;
+        letter-spacing: 1px;
+
+    }
+
+    .storebuttonwrapper .googlestoreimage {
+        width: 180px;
+    }
+
+    .storebuttonwrapper .appstoreimage {
+        width: 180px;
+    }
+
+    .startonwebbutton {
+
+        background-color: #f7941d;
+        height: 50px;
+        width: 180px;
+        color: white;
+        font-family: 'Titillium Web', sans-serif;
+        letter-spacing: 1px;
+        font-size: 1.2em;
+        border-radius: 10px;
+        zoom: 1.007;
+    }
+
+    .startthewebdesktop {
+        padding-left: 7%;
+        padding-right: 7%;
+        border: 3px solid white;
+        background-color: #2E3842;
+        height: 50px;
+    }
+
+    .inputmarginmobile {
+        text-align: center;
+    }
+
+    .input-email {
+        margin-right: 10px;
+        font-family: 'Titillium Web', sans-serif;
+        line-height: 2.8em;
+        width: 34%;
+        color: #0c77ad;
+        padding-left: 10px;
+        background-color: #ecf0f7;
+        border: none;
+        border-radius: 5px;
+
+    }
+
+    .input-phone {
+        margin-left: 10px;
+        font-family: 'Titillium Web', sans-serif;
+        line-height: 2.8em;
+        width: 34%;
+        color: #0c77ad;
+        padding-left: 10px;
+        background-color: #ecf0f7;
+        border: none;
+        border-radius: 5px;
+
+    }
+
+    .input-password {
+        margin-right: 10px;
+        font-family: 'Titillium Web', sans-serif;
+        line-height: 2.8em;
+        width: 34%;
+        color: #0c77ad;
+        padding-left: 10px;
+        background-color: #ecf0f7;
+        border: none;
+        border-radius: 5px;
+
+    }
+
+    .profile-logo-margintop {
+        margin-top: 10px;
+    }
+
+    .outer-mobile-body {
+        width: 100px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .inner-mobilebody {
+        width: 90px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: none;
+    }
+
+    .social-facebook-center {
+        padding-top: 6px;
+    }
+
+    .social-twitter-center {
+        padding-top: 6px;
+        padding-left: 3px;
+    }
+
+    .social-youtube-center {
+        padding-top: 16px;
+    }
+
+    .martop3per {
+        margin-top: 4%;
+    }
+
+    .lele {
+        background-color: blueviolet;
+    }
+
+}
+
+/* Portrait phones and smaller */
+@media (max-width: 480px) {
+
+    .body {
+        overflow-x: hidden;
+    }
+
+    .webview {
+        display: none;
+    }
+
+    .startnowbutton {
+        background-color: #f7941d;
+        border: none;
+        height: 50px;
+        width: 280px;
+        font-family: 'Titillium Web', sans-serif;
+        font-size: 1.4em;
+        zoom: 1.005;
+        color: white;
+        border-radius: 10px;
+    }
+
+    .payu-paytm {
+        width: 30px;
+        margin-left: 1%;
+        cursor: pointer;
+    }
+
+    .mobi-paypal {
+        width: 40px;
+        margin-left: 1%;
+        cursor: pointer;
+    }
+
+    .margintop2per {
+        margin-top: 2%;
+    }
+
+    .paddingleftinput {
+        padding-left: 3%;
+    !important;
+    }
+
+    .startthewebmargintop {
+        margin-top: 10px;
+        text-align: center;
+    }
+
+    .browserviewtransition {
+        display: none;
+    }
+
+    .sectionseperator:after {
+        content: "..........................";
+        letter-spacing: 3px; /* Use letter-spacing to increase space between dots*/
+        border-top: 1px solid white;
+    }
+
+    #phoneNumber {
+        text-align: center;
+        width: 180px;
+        height: 48px;
+        border-radius: 5px;
+        color: #0c77ad;
+        font-family: 'titillium web', sans-serif;
+    }
+
+    .linkbuttonforapp {
+        background-color: #f7941d;
+        height: 48px;
+        width: 180px;
+        border-radius: 10px;
+        color: white;
+        font-family: 'Titillium Web', sans-serif;
+        font-size: 1.2em;
+        border: none;
+        zoom: 1.007;
+        letter-spacing: 1px;
+
+    }
+
+    .storebuttonwrapper .googlestoreimage {
+        width: 180px;
+    }
+
+    .storebuttonwrapper .appstoreimage {
+        width: 180px;
+    }
+
+    .startonwebbutton {
+
+        background-color: #f7941d;
+        height: 50px;
+        width: 180px;
+        color: white;
+        font-family: 'Titillium Web', sans-serif;
+        letter-spacing: 1px;
+        font-size: 1.2em;
+        border-radius: 10px;
+        zoom: 1.007;
+    }
+
+    .startthewebdesktop {
+        padding-left: 7%;
+        padding-right: 7%;
+        border: 3px solid white;
+        background-color: #2E3842;
+        height: 50px;
+    }
+
+    .inputmarginmobile {
+        text-align: center;
+    }
+
+    .input-email {
+        margin-right: 10px;
+        font-family: 'Titillium Web', sans-serif;
+        line-height: 2.8em;
+        width: 34%;
+        color: #0c77ad;
+        padding-left: 10px;
+        background-color: #ecf0f7;
+        border: none;
+        border-radius: 5px;
+
+    }
+
+    .input-phone {
+        margin-left: 10px;
+        font-family: 'Titillium Web', sans-serif;
+        line-height: 2.8em;
+        width: 34%;
+        color: #0c77ad;
+        padding-left: 10px;
+        background-color: #ecf0f7;
+        border: none;
+        border-radius: 5px;
+
+    }
+
+    .input-password {
+        margin-right: 10px;
+        font-family: 'Titillium Web', sans-serif;
+        line-height: 2.8em;
+        width: 34%;
+        color: #0c77ad;
+        padding-left: 10px;
+        background-color: #ecf0f7;
+        border: none;
+        border-radius: 5px;
+
+    }
+
+    .profile-logo-margintop {
+        margin-top: 10px;
+    }
+
+    .outer-mobile-body {
+        width: 100px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .inner-mobilebody {
+        width: 90px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: none;
+    }
+
+    .social-facebook-center {
+        padding-top: 6px;
+    }
+
+    .social-twitter-center {
+        padding-top: 6px;
+        padding-left: 3px;
+    }
+
+    .social-youtube-center {
+        padding-top: 6px;
+    }
+
+    .martop3per {
+        margin-top: 4%;
+    }
+
+    .lele {
+        background-color: green;
+    }
+}
+
+.martop8 {
+    padding-top: 25px;
+}
+
+.planandplay {
+
+    -webkit-transition: background-color 2s;
+    transition: background-color 2s;
+}
+
+.splitandsettle {
+
+    -webkit-transition: background-color 2s;
+    transition: background-color 2s;
+}
+
+.planandplay:hover {
+    background-color: cornflowerblue;
+}
+
+.splitandsettle:hover {
+    background-color: cornflowerblue;
+}
+
+.changenavcolor {
+    background-color: white;
+!important;
+}
+
+.hidelogo {
+    opacity: 0;
+}
+
+.linkbuttonforapp:hover {
+    background-color: #e67c00;
+    color: white;
+    zoom: 1;
+
+}
+
+#linkButton {
+    width: 150px;
+}
+
+#getLink {
+    margin-left: 5px;
+    margin-top: 0px;
+    font-weight: 800;
+    font-size: 1em;
+}
+
+.defaultnavcolor {
+    background-color: #2E3842;
+}
+
+.changenavcolour {
+    background-color: white;
+}
+
+.divone {
+    background: url("../images");
+}
+
+.storebutton {
+    border: 1px solid black;
+    background-color: black;
+    width: 150px;
+}
+
+.storebutton:hover {
+}
+
+.linkhover:hover {
+    background-color: gainsboro;
+}
+
+.defaulticonbar {
+    font-size: 2.3em;
+    color: #0c77ad;
+    position: fixed;
+    width: 34px;
+    top: 8px;
+    right: 7px;
+    z-index: 20;
+    cursor: pointer;
+}
+
+.defaultmyaccount {
+    float: right;
+    position: fixed;
+    width: 34px;
+    top: 15px;
+    right: 120px;
+    color: #f5a623;
+    cursor: pointer;
+    z-index: 20;
+
+}
+
+.topleftlogo {
+    position: fixed;
+    width: 34px;
+    top: 8px;
+    left: 10px
+}
+
+.changemyaccountcol {
+    color: white;
+}
+
+.changemyaccountcol:hover {
+    color: #f5a623;
+}
+
+.changeiconbar {
+    color: white;
+
+}
+
+.startonwebbutton:hover {
+    background-color: #e67c00;
+    zoom: 1;
+    box-shadow: 0px 0px 0px #b96d14;
+    color: white;
+}
+
+.defaultlogostyle {
+
+}
+
+.starttimerlogo {
+    display: initial;
+}
+
+.endtimerlogo {
+    display: none;
+}
+
+.splashbackground {
+    background-color: black;
+}
+
+.mainbody {
+    overflow-x: hidden;
+}
+
+.makebodyblur {
+    -webkit-filter: invert(100%);
+    -webkit-filter: blur(5px);
+    -moz-filter: blur(5px);
+    -o-filter: blur(5px);
+    -ms-filter: blur(5px);
+    filter: blur(5px);
+}
+
+.dontmakebodyblur {
+    -webkit-filter: invert(0%);
+    -webkit-filter: blur(0px);
+    -moz-filter: blur(0px);
+    -o-filter: blur(0px);
+    -ms-filter: blur(0px);
+    filter: blur(0px);
+}
+
+.howitworks {
+    color: white;
+!important;
+    padding-left: 15%;
+    cursor: pointer;
+}
+
+.howitworks:hover {
+    color: black;
+}
+
+.howitworksanimate {
+    -webkit-animation-name: mymove; /* Chrome, Safari, Opera */
+    -webkit-animation-duration: 1s; /* Chrome, Safari, Opera */
+    animation-name: mymove;
+    animation-duration: 1s;
+}
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes mymove {
+    from {
+        margin-top: 5px;
+    }
+    to {
+        margin-top: 0px;
+    }
+}
+
+.fontsidebartags {
+    font-family: "Titillium Web", sans-serif;
+}
+
+/* Standard syntax */
+@keyframes mymove {
+    from {
+        margin-top: 5px;
+    }
+    to {
+        margin-top: 0px;
+    }
+}
+
+.examples {
+    color: white;
+!important;
+    padding-left: 15%;
+    cursor: pointer;
+}
+
+.examples:hover {
+    color: black;
+}
+
+.getstarted {
+    color: white;
+!important;
+    padding-left: 15%;
+    cursor: pointer;
+}
+
+.getverticalcenter {
+    background-color: #0044cc;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+}
+
+.getstarted:hover {
+    color: black;
+
+}
+
+.faqs {
+    color: white;
+!important;
+    padding-left: 15%;
+    cursor: pointer;
+}
+
+.faqs:hover {
+    color: black;
+}
+
+.forbusinesses {
+    color: white;
+!important;
+    padding-left: 15%;
+    cursor: pointer;
+}
+
+.linebreakersidebar {
+    color: white;
+!important;
+    padding-left: 15%;
+    letter-spacing: 1px;
+    color: white;
+    font-weight: 500;
+}
+
+.martop30 {
+    magintop: 30px;
+}
+
+.forbusinesses:hover {
+    color: black;
+}
+
+.myaccount {
+    color: #f5a623;
+!important;
+    padding-left: 15%;
+    cursor: pointer;
+}
+
+.myaccount:hover {
+    color: black;
+}
+
+.splitsettletextdefault {
+    color: white;
+    -webkit-transition: all 2s;
+    transition: all 2s;
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 1.5em;
+    font-weight: 300;
+    letter-spacing: 0.2px;
+    display: none;
+}
+
+.splitsettletextonedefault {
+    display: block;
+    color: white;
+}
+
+.splitsettletextonefade {
+    display: block;
+    color: black;
+}
+
+.splitsettletexttwofade {
+    display: block;
+    color: black;
+}
+
+.splitsettletextthreefade {
+    display: block;
+    color: black;
+}
+
+.splitsettletextfourfade {
+    display: block;
+    color: black;
+}
+
+.splitsettleimagedefault {
+    z-index: 10;
+    -webkit-transition: all 2s linear;
+    transition: all 2s linear;
+    display: none;
+    opacity: 0;
+    position: absolute;
+}
+
+.splitsettleimageonefade {
+    display: initial;
+    opacity: 1;
+}
+
+.splitsettleimagetwofade {
+    display: initial;
+    opacity: 1;
+}
+
+.splitsettleimagethreefade {
+    display: initial;
+    opacity: 1;
+}
+
+.splitsettleimagefourfade {
+    display: initial;
+    opacity: 1;
+}
+
+.plantextdefault {
+    -webkit-transition: all 2s;
+    transition: all 2s;
+    color: white;
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 1.5em;
+    font-weight: 300;
+    letter-spacing: 0.2px;
+    display: none;
+}
+
+.plantextonefadebackground {
+    display: block;
+    color: white;
+}
+
+.plantextonefade {
+    display: block;
+    color: black;
+}
+
+.plantexttwofade {
+    display: block;
+    color: black;
+}
+
+.plantextthreefade {
+    display: block;
+    color: black;
+}
+
+.plantextfourfade {
+    display: block;
+    color: black;
+}
+
+.planimagedefault {
+    z-index: 10;
+    -webkit-transition: all 2s linear;
+    transition: all 2s linear;
+    display: none;
+    opacity: 0;
+    position: absolute;
+}
+
+.planimageonefade {
+    display: initial;
+    opacity: 1;
+}
+
+.planimagetwofade {
+    display: initial;
+    opacity: 1;
+}
+
+.planimagethreefade {
+    display: initial;
+    opacity: 1;
+}
+
+.planimagefourfade {
+    display: initial;
+    opacity: 1;
+}
+
+.splitsettledefaultbackground {
+    -webkit-transition: all 1s linear;
+    transition: all 1s linear;
+    background-color: #2e3842;
+    border-right: 1px solid black;
+    padding-top: 10px;
+    height: 100%;
+}
+
+.planplaydefaultbackground {
+    -webkit-transition: all 1s linear;
+    transition: all 1s linear;
+    background-color: #2e3842;
+    padding-top: 10px;
+    height: 100%;
+}
+
+.splitsettlefadebackground {
+    background-color: white;
+}
+
+.planplayfadebackground {
+    background-color: white;
+}
+
+.splitandsettletext {
+    text-decoration: none;
+    font-family: "Titillium Web", sans-serif;
+    font-size: 2em;
+    letter-spacing: 1px;
+    font-weight: 100;
+    color: white;
+    -webkit-transition: all 2s;
+    transition: all 2s;
+    text-transform: none;
+    letter-spacing: 1px;
+    line-height: 2em;
+}
+
+.splitandsettletextchange {
+    color: black;
+}
+
+.planandplaytext {
+    text-decoration: none;
+    font-family: "Titillium Web", sans-serif;
+    font-size: 2em;
+    letter-spacing: 1px;
+    font-weight: 100;
+    color: white;
+    -webkit-transition: all 2s;
+    transition: all 2s;
+    text-transform: none;
+    letter-spacing: 1px;
+    line-height: 2em;
+}
+
+.planandplaytextchange {
+    color: black;
+}
+
+.navbarbackgroundcolourdark {
+    background-color: #5585B5;
+}
+
+.navbarbackgroundcolourwhite {
+    background-color: #FFFFFF;
+
+}
+
+.hidelogoshow {
+    opacity: 1;
+}
+
+.starttimernodisplaynone {
+    display: none;
+}
+
+.endtimerlogodisplaytrue {
+    display: initial;
+}
+
+.hidelogonotshow {
+    opacity: 0;
+}
+
+.starttimernodisplaytrue {
+    display: initial;
+}
+
+.endtimerlogodisplaynone {
+    display: none;
+}
+
+a {
+    font-family: "Titillium Web", sans-serif;
+}
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes example {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100px;
+    }
+}
+
+/* Standard syntax */
+@keyframes example {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100px;
+    }
+}
+
+.defaultsliderone {
+    margin-top: 4%;
+}
+
+.defaultslidertwo {
+    margin-top: 4%;
+
+}
+
+.defaultsliderthree {
+    margin-top: 4%;
+
+}
+
+.showslideronedisplay {
+}
+
+.showslidertwodisplay {
+}
+
+.showsliderthreedisplay {
+}
+
+.showsliderfourdisplay {
+}
+
+.formsubmitbutton {
+    font-family: 'Titillium Web', sans-serif;
+    line-height: 2.8em;
+    width: 220px;
+    color: white;
+    padding-left: 10px;
+    background-color: black;
+    border: none;
+    margin-top: 10px;
+}
+
+.hideslideronedisplay {
+    display: none;
+}
+
+.hideslidertwodisplay {
+    display: none;
+}
+
+.hidesliderthreedisplay {
+    display: none;
+}
+
+.hidesliderfourdisplay {
+    display: none;
+}
+
+.sliderimageanimate {
+    -webkit-animation-name: sliderimagemove; /* Chrome, Safari, Opera */
+    -webkit-animation-duration: 4s; /* Chrome, Safari, Opera */
+    animation-name: sliderimagemove;
+    animation-duration: 4s;
+}
+
+.lefttorightsliderone {
+    position: relative;
+    -webkit-animation: lefttoright 1.5s; /* Chrome, Safari, Opera */
+    animation: lefttoright 1.5s;
+}
+
+.righttoleftsliderone {
+    position: relative;
+    -webkit-animation: righttoleft 1.5s; /* Chrome, Safari, Opera */
+    animation: righttoleft 1.5s;
+}
+
+.lefttorightslidertwo {
+    position: relative;
+    -webkit-animation: lefttoright 1.5s; /* Chrome, Safari, Opera */
+    animation: lefttoright 1.5s;
+}
+
+.righttoleftslidertwo {
+    position: relative;
+    -webkit-animation: righttoleft 1.5s; /* Chrome, Safari, Opera */
+    animation: righttoleft 1.5s;
+}
+
+.lefttorightsliderthree {
+    position: relative;
+    -webkit-animation: lefttoright 1.5s; /* Chrome, Safari, Opera */
+    animation: lefttoright 1.5s;
+}
+
+.righttoleftsliderthree {
+    position: relative;
+    -webkit-animation: righttoleft 0.8s; /* Chrome, Safari, Opera */
+    animation: righttoleft 1.5s;
+}
+
+.lefttorightsliderfour {
+    position: relative;
+    -webkit-animation: lefttoright 0.8s; /* Chrome, Safari, Opera */
+    animation: lefttoright 1.5s;
+}
+
+.righttoleftsliderfour {
+    position: relative;
+    -webkit-animation: righttoleft 0.8s; /* Chrome, Safari, Opera */
+    animation: righttoleft 1.5s;
+}
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes lefttoright {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+/* Standard syntax */
+@keyframes lefttoright {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes righttoleft {
+    from {
+        right: 0px;
+    }
+    to {
+        right: 100%;
+    }
+}
+
+/* Standard syntax */
+@keyframes righttoleft {
+    from {
+        right: 0px;
+    }
+    to {
+        right: 100%;
+    }
+}
+
+.logozindexwhite {
+    z-index: 20;
+}
+
+.logozindexblue {
+    z-index: 20;
+}
+
+.customnavbarhide {
+    display: none;
+}
+
+.customnavbarshow {
+    display: initial;
+}
+
+.sidebar {
+    top: 0px;
+    height: 100%;
+    background-color: #2E3842;
+    z-index: 30;
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-top: 100px;
+
+}
+
+.ion-ios-close-empty {
+    color: white;
+    font-size: 4em;
+    top: -8px;
+    right: 24px;
+    font-weight: normal;
+    position: absolute;
+}
+
+.social-account {
+    position: absolute;
+    bottom: 5%;
+    left: 58px;
+    width: 150px;
+}
+
+.mobilesplitandplan {
+    height: 350px;
+    border-bottom: 1px solid black;
+    background-color: #2E3842;
+    width: 100%;
+    margin-left: 0px;
+    margin-right: 0px;
+    position: relative;
+    padding-top: 20px;
+}
+
+.cursorpointer {
+    cursor: pointer;
+}
+
+.mobilesplitandplaytext {
+    border-right: 1px solid black;
+    height: 100%;
+}
+
+.mobilesplitandplaytext h4 {
+    color: white;
+    margin-top: 10px;
+}
+
+.modalokbutton {
+    background-color: #FFa550;
+}
+
+.modalokbuttonaccount {
+    background-color: #005BCC;
+    margin-top: 10px;
+    color: white;
+}
+
+.modalcancel {
+    background-color: #2E3842;
+    border: none;
+    right: 5px;
+    position: absolute;
+    font-size: 1.8em;
+}
+
+.ion-social-twitter {
+    color: whitesmoke;
+    cursor: pointer;
+    font-size: 1.3em;
+    font-weight: 900;
+}
+
+.ion-social-twitter:hover {
+    color: #f5a623;
+}
+
+.ion-social-youtube {
+    color: whitesmoke;
+    cursor: pointer;
+    font-size: 1.3em;
+    font-weight: 900;
+    margin-left: 4%;
+}
+
+.ion-social-youtube:hover {
+    color: #f5a623;
+}
+
+.ion-social-facebook {
+    color: whitesmoke;
+    cursor: pointer;
+    font-size: 1.3em;
+    font-weight: 900;
+    margin-left: 4%;
+}
+
+.ion-social-facebook:hover {
+    color: #f5a623;
+}
+
+.containerfluidwrapper {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.topbackground {
+    height: 100%;
+    display: block;
+    border-bottom: 1px solid black;
+    width: 100%;
+    margin-right: 0px;
+    margin-left: 0px;
+    padding-bottom: 4%;
+    background-image: url('../images/Icons.png');
+    background-repeat: repeat-x;
+
+
+}
+
+.changetopbackground {
+    background-color: white;
+}
+
+a:focus {
+    outline: 0;
+}
+
+.mypoolintext {
+    color: rgb(85, 133, 181);
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 46px;
+    margin-bottom: 1px;
+    letter-spacing: 0;
+    font-weight: bold;
+}
+
+.paymentmadefuntext {
+    color: rgb(85, 133, 181);
+    font-family: 'Titillium Web', sans-serif;
+    line-height: 1.5em;
+    font-size: 20px;
+    letter-spacing: .5px;
+}
+
+.storebuttonwrapper {
+    margin-top: 2%;
+}
+
+.horizontalline {
+    margin-top: 10px
+}
+
+.startonwebwrapper {
+    margin-top: 35px;
+}
+
+.ventureswrapper {
+    margin-top: 20px;
+}
+
+.ventureswrapper img {
+    width: 50px;
+    margin-left: 5px
+}
+
+.ventureswrapper a {
+    text-decoration: none;
+    color: black;
+}
+
+.sectionfour {
+    height: 100%;
+    padding-left: 6%;
+    padding-right: 6%;
+    padding-bottom: 7%;
+    width: 100%;
+    margin-right: 0px;
+    margin-left: 0px;
+    overflow-x: hidden;
+    padding-top: 7%;
+    border-top: 1px dotted black;
+}
+
+.sectionmedialogos {
+    padding-top: 6%;
+    padding-bottom: 12%;
+    width: 100%;
+    margin-right: 0px;
+    margin-left: 0px;
+    overflow-x: hidden;
+}
+
+.sectiontwo {
+    height: 530px;
+    border-bottom: 1px solid black;
+    width: 100%;
+    margin-right: 0px;
+    margin-left: 0px;
+    overflow-x: hidden;
+}
+
+.sectionmobiletwo {
+    height: 350px;
+    border-bottom: 1px solid black;
+    width: 100%;
+    margin-right: 0px;
+    margin-left: 0px;
+    overflow-x: hidden;
+}
+
+.particleJs {
+    background-color: transparent;
+    width: 35%;
+    height: 100%;
+    display: block;
+    position: absolute;
+    top: 0px;
+    left: 0px
+}
+
+.splitsettleleftsection {
+    padding-top: 30px;
+}
+
+.splitsettlerightsection {
+    padding-top: 145px;
+    padding-left: 25px;
+}
+
+.margintop50 {
+    margin-top: 50px;
+}
+
+.planplayleftsection {
+    padding-top: 30px;
+}
+
+.planplayrightsection {
+    padding-top: 145px;
+    padding-left: 25px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0 0 20px 0;
+    color: #181616;
+    font-weight: 100;
+    font-family: 'Titillium Web', sans-serif;
+    line-height: 1.5em;
+}
+
+.sectionthree {
+    height: 100%;
+    margin-top: 15px;
+    width: 100%;
+    margin-right: 0px;
+    margin-left: 0px;
+    padding-bottom: 10%;
+    padding-top: 3%;
+    padding-left: 3%;
+    padding-right: 3%;
+}
+
+.threethousandpeople {
+    margin-top: 20px;
+    font-weight: 100;
+    font-size: 1.5em;
+}
+
+.margintop20pixel {
+    margin-top: 20px;
+}
+
+.width30pix {
+    width: 300px;
+}
+
+.poolininfo {
+    background-color: #2E3842;
+    height: 100%;
+    padding-top: 5%;
+    padding-bottom: 3%;
+    width: 100%;
+    margin-right: 0px;
+    margin-left: 0px;
+    border-bottom: 1px solid #2E3842;
+    padding-left: 5%;
+    padding-right: 2%;
+}
+
+::-webkit-input-placeholder {
+    font-family: "Titillium Web", sans-serif;
+    font-size: 1em;
+}
+
+:-moz-placeholder {
+    /* Firefox 18- */
+    font-family: "Titillium Web", sans-serif;
+    font-size: 1em;
+
+}
+
+::-moz-placeholder {
+    /* Firefox 19+ */
+    font-family: "Titillium Web", sans-serif;
+    font-size: 1em;
+
+}
+
+:-ms-input-placeholder {
+    font-family: "Titillium Web", sans-serif;
+    font-size: 1em;
+
+}
+
+.fullcircle {
+    width: 35px;
+    height: 35px;
+    -webkit-border-radius: 17.5px;
+    -moz-border-radius: 17.5px;
+    border-radius: 17.5px;
+    color: black;
+    background-color: white;
+    display: inline-block;
+}
+
+.poolininfo .mytitle {
+    color: white;
+!important;
+}
+
+.title-page {
+    margin-top: 4%;
+}
+
+.poolininfo .myemail {
+    color: white;
+    display: block;
+    font-size: 1.3em;
+    text-decoration: none;
+    font-family: "Titillium Web", sans-serif;
+    margin-top: 3%;
+}
+
+.poolininfo .mynumber {
+    color: white;
+    margin-top: 40px;
+    display: block;
+    font-size: 1.3em;
+    text-decoration: none
+}
+
+.poolininfo .myaddress {
+    color: white;
+    margin-top: 40px;
+    display: block;
+    font-size: 1.3em;
+    text-decoration: none
+}
+
+.textfooter {
+    color: white;
+    text-decoration: none;
+}
+
+.textfooter:hover {
+    color: #f5a623;
+    text-decoration: none;
+}
+
+.mobiletextaligncenter {
+    text-align: center;
+}
+
+.socialcolorfooter {
+    color: #2E3842;
+}
+
+.footertextalign {
+    text-align: center;
+}
+
+.colcentered {
+    margin: 0 auto;
+    float: none;
+    width: 240px;
+}
+
+.custommodal {
+    background-color: #426D98;
+    color: white;
+    border-radius: 10px;
+    padding: 10px;
+    margin-top: 10%;
+}
+
+.ngdialog.ngdialog-theme-default .ngdialog-content {
+    background-color: #426D98;
+}
+
+.profile-description {
+    color: #303030;
+    font-weight: 300;
+    font-size: 16px;
+    font-family: 'Titillium Web', sans-serif;
+    line-height: 28px;
+    text-align: justify;
+}
+
+.profile-logos {
+    height: auto;
+    max-width: 100%;
+    vertical-align: middle;
+}
+
+.startnow {
+    background-color: #f7941d;
+    font-family: "Titillium Web", sans-serif;
+    width: 280px;
+    line-height: 2em;
+    color: white;
+    cursor: pointer;
+    border-radius: 10px;
+    font-size: 1.4em;
+    zoom: 1.005;
+
+}
+
+.startnowbutton:hover {
+    background-color: #e67c00;
+    zoom: 1;
+    box-shadow: 0px 0px 0px #b96d14;
+    color: white;
+}
+
+.iconzoom {
+    -webkit-transition: all 1s ease; /* Safari and Chrome */
+    -moz-transition: all 1s ease; /* Firefox */
+    -o-transition: all 1s ease; /* IE 9 */
+    -ms-transition: all 1s ease; /* Opera */
+    transition: all 1s ease;
+    color: #e7e7e7;
+    zoom: 0;
+    font-size: 2em;
+}
+
+.iconzoominitial {
+    zoom: 1.4;
+    color: white;
+}
+
+.iconzoominitialtextone {
+    zoom: 1.4;
+    color: black;
+}
+
+.iconzoominitialtextwo {
+    zoom: 1.4;
+    color: black;
+}
+
+.iconzoominitialtexthree {
+    zoom: 1.4;
+    color: black;
+}
+
+.iconzoominitialtextfour {
+    zoom: 1.4;
+    color: black;
+}
+
+.iconzoominitialplay {
+    color: white;
+    zoom: 1.4;
+}
+
+.iconzoominitialtextoneplay {
+    zoom: 1.4;
+    color: black;
+}
+
+.iconzoominitialtextwoplay {
+    zoom: 1.4;
+    color: black;
+}
+
+.iconzoominitialtexthreeplay {
+    zoom: 1.4;
+    color: black;
+}
+
+.iconzoominitialtextfourplay {
+    zoom: 1.4;
+    color: black;
+}
+
+/* latin-ext */
+@font-face {
+    font-family: 'Titillium Web';
+    font-style: normal;
+    font-weight: 300;
+    src: local('Titillium WebLight'), local('TitilliumWeb-Light'), url(https://fonts.gstatic.com/s/titilliumweb/v4/anMUvcNT0H1YN4FII8wpr9INifKjd1RJ3NxxEi9Cy2w.woff2) format('woff2');
+    unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
+}
+
+/* latin */
+@font-face {
+    font-family: 'Titillium Web';
+    font-style: normal;
+    font-weight: 300;
+    src: local('Titillium WebLight'), local('TitilliumWeb-Light'), url(https://fonts.gstatic.com/s/titilliumweb/v4/anMUvcNT0H1YN4FII8wpr4-67659ICLY8bMrYhtePPA.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+
+/* latin-ext */
+@font-face {
+    font-family: 'Titillium Web';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Titillium Web'), local('TitilliumWeb-Regular'), url(https://fonts.gstatic.com/s/titilliumweb/v4/7XUFZ5tgS-tD6QamInJTcSo_WB_cotcEMUw1LsIE8mM.woff2) format('woff2');
+    unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
+}
+
+/* latin */
+@font-face {
+    font-family: 'Titillium Web';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Titillium Web'), local('TitilliumWeb-Regular'), url(https://fonts.gstatic.com/s/titilliumweb/v4/7XUFZ5tgS-tD6QamInJTcZSnX671uNZIV63UdXh3Mg0.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+
+/* latin-ext */
+@font-face {
+    font-family: 'Titillium Web';
+    font-style: normal;
+    font-weight: 600;
+    src: local('Titillium WebSemiBold'), local('TitilliumWeb-SemiBold'), url(https://fonts.gstatic.com/s/titilliumweb/v4/anMUvcNT0H1YN4FII8wpr_SNRT0fZ5CX-AqRkMYgJJo.woff2) format('woff2');
+    unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
+}
+
+/* latin */
+@font-face {
+    font-family: 'Titillium Web';
+    font-style: normal;
+    font-weight: 600;
+    src: local('Titillium WebSemiBold'), local('TitilliumWeb-SemiBold'), url(https://fonts.gstatic.com/s/titilliumweb/v4/anMUvcNT0H1YN4FII8wpr46gJz9aNFrmnwBdd69aqzY.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}

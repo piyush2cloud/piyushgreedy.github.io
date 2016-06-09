@@ -1,0 +1,220 @@
+<div style="width: 100%;height:50px;background-color: #5585b5;position: fixed;z-index: 20;" ng-class="{customnavbarhide:customnavbarhide,
+customnavbarshow:customnavbarshow,makebodyblur:makebodyblur}">
+
+</div>
+
+<div style="background-color: black" ng-class="{makebodyblur:makebodyblur}">
+
+    <a ng-click="navLogoClick()" href="">
+        <img src="images/img/Logo_White.png" ng-class="{logozindexwhite:logozindexwhite}"
+             class="topleftlogo">
+
+        <img src="images/img/Logo_Blue.png" ng-class="{logozindexblue:logozindexblue}"
+             class="topleftlogo">
+    </a>
+
+
+    <i class="ion-navicon defaulticonbar"
+       data-toggle="sidebar"
+       data-target=".sidebar-right"
+       ng-click="makebackgroundblur()" ng-class="{changeiconbar:changenavicon}">
+    </i>
+
+    <h4 class="defaultmyaccount" ng-click="gotToAccounts()" ng-class="{changemyaccountcol:changemyaccountcol}">
+        <b>MYACCOUNT</b>
+    </h4>
+
+</div>
+
+
+<div class="col-xs-7 col-sm-3 col-md-3 sidebar sidebar-right sidebar-animate">
+
+            <span class="ion-ios-close-empty" ng-click="makebackgroundnormal()"
+                  ng-class="{howitworksanimate:howitworksanimate}"
+                  data-toggle="sidebar"
+                  data-target=".sidebar-right"
+                  style="cursor: pointer">
+            </span>
+
+    <ul class="nav navbar-stacked" style="margin-top:10px">
+
+        <li class="howitworks" ng-class="{howitworksanimate:howitworksanimate}" data-toggle="sidebar"
+            data-target=".sidebar-right">
+            <a class="howitworks fontsidebartags"
+               data-toggle="sidebar"
+               data-target=".sidebar-right"
+               ng-class="{howitworksanimate:howitworksanimate}"
+               ng-click="makebackgroundnormal()"
+               du-smooth-scroll="section-1" du-scrollspy offset="50">
+                HOME
+            </a>
+        </li>
+
+        <li class="howitworks" ng-class="{howitworksanimate:howitworksanimate}">
+            <a class="howitworks fontsidebartags"
+               ng-click="makebackgroundnormal()" data-toggle="sidebar"
+               data-target=".sidebar-right" du-smooth-scroll="section-2" du-scrollspy offset="50">
+                HOW IT WORKS
+            </a>
+        </li>
+
+        <li class="examples" ng-class="{howitworksanimate:howitworksanimate}">
+            <a class="examples fontsidebartags" href="Explore/Transfers.php"
+               ng-click="makebackgroundnormal()" data-toggle="sidebar"
+               data-target=".sidebar-right" du-smooth-scroll="section-3" du-scrollspy>
+                SEND/REQUEST
+            </a>
+        </li>
+
+        <li class="getstarted" ng-class="{howitworksanimate:howitworksanimate}">
+            <a class="getstarted" style="font-family: 'Titillium Web', sans-serif"
+               ng-click="makebackgroundnormal()" data-toggle="sidebar"
+               data-target=".sidebar-right" du-smooth-scroll="section-3" du-scrollspy offset="-160">
+                GET STARTED
+            </a>
+        </li>
+
+        <li class="faqs" ng-class="{howitworksanimate:howitworksanimate}">
+            <a class="faqs fontsidebartags" href="Faqs.html"
+               ng-class="{howitworksanimate:howitworksanimate}"
+               ng-click="makebackgroundnormal()"
+               data-toggle="sidebar"
+               data-target=".sidebar-right">
+                FAQS
+            </a>
+        </li>
+
+        <li class="forbusinesses" ng-class="{howitworksanimate:howitworksanimate}">
+            <a href="Api.html" class="forbusinesses fontsidebartags"
+               data-toggle="sidebar"
+               data-target=".sidebar-right"
+                    >
+                BUSINESSES
+            </a>
+        </li>
+
+                <span class="social-account">
+                    <a href="https://twitter.com/mypoolin" target="_blank">
+                        <i class="ion-social-twitter"></i>
+                    </a>
+                    <a href="https://www.youtube.com/channel/UCWU-mceX3AWWfJcFpUOHp0Q" target="_blank">
+                        <i class="ion-social-youtube"></i>
+                    </a>
+                    <a href="https://www.facebook.com/mypoolin" target="_blank">
+                        <i class="ion-social-facebook"></i>
+                    </a>
+                </span>
+
+    </ul>
+
+</div>
+</div>
+
+
+<!--<div class="navbar navbar-fixed-top defaultnavcolor" ng-class="{
+     navbarbackgroundcolourdark:navbarbackgroundcolourdark,
+     navbarbackgroundcolourwhite:navbarbackgroundcolourwhite}">
+
+    <a ng-click="navLogoClick()" href="">
+        <img src="images/img/Logo_White.png" ng-class="{logozindexwhite:logozindexwhite}"
+             class="topleftlogo">
+
+        <img src="images/img/Logo_Blue.png" ng-class="{logozindexblue:logozindexblue}"
+             class="topleftlogo">
+    </a>
+
+
+    <i class="ion-navicon defaulticonbar"
+       data-toggle="sidebar"
+       data-target=".sidebar-right"
+       ng-click="makebackgroundblur()" ng-class="{changeiconbar:changenavicon}">
+    </i>
+
+    <h4 class="defaultmyaccount" ng-click="gotToAccounts()" ng-class="{changemyaccountcol:changemyaccountcol}">
+        <b>MY ACCOUNT</b>
+    </h4>
+
+
+    <div class="col-xs-7 col-sm-3 col-md-3 sidebar sidebar-right sidebar-animate">
+
+            <span class="ion-ios-close-empty" ng-click="makebackgroundnormal()"
+                  ng-class="{howitworksanimate:howitworksanimate}"
+                  data-toggle="sidebar"
+                  data-target=".sidebar-right"
+                  style="cursor: pointer">
+            </span>
+
+        <ul class="nav navbar-stacked" style="margin-top:10px">
+
+            <li class="howitworks" ng-class="{howitworksanimate:howitworksanimate}" data-toggle="sidebar"
+                data-target=".sidebar-right">
+                <a class="howitworks fontsidebartags"
+                   data-toggle="sidebar"
+                   data-target=".sidebar-right"
+                   ng-class="{howitworksanimate:howitworksanimate}"
+                   ng-click="makebackgroundnormal()"
+                   du-smooth-scroll="section-1" du-scrollspy offset="50">
+                    HOME
+                </a>
+            </li>
+
+            <li class="howitworks" ng-class="{howitworksanimate:howitworksanimate}">
+                <a class="howitworks fontsidebartags"
+                   ng-click="makebackgroundnormal()" data-toggle="sidebar"
+                   data-target=".sidebar-right" du-smooth-scroll="section-2" du-scrollspy offset="50">
+                    HOW IT WORKS
+                </a>
+            </li>
+
+            <li class="examples" ng-class="{howitworksanimate:howitworksanimate}">
+                <a class="examples fontsidebartags" href="Explore/Transfers.php"
+                   ng-click="makebackgroundnormal()" data-toggle="sidebar"
+                   data-target=".sidebar-right" du-smooth-scroll="section-3" du-scrollspy>
+                    SEND/REQUEST
+                </a>
+            </li>
+
+            <li class="getstarted" ng-class="{howitworksanimate:howitworksanimate}">
+                <a class="getstarted" style="font-family: 'Titillium Web', sans-serif"
+                   ng-click="makebackgroundnormal()" data-toggle="sidebar"
+                   data-target=".sidebar-right" du-smooth-scroll="section-3" du-scrollspy offset="-160">
+                    GET STARTED
+                </a>
+            </li>
+
+            <li class="faqs" ng-class="{howitworksanimate:howitworksanimate}">
+                <a class="faqs fontsidebartags" href="Faqs.html"
+                   ng-class="{howitworksanimate:howitworksanimate}"
+                   ng-click="makebackgroundnormal()"
+                   data-toggle="sidebar"
+                   data-target=".sidebar-right">
+                    FAQS
+                </a>
+            </li>
+
+            <li class="forbusinesses" ng-class="{howitworksanimate:howitworksanimate}">
+                <a href="Api.html" class="forbusinesses fontsidebartags"
+                   data-toggle="sidebar"
+                   data-target=".sidebar-right"
+                        >
+                    BUSINESSES
+                </a>
+            </li>
+
+                <span class="social-account">
+                    <a href="https://twitter.com/mypoolin" target="_blank">
+                        <i class="ion-social-twitter"></i>
+                    </a>
+                    <a href="https://www.youtube.com/channel/UCWU-mceX3AWWfJcFpUOHp0Q" target="_blank">
+                        <i class="ion-social-youtube"></i>
+                    </a>
+                    <a href="https://www.facebook.com/mypoolin" target="_blank">
+                        <i class="ion-social-facebook"></i>
+                    </a>
+                </span>
+
+        </ul>
+
+    </div>
+</div>-->
+

@@ -1,139 +1,993 @@
-angular.module('quintify.controllers', [])
+var app = angular.module('poolin.controllers', [])
 
-    .controller("myCtrl", function ($scope, $timeout, $window) {
-
-        $scope.imagechangepath = 'images/f1.jpg';
-
-        $scope.disappeardiv=0;
-        $scope.appeardivdefault=1;
-
-        $scope.animatelinechange = 0;
-        $scope.onlinetesttextchange = 0;
-        $scope.firstgifboxfade = 0;
-        $scope.secondgifboxfade = 0;
-
-        $scope.thirdgifboxfade = 0;
-        $scope.fourgifboxfade = 0;
-        $scope.fivegifboxfade = 0;
-        $scope.sixgifboxfade = 0;
-        $scope.sevengifboxfade = 0;
-        $scope.eightgifboxfade = 0;
-        $scope.onlyplacetolearnfade = 0;
+app.controller("myCtrl", function ($scope, $timeout, $window, $interval, $document, $filter, $http, ngDialog,$rootScope) {
 
 
-        $timeout(function () {
-            $scope.animatelinechange = 1;
-        }, 1500);
+    $scope.showAccount = 0; //Used to toggle the Account section using ng-if
+    $scope.onloadimage = 1;  //Show Splash screen initially on loading
+    $scope.containershow = 0; //used to show container when loading completes
+    $scope.navshow = 0;       //Toggle visibility of navbar using navshow
+    $scope.logozindexblue = 1; //Giving z index to the top left poolin blue icon
+    $scope.logozindexwhite = 0; //Giving z index to the top left poolin whie icon
+    $scope.mobilenumber = "";   //Storing the mobile numbe of the input number
+    $scope.filldetailsmodal = 0;
+    $scope.user = {             //Store the User account details when entered/
+        emailaddress: "",
+        phonenumber: "",
+        password: ""
+    };
 
-        $timeout(function () {
-            $scope.onlinetesttextchange = 1;
-        }, 2500);
+    $scope.customnavbarshow = 0;
+    $scope.customnavbarhide = 1;
 
-        $timeout(function () {
-            $scope.firstgifboxfade = 1;
-        }, 3500);
+    $scope.changemyaccountcol = 0;
 
-        $timeout(function () {
-            $scope.secondgifboxfade = 1;
-        }, 4500);
+    if ($window.innerWidth > 993) {  //Checks If screen width is greater than 993px
+        $scope.showbrowsertrue = 1;         //Toggle the section two of How it Works
+        $scope.showmobiletrue = 0;   //Togglelin the section two of How it Works
+        $scope.martop8 = 0;          //Margin when when column seperates
+        $scope.showseperatorlarge = 1;  //Show Large LIne
+        $scope.showseperatorsmall = 0;  //Show small line according to screen width
+        $scope.mobiletextaligncenter = 0;
+        $scope.colcentered = 0;
 
-        $timeout(function () {
-            $scope.thirdgifboxfade = 1;
-        }, 5500);
+    } else {
+        $scope.mobiletextaligncenter = 1;
+        $scope.colcentered = 1;
+        $scope.showbrowsertrue = 0;
+        $scope.showmobiletrue = 1;
+        $scope.martop8 = 1;
+        $scope.showseperatorlarge = 0;
+        $scope.showseperatorsmall = 1;
+    }
 
-        $timeout(function () {
-            $scope.fourgifboxfade = 1;
-        }, 6500);
-
-
-        $timeout(function () {
-            $scope.fivegifboxfade = 1;
-        }, 7500);
+    /*$timeout(function () {            //Timeout Used to Show topsection when web page open intially after white background.
+        $scope.logozindexblue = 1;    //Toggle the value of top section
+        $scope.logozindexwhite = 0;
 
         $timeout(function () {
-            $scope.sixgifboxfade = 1;
-        }, 8500);
+            $scope.showtagline = 1;
+            $scope.lightbackground = 1;
+            $scope.iconbarchange = 1;
+            $scope.navbarbackgroundcolourwhite = 1;
+        }, 300);
+    }, 800);*/
+
+    $scope.lightbackground = 1;
+    $scope.iconbarchange = 1;
+    $scope.navbarbackgroundcolourwhite = 1;
+    $scope.logozindexblue = 1;    //Toggle the value of top section
+    $scope.logozindexwhite = 0;
+
+    $scope.autoscrollmobile = 0;  //When user see the section than only autoscroll
+
+    $scope.formsubmitted = function () {
+
+        console.log($scope.user);            //Check the User Data From Phone
+
+        if (($scope.user.emailaddress).length === 0 || ($scope.user.phonenumber).length === 0) {
+
+            ngDialog.open({
+                template: '<div class="text-center"> <h4 style="color:white;margin-top:5%;font-size:1.1em"> Please Enter All the Details !' +
+                '</h4> <button class="modalokbutton btn" ng-click="closeSelf()"> Ok</button> </div>',
+                plain: true,
+                scope: $scope
+            });
+
+        }
+
+        else {
+
+            var req = {
+                method: 'POST',
+                url: 'https://mypoolin.com/Organize/MyPools',
+                data: $scope.user,
+                contentType: 'application/json'
+            }
+
+            $http(req).then(function (success) {
+                console.log(success);//success callback
+            }, function (failure) {
+                console.log(failure);//failure callback
+            });
+        }
+
+    }
+
+    $scope.openforgotmodal = function () {
+
+        ngDialog.open({
+            template: '<div class="text-center"> <h5 style="color:white;margin-top:5%;font-size:1.1em"> No worries! Just enter the Email-ID/mobile number that you have used on Mypoolin and we will send across your old password on the same email/mobile number. You can also set a new password below !' +
+            '</h4>' +
+            '</div>' +
+            ' <input type="text" placeholder="Enter email/mobile number" ng-model="modalemailid" style="border-radius: 5px;padding:5px">' +
+            '<div class="text-center" style="margin-top:3px"> ' +
+            '<button class="modalokbuttonaccount btn" ng-click="openSelfParamsold(modalemailid)">Send Old Password</button>' +
+            '<button class="modalokbuttonaccount btn" style="margin-left:3px" ng-click="openSelfParamsoldchange(modalemailid)">Change Password</button></div> ',
+            plain: true,
+            scope: $scope
+        });
+
+    }
+
+    $scope.openSelfParamsold = function (gettext) {
+
+        $scope.emailidfrommodal = gettext;
+        $scope.closeSelf();
+
+
+        if (angular.isUndefined($scope.emailidfrommodal)) {
+            ngDialog.open({
+                template: '<div class="text-center"> <h4 style="color:white;margin-top:5%;font-size:1.1em">Whoops! Please Fill Correct Details!' +
+                '</h4> <button class="modalokbutton btn" ng-click="closeSelf()"> Ok</button> </div>',
+                plain: true,
+                scope: $scope
+            });
+        }
+
+        else {
+
+            var req = {
+                method: 'POST',
+                url: 'https://mypoolin.com/flexpool/Forpass',
+                data: {email: '$scope.emailidfrommodal', isEmail: ''},
+                contentType: 'application/json'
+            }
+
+            $http(req).then(function (success) {
+                console.log(success); //success callback
+            }, function (failure) {
+                console.log(failure);  //failure callback
+            });
+        }
+
+    }
+
+    $scope.openSelfParamsoldchange = function (gettext) {
+
+        $scope.emailidfrommodal = gettext;
+        $scope.closeSelf();
+
+        if (angular.isUndefined($scope.emailidfrommodal)) {
+            ngDialog.open({
+                template: '<div class="text-center"> <h4 style="color:white;margin-top:5%;font-size:1.1em">Whoops! Please Fill Correct Details!' +
+                '</h4> <button class="modalokbutton btn" ng-click="closeSelf()"> Ok</button> </div>',
+                plain: true,
+                scope: $scope
+            });
+        }
+
+        else {
+
+            ngDialog.open({
+                template: '<div class="text-center"> <h5 style="color:white;margin-top:5%;font-size:1.1em">{{emailidfrommodal}} No worries! Just enter the Email-ID/mobile number that you have used on Mypoolin and we will send across your old password on the same email/mobile number. You can also set a new password below !' +
+                '</h4>' +
+                '</div>' +
+                ' <input type="text" placeholder="Your Old Password" ng-model="modalemailid" style="border-radius: 5px;padding:5px">' +
+                ' <input type="text" placeholder="Enter New Password" ng-model="modalnewemailid" style="border-radius: 5px;padding:5px;display: block;margin-top:2px;margin-bottom:2px"> ' +
+                ' <input type="text" placeholder="Retype New Password" ng-model="modalretypenewemailid" style="border-radius: 5px;padding:5px">' +
+                '<div class="text-center" style="margin-top:3px"> ' +
+                '<button class="modalokbuttonaccount btn" ng-click="changeSelfParamsold(modalemailid,modalnewemailid,modalretypenewemailid)">Change Password</button>' +
+                '</div> ',
+                plain: true,
+                scope: $scope
+            });
+        }
+    }
+
+    $scope.changeSelfParamsold = function (oldpassword, newpassword, renewpassword) {
+
+
+        var matchpass = angular.equals(newpassword, renewpassword);
+        $scope.closeSelf();
+
+        if (matchpass) {
+
+            $scope.email = $scope.emailidfrommodal;
+            $scope.new_password1 = newpassword;
+            $scope.oldPassword = oldpassword;
+
+            var req = {
+                method: 'POST',
+                url: 'https://mypoolin.com/flexpool/Forpass',
+                data: {email: '$scope.email', isEmail: '', old: '$scope.oldPassword', pass: '$scope.new_password1'},
+                contentType: 'application/json'
+            }
+
+            $http(req).then(function (success) {
+                console.log(success); //success callback
+            }, function (failure) {
+                console.log(failure);  //failure callback
+            });
+
+        }
+        else {
+
+            ngDialog.open({
+                template: '<div class="text-center"> <h4 style="color:white;margin-top:5%;font-size:1.1em">Whoops! Password does not Matches!' +
+                '</h4> <button class="modalokbutton btn" ng-click="closeSelf()"> Ok</button> </div>',
+                plain: true,
+                scope: $scope
+            });
+        }
+    }
+
+
+    $scope.getlinkmobile = function () {
+        if (($scope.mobilenumber).length < 10 || isNaN($scope.mobilenumber)) {
+            $scope.modaltextdisplay = "Whoops.. please check the mobile number entered";
+            console.log("invalid mobile");
+        }
+        else {
+
+            console.log("valid mobile");
+            $scope.modaltextdisplay = "Awesome! The app download link is being sent to your phone";
+
+            var req = {
+                method: 'POST',
+                url: 'https://mypoolin.com/confirmation.php',
+                data: {mobile: '9711593119'},
+                contentType: 'application/json'
+            }
+
+            $http(req).then(function (success) {
+                console.log(success); //success callback
+            }, function (failure) {
+                console.log(failure);  //failure callback
+            });
+        }
+
+        ngDialog.open({
+            template: '<div class="text-center"> <h4 style="color:white;margin-top:5%;font-size:1.1em">{{modaltextdisplay}}' +
+            '</h4> <button class="modalokbutton btn" ng-click="closeSelf()"> Ok</button> </div>',
+            plain: true,
+            className: 'ngdialog-theme-default',
+            scope: $scope
+        });
+
+    }
+
+    $scope.closeSelf = function () {
+        ngDialog.closeAll();
+    }
+
+    $scope.showAccount = 0;
+
+    $scope.gotToAccounts = function () {
+        $scope.showAccount = !$scope.showAccount;
+        $scope.makebackgroundnormal();
+        var top = 0;
+        var duration = 2; //milliseconds
+        //Scroll to the exact position
+        $document.scrollTop(top, duration).then(function () {
+            console && console.log('You just scrolled to the top!');
+        });
+    }
+
+
+    /*$scope.$on('$includeContentLoaded', function (event, target) {
+     console.log(event);  //this $includeContentLoaded event object
+     console.log(target); //path to the included resource, 'snippet.html' in this case
+
+     if(target=="html/footer.html"){
+     var date = new Date();
+     $scope.ddMMyyyy = $filter('date')(new Date(), 'dd/MM/yyyy HH:mm:ss');
+     console.log("Time until DOMready: winodw", $scope.ddMMyyyy);
+     $scope.onloadimage = 0;
+     $scope.navshow=1;
+     $scope.containershow=1;
+
+     $timeout(function () {
+     $scope.showtagline = 1;
+     $scope.lightbackground = 1;
+     $scope.navbarbackgroundcolourwhite = 1;
+     $scope.iconbarchange = 1;
+     }, 1000);
+     }
+
+     });*/
+
+    $scope.showtagline = 0;
+    $scope.starttimerlogo = 1;
+    $scope.endtimerlogo = 0;
+
+    $scope.planplayfade = 0;
+    $scope.splitsettlefade = 0;
+
+    $scope.splittexttwo = 0;
+    $scope.splittextthree = 0;
+    $scope.splittextfour = 0;
+    $scope.makebodyblur = 0;
+    $scope.dontmakebodyblur = 1;
+
+    $scope.makebackgroundblur = function () {
+        $scope.makebodyblur = 1;
+        $scope.howitworksanimate = 1;
+    }
+
+    $scope.makebackgroundnormal = function () {
+        $scope.makebodyblur = 0;
+        $scope.howitworksanimate = 0;
+
+    }
+
+
+    $scope.splitsettleimageonefading = 0;   //used to fade screenshot one of splitsettle
+    $scope.splitsettleimagetwofading = 0;   //used to fade screenshot two of splitsettle
+    $scope.splitsettleimagethreefading = 0;  //used to fade screenshot three of splitsettle
+    $scope.splitsettleimagefourfading = 0;   //used to fade screenshot four of splitsettle
+
+    $scope.splitandsettletimerone = null;    //used to set intial timer null
+
+    $scope.splitsettleimageonefading = 1;  //Initially show the screenshot in split and settle section
+    $scope.splitsettletextonedefault = 1;                 //Initially show the text in split and settle section
+    $scope.splitandsettletextchange = 0;   //toggle display of the text
+    $scope.autoscrollmouseeneter = null;   // when user see the screen than only autoscroll should work
+
+    $scope.iconzoominitial = 1;
+    $scope.iconzoominitialtextone = 0;
+    $scope.iconzoominitialtextwo = 0;
+    $scope.iconzoominitialtexthree = 0;
+    $scope.iconzoominitialtextfour = 0;
+
+    //Timer start function.
+    $scope.StartTimerSettle = function () {
+
+        $scope.autoscrollmouseenetersplit = $timeout(function () {
+
+            if ($scope.autoscrollmobile === 1) {
+
+                $scope.iconzoominitial = 0;
+                $scope.iconzoominitialtextone = 1;
+
+                $scope.splitsettlefade = 1;
+                $scope.splitsettletextonedefault = 0;
+                $scope.splittextone = 1;
+                $scope.splitandsettletextchange = 1;
+                $scope.callAtInterval();
+                $timeout.cancel($scope.autoscrollmouseenetersplit);
+
+            }
+            else {
+                $scope.StartTimerSettle();
+            }
+
+        }, 1);
+
+
+    };
+
+    $scope.splitsettletextonedefault = 1;
+    $scope.splittextone = 0;
+
+    //Timer stop function.
+    $scope.StopTimerSettle = function () {
+
+        $timeout.cancel($scope.autoscrollmouseenetersplit);
+
+        $scope.splitsettlefade = 0;
+        $scope.splitandsettletextchange = 0;
+
+        $scope.iconzoominitial = 1;
+        $scope.iconzoominitialtextone = 0;
+        $scope.iconzoominitialtextwo = 0;
+        $scope.iconzoominitialtexthree = 0;
+        $scope.iconzoominitialtextfour = 0;
+
+        $timeout.cancel($scope.splitandsettletimerone);
+        $scope.splitsettletextonedefault = 1;
+        $scope.splittextone = 0;
+        $scope.splittexttwo = 0;
+        $scope.splittextthree = 0;
+        $scope.splittextfour = 0;
+
+        $scope.splitsettleimageonefading = 1;
+        $scope.splitsettleimagetwofading = 0;
+        $scope.splitsettleimagethreefading = 0;
+        $scope.splitsettleimagefourfading = 0;
+
+    };
+
+
+    $scope.callAtInterval = function () {
+
+        $scope.splitandsettletimerone = $timeout(function () {
+
+            $scope.splittextone = 0;
+            $scope.splittexttwo = 1;
+            $scope.splittextthree = 0;
+            $scope.splittextfour = 0;
+            $scope.splitsettletextonedefault = 0;                 //Initially show the text in split and settle section
+
+            $scope.splitsettleimageonefading = 0;
+            $scope.splitsettleimagetwofading = 1;
+            $scope.splitsettleimagethreefading = 0;
+            $scope.splitsettleimagefourfading = 0;
+
+            $scope.iconzoominitialtextone = 0;
+            $scope.iconzoominitialtextwo = 1;
+            $scope.iconzoominitialtexthree = 0;
+            $scope.iconzoominitialtextfour = 0;
+
+            $scope.splitandsettletimerone = $timeout(function () {
+
+                $scope.splittextone = 0;
+                $scope.splittexttwo = 0;
+                $scope.splittextthree = 1;
+                $scope.splittextfour = 0;
+                $scope.splitsettleimageonefading = 0;
+                $scope.splitsettleimagetwofading = 0;
+                $scope.splitsettleimagethreefading = 1;
+                $scope.splitsettleimagefourfading = 0;
+
+                $scope.iconzoominitialtextone = 0;
+                $scope.iconzoominitialtextwo = 0;
+                $scope.iconzoominitialtexthree = 1;
+                $scope.iconzoominitialtextfour = 0;
+
+                $scope.splitandsettletimerone = $timeout(function () {
+
+                    $scope.splittextone = 0;
+                    $scope.splittexttwo = 0;
+                    $scope.splittextthree = 0;
+                    $scope.splittextfour = 1;
+                    $scope.splitsettleimageonefading = 0;
+                    $scope.splitsettleimagetwofading = 0;
+                    $scope.splitsettleimagethreefading = 0;
+                    $scope.splitsettleimagefourfading = 1;
+
+                    $scope.iconzoominitialtextone = 0;
+                    $scope.iconzoominitialtextwo = 0;
+                    $scope.iconzoominitialtexthree = 0;
+                    $scope.iconzoominitialtextfour = 1;
+
+                    $scope.splitandsettletimerone = $timeout(function () {
+
+                        $scope.splittextone = 1;
+                        $scope.splittexttwo = 0;
+                        $scope.splittextthree = 0;
+                        $scope.splittextfour = 0;
+                        $scope.splitsettleimageonefading = 1;
+                        $scope.splitsettleimagetwofading = 0;
+                        $scope.splitsettleimagethreefading = 0;
+                        $scope.splitsettleimagefourfading = 0;
+                        $scope.iconzoominitialtextone = 1;
+                        $scope.iconzoominitialtextwo = 0;
+                        $scope.iconzoominitialtexthree = 0;
+                        $scope.iconzoominitialtextfour = 0;
+
+                        $scope.callAtInterval();
+                    }, 2700);
+                }, 2700);
+            }, 2700);
+        }, 2700);
+    }
+
+
+    $scope.plantextone = 0;  //text line one of plan and play
+    $scope.plantextonefadebackground = 1;
+
+    $scope.plantexttwo = 0;//text line two of plan and play
+    $scope.plantextthree = 0;//text line three of plan and play
+    $scope.plantextfour = 0;//text line four of plan and play
+
+    $scope.planimageonefading = 0;  //used to fade screenshot one of plan and play
+    $scope.planimagetwofading = 0;  //used to fade screenshot two of plan and play
+    $scope.planimagethreefading = 0; //used to fade screenshot three of plan and play
+    $scope.planimagefourfading = 0; //used to fade screenshot four of plan and play
+
+    $scope.plantimerone = null;  //used to set intial timer null for plan and play section
+
+    $scope.planimageonefading = 1;  //Initially show the screenshot in plan and play section
+
+    $scope.planandplaytextchange = 0; //toggle display of the text plan and play
+
+    $scope.iconzoominitialplay = 1;
+    $scope.iconzoominitialtextoneplay = 0;
+    $scope.iconzoominitialtextwoplay = 0;
+    $scope.iconzoominitialtexthreeplay = 0;
+    $scope.iconzoominitialtextfourplay = 0;
+
+    //Timer start function.
+    $scope.StartTimerPlay = function () {
+
+        $scope.autoscrollmouseeneterplay = $timeout(function () {
+            if ($scope.autoscrollmobile === 1) {
+
+                $scope.iconzoominitialplay = 0;
+                $scope.iconzoominitialtextoneplay = 1;
+
+                $scope.plantextone = 1;  //text line one of plan and play
+                $scope.plantextonefadebackground = 0;
+                $scope.planplayfade = 1;
+                $scope.planandplaytextchange = 1;
+                $scope.callAtIntervalPlay();
+                $timeout.cancel($scope.autoscrollmouseeneterplay);
+
+            }
+            else {
+                $scope.StartTimerPlay();
+            }
+
+        }, 1);
+
+    };
+
+
+    //Timer stop function.
+    $scope.StopTimerPlay = function () {
+
+        $scope.planplayfade = 0;
+        $scope.planandplaytextchange = 0;
+        $timeout.cancel($scope.autoscrollmouseeneterplay);
+        $timeout.cancel($scope.plantimerone);
+        $scope.plantextone = 0;  //text line one of plan and play
+        $scope.plantextonefadebackground = 1;
+        $scope.plantexttwo = 0;
+        $scope.plantextthree = 0;
+        $scope.plantextfour = 0;
+
+        $scope.planimageonefading = 1;
+        $scope.planimagetwofading = 0;
+        $scope.planimagethreefading = 0;
+        $scope.planimagefourfading = 0;
+
+        $scope.iconzoominitialplay = 1;
+        $scope.iconzoominitialtextoneplay = 0;
+        $scope.iconzoominitialtextwoplay = 0;
+        $scope.iconzoominitialtexthreeplay = 0;
+        $scope.iconzoominitialtextfourplay = 0;
+
+    };
+
+
+    $scope.callAtIntervalPlay = function () {
+
+        $scope.plantimerone = $timeout(function () {
+
+            $scope.plantextone = 0;
+            $scope.plantexttwo = 1;
+            $scope.plantextthree = 0;
+            $scope.plantextfour = 0;
+            $scope.planimageonefading = 0;
+            $scope.planimagetwofading = 1;
+            $scope.planimagethreefading = 0;
+            $scope.planimagefourfading = 0;
+
+            $scope.iconzoominitialtextoneplay = 0;
+            $scope.iconzoominitialtextwoplay = 1;
+            $scope.iconzoominitialtexthreeplay = 0;
+            $scope.iconzoominitialtextfourplay = 0;
+
+            $scope.plantimerone = $timeout(function () {
+
+                $scope.iconzoominitialtextoneplay = 0;
+                $scope.iconzoominitialtextwoplay = 0;
+                $scope.iconzoominitialtexthreeplay = 1;
+                $scope.iconzoominitialtextfourplay = 0;
+
+                $scope.plantextone = 0;
+                $scope.plantexttwo = 0;
+                $scope.plantextthree = 1;
+                $scope.plantextfour = 0;
+                $scope.planimageonefading = 0;
+                $scope.planimagetwofading = 0;
+                $scope.planimagethreefading = 1;
+                $scope.planimagefourfading = 0;
+
+                $scope.plantimerone = $timeout(function () {
+
+                    $scope.plantextone = 0;
+                    $scope.plantexttwo = 0;
+                    $scope.plantextthree = 0;
+                    $scope.plantextfour = 1;
+                    $scope.planimageonefading = 0;
+                    $scope.planimagetwofading = 0;
+                    $scope.planimagethreefading = 0;
+                    $scope.planimagefourfading = 1;
+
+                    $scope.iconzoominitialtextoneplay = 0;
+                    $scope.iconzoominitialtextwoplay = 0;
+                    $scope.iconzoominitialtexthreeplay = 0;
+                    $scope.iconzoominitialtextfourplay = 1;
+
+                    $scope.plantimerone = $timeout(function () {
+
+                        $scope.plantextone = 1;
+                        $scope.plantexttwo = 0;
+                        $scope.plantextthree = 0;
+                        $scope.plantextfour = 0;
+                        $scope.planimageonefading = 1;
+                        $scope.planimagetwofading = 0;
+                        $scope.planimagethreefading = 0;
+                        $scope.planimagefourfading = 0;
+
+                        $scope.iconzoominitialtextoneplay = 1;
+                        $scope.iconzoominitialtextwoplay = 0;
+                        $scope.iconzoominitialtexthreeplay = 0;
+                        $scope.iconzoominitialtextfourplay = 0;
+
+                        $scope.callAtIntervalPlay();
+                    }, 2700);
+                }, 2700);
+            }, 2700);
+        }, 2700);
+    }
+
+    $scope.starttimernodisplaytrue = 1;  //bluelogo visible upon scrolling
+    $scope.starttimernodisplaynone = 0;  //toggle the top left logo
+
+    $scope.endtimerlogodisplaynone = 1;  //whitelogo visible upon scrolling
+    $scope.endtimerlogodisplaytrue = 0;  //toggle the top left logo
+
+
+    $scope.firstDivHide = 0;
+    $scope.secondDivHide = 0;
+    $scope.firstDivShow = 1;
+    $scope.secondDivShow = 1;
+
+    $scope.showline = 1;  //Toggle the line visibility
+    $scope.hideline = 0;  //Toggle the line visibility
+
+    $scope.iconbarchange = 0; //Toggle the icons visibility
+
+
+    $scope.navLogoClick = function () {
+        var top = 0;
+        var duration = 2; //milliseconds
+        //Scroll to the exact position
+        $document.scrollTop(top, duration).then(function () {
+            console && console.log('You just scrolled to the top!');
+        });
+    };
+
+
+    $scope.lefttorightsliderone = 0;  //sliding left to right slide one
+    $scope.righttoleftsliderone = 0;  //sliding right to left slide one
+    $scope.lefttorightslidertwo = 0;  //sliding left to right slide two
+    $scope.righttoleftslidertwo = 0;  //sliding right to left slide two
+    $scope.lefttorightsliderthree = 0; //sliding left to right slide three
+    $scope.righttoleftsliderthree = 0;  //sliding right to left slide three
+    $scope.lefttorightsliderfour = 0; //sliding left to right slide four
+    $scope.righttoleftsliderfour = 0;  //sliding right to left slide four
+
+    $scope.showslideronedisplay = 1;  //Show initially the slider one in section three
+    $scope.hideslideronedisplay = 0;  //hide initially the slider one in section three
+
+    $scope.showslidertwodisplay = 0;  //Show the slider two in section three
+    $scope.hideslidertwodisplay = 1;  //hide the slider two in section three
+
+    $scope.showsliderthreedisplay = 0;  //Show the slider three in section three
+    $scope.hidesliderthreedisplay = 1;  //hide the slider three in section three
+
+    $scope.showsliderfourdisplay = 0;   //Show the slider four in section three
+    $scope.hidesliderfourdisplay = 1;   //hide the slider four in section three
+
+    $scope.forgot_email = "";
+
+    $scope.forgotpassword = function () {
+
+        console.log($scope.forgot_email);
+        $scope.isemailvalid = $scope.validateEmail($scope.forgot_email);
+        console.log($scope.isemailvalid);
+
+        if ($scope.isemailValid) {
+            $scope.forgotemailinvalid = "Awesome ! Check your Email";
+        }
+        else {
+
+            $scope.forgotemailinvalid = "Whoops! Email is not Valid";
+
+
+            /*var req = {
+             method: 'POST',
+             url: 'https://mypoolin.com/flexpool/Forpass',
+             data:
+             {
+             email: '$scope.forgot_email',
+             isEmail: 'isEmail'
+             },
+             contentType: 'application/json'
+             }
+
+             $http(req).then(function (success) {
+             console.log(success); //success callback
+             }, function (failure) {
+             console.log(failure);  //failure callback
+             });*/
+        }
+    }
+
+
+    $scope.changesliderone = function () {  //changing the slider  one
+
+
+        $scope.lefttorightsliderone = 1;
+        $scope.righttoleftsliderone = 0;
+        $scope.lefttorightslidertwo = 0;
+        $scope.righttoleftslidertwo = 0;
+        $scope.lefttorightsliderthree = 0;
+        $scope.righttoleftsliderthree = 0;
+        $scope.lefttorightsliderfour = 0;
+        $scope.righttoleftsliderfour = 0;
 
         $timeout(function () {
-            $scope.sevengifboxfade = 1;
-        }, 9500);
 
+            $scope.showslideronedisplay = 0;
+            $scope.hideslideronedisplay = 1;
+
+            $scope.showslidertwodisplay = 1;
+            $scope.hideslidertwodisplay = 0;
+
+            $scope.showsliderthreedisplay = 0;
+            $scope.hidesliderthreedisplay = 1;
+
+            $scope.showsliderfourdisplay = 0;
+            $scope.hidesliderfourdisplay = 1;
+
+
+        }, 1000);
+
+
+    }
+
+    $scope.changeslidertwo = function () { //changing the slider two
+
+        $scope.lefttorightsliderone = 0;
+        $scope.righttoleftsliderone = 0;
+        $scope.lefttorightslidertwo = 1;
+        $scope.righttoleftslidertwo = 0;
+        $scope.lefttorightsliderthree = 0;
+        $scope.righttoleftsliderthree = 0;
+        $scope.lefttorightsliderfour = 0;
+        $scope.righttoleftsliderfour = 0;
 
         $timeout(function () {
-            $scope.eightgifboxfade = 1;
-            $scope.onlyplacetolearnfade = 1;
 
-        }, 10500);
+            $scope.showslideronedisplay = 0;
+            $scope.hideslideronedisplay = 1;
+
+            $scope.showslidertwodisplay = 0;
+            $scope.hideslidertwodisplay = 1;
+
+            $scope.showsliderthreedisplay = 1;
+            $scope.hidesliderthreedisplay = 0;
+
+            $scope.showsliderfourdisplay = 0;
+            $scope.hidesliderfourdisplay = 1;
+
+        }, 1000);
+
+    }
+
+    $scope.changesliderthree = function () {  //work for changing slider two
+
+        $scope.lefttorightsliderthree = 1;
+
+        $timeout(function () {
+
+            $scope.showslideronedisplay = 1;
+            $scope.hideslideronedisplay = 0;
+
+            $scope.showslidertwodisplay = 0;
+            $scope.hideslidertwodisplay = 1;
+
+            $scope.showsliderthreedisplay = 0;
+            $scope.hidesliderthreedisplay = 1;
+
+            $scope.showsliderfourdisplay = 0;
+            $scope.hidesliderfourdisplay = 1;
+
+            $scope.lefttorightsliderthree = 0;
 
 
-        $scope.animateElementIn = function ($el) {
-            $el.removeClass('timeline-hidden');
-            $el.addClass('bounce-in');
-        };
+        }, 1000);
 
-        // optional: not mandatory (uses angular-scroll-animate)
-        $scope.animateElementOut = function ($el) {
-            $el.addClass('timeline-hidden');
-            $el.removeClass('bounce-in');
-        };
+    }
 
-        $scope.events = [{
-            badgeClass: 'danger',
-            colorback: '#D9534F',
-            badgeIconClass: 'glyphicon-check',
-            title: 'In Depth Assessment',
-            content: 'Learnign by experience is still one of the most effective ways to learn and retain a knowledge as it has experience to it. We prepare tests for both collective and individual assessment so that students can easily figure out their key to success..'
-        },
-            {
-                badgeClass: 'success',
-                colorback: '#3F903F',
-                badgeIconClass: 'glyphicon glyphicon-pencil',
-                title: 'Question and Answer based learning',
-                content: 'Often evidences are a better solution than proof. When a concept is already hard to understand, its better to ask. Its better to answer what? why? how? In the answer lies the rub! '
-            }, {
-                badgeClass: 'primary',
-                colorback: '#2E6DA4',
-                badgeIconClass: 'glyphicon-credit-card',
-                title: 'Frequently Updated Question Bank',
-                content: 'Change is rule of life! So why same questions, why repetition. Face challenging new problems every day, hand crafted, brain stormed by our experts for those who seek study adventures! '
-            }, {
-                badgeClass: 'info',
-                colorback: '#5BC0DE',
-                badgeIconClass: 'glyphicon glyphicon-user',
-                title: 'Customised Test',
-                content: 'More relentless, more successful. Why wait for institution to schedule exam for you. We give customised test any time, any syllabus, self set difficulty, time bound or unbound, increasing difficulty or fixed and much more variants crafted only for you, the future! '
-            }, {
-                badgeClass: 'danger',
-                colorback: '#D9534F',
-                badgeIconClass: 'glyphicon glyphicon-signal',
-                title: 'Online Doubt Clearing Session',
-                content: 'Stuck with something, We are here to help. In case of a persistent doubt in any problem just head to online doubt sessions with our instructor and your issue will be well addressed. .'
-            }, {
-                badgeClass: 'primary',
-                colorback: '#2E6DA4',
-                badgeIconClass: 'glyphicon glyphicon-repeat',
-                title: 'Detailed Solutions',
-                content: 'Every test follows with a very detailed solutions that goes in depth to all concepts with reference to problem related to those conepts. It is known that ontological understanding of concepts leads to a much better, retaintive and effective learning experience for students '
-            }, {
-                badgeClass: 'info',
-                colorback: '#5BC0DE',
-                badgeIconClass: 'glyphicon glyphicon-edit',
-                title: 'Competetive learning',
-                content: 'No one is at their best, until there is a challenge. Why player 2 only in games, why not compete with the guy on your right or on your left. See where you stand in the competetition through friendly hosted custom tests among friends. '
-            }, {
-                badgeClass: 'danger',
-                colorback: '#D9534F',
-                badgeIconClass: 'glyphicon glyphicon-flash',
-                title: 'Video Tutorials',
-                content: 'Stay up to date with video tutorials addressing common problems faced by many students and much more on a regular basis.'
-            }, {
-                badgeClass: 'primary',
-                colorback: '#2E6DA4',
-                badgeIconClass: 'glyphicon glyphicon-thumbs-up',
-                title: 'Reach Your success',
-                content: 'Summing it all up, key to success is, to test your self, to assess your self, and to become an even better self. We are the platform to help you do just that. Fly to your success beyond any bounds. .'
-            },
 
-        ];
+    $scope.changesliderfour = function () {   //working for changing slider two
 
-    });
+        $scope.lefttorightsliderone = 0;
+        $scope.righttoleftsliderone = 0;
+        $scope.lefttorightslidertwo = 1;
+        $scope.righttoleftslidertwo = 0;
+        $scope.lefttorightsliderthree = 0;
+        $scope.righttoleftsliderthree = 0;
+        $scope.lefttorightsliderfour = 0;
+        $scope.righttoleftsliderfour = 0;
+
+        $timeout(function () {
+
+            $scope.showslideronedisplay = 0;
+            $scope.hideslideronedisplay = 1;
+
+            $scope.showslidertwodisplay = 0;
+            $scope.hideslidertwodisplay = 1;
+
+            $scope.showsliderthreedisplay = 0;
+            $scope.hidesliderthreedisplay = 1;
+
+            $scope.showsliderfourdisplay = 1;
+            $scope.hidesliderfourdisplay = 0;
+
+        }, 1000);
+
+    }
+
+    $scope.backslidertoone = function () {
+
+        $scope.lefttorightsliderone = 0;
+        $scope.righttoleftsliderone = 0;
+        $scope.lefttorightslidertwo = 0;
+        $scope.righttoleftslidertwo = 1;
+        $scope.lefttorightsliderthree = 0;
+        $scope.righttoleftsliderthree = 0;
+        $scope.lefttorightsliderfour = 0;
+        $scope.righttoleftsliderfour = 0;
+
+        $timeout(function () {
+
+            $scope.showslideronedisplay = 1;
+            $scope.hideslideronedisplay = 0;
+
+            $scope.showslidertwodisplay = 0;
+            $scope.hideslidertwodisplay = 1;
+
+            $scope.showsliderthreedisplay = 0;
+            $scope.hidesliderthreedisplay = 1;
+
+            $scope.showsliderfourdisplay = 0;
+            $scope.hidesliderfourdisplay = 1;
+
+        }, 1000);
+    }
+
+    $scope.backslidertotwo = function () {
+
+        $scope.lefttorightsliderone = 0;
+        $scope.righttoleftsliderone = 0;
+        $scope.lefttorightslidertwo = 0;
+        $scope.righttoleftslidertwo = 0;
+        $scope.lefttorightsliderthree = 0;
+        $scope.righttoleftsliderthree = 1;
+        $scope.lefttorightsliderfour = 0;
+        $scope.righttoleftsliderfour = 0;
+
+        $timeout(function () {
+
+            $scope.showslideronedisplay = 0;
+            $scope.hideslideronedisplay = 1;
+
+            $scope.showslidertwodisplay = 1;
+            $scope.hideslidertwodisplay = 0;
+
+            $scope.showsliderthreedisplay = 0;
+            $scope.hidesliderthreedisplay = 1;
+
+            $scope.showsliderfourdisplay = 0;
+            $scope.hidesliderfourdisplay = 1;
+
+        }, 1000);
+    }
+
+    $scope.backslidertothree = function () {
+
+        $scope.righttoleftsliderfour = 1;
+        $scope.lefttorightsliderone = 0;
+        $scope.righttoleftsliderone = 0;
+        $scope.lefttorightslidertwo = 0;
+        $scope.righttoleftslidertwo = 0;
+        $scope.lefttorightsliderthree = 0;
+        $scope.righttoleftsliderthree = 0;
+        $scope.lefttorightsliderfour = 0;
+
+        $timeout(function () {
+
+            $scope.showslideronedisplay = 0;
+            $scope.hideslideronedisplay = 1;
+
+            $scope.showslidertwodisplay = 1;
+            $scope.hideslidertwodisplay = 0;
+
+            $scope.showsliderthreedisplay = 0;
+            $scope.hidesliderthreedisplay = 1;
+
+            $scope.showsliderfourdisplay = 0;
+            $scope.hidesliderfourdisplay = 1;
+
+        }, 1000);
+    }
+
+
+    $scope.emailsubscribe = "";
+    $scope.datatoggling = "modal";
+    $scope.datatoggletarget = "#po";
+
+    $scope.validateEmail = function (email) {
+        var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        return re.test(email);
+    }
+
+    $scope.submitemail = function () {
+
+        $scope.isemailvalid = $scope.validateEmail($scope.emailsubscribe);
+        console.log(($scope.isemailvalid === false));
+
+
+        if (($scope.isemailvalid === false)) {
+            $scope.modalemailtext = "Whoops! Please Enter the valid Email address !";
+        }
+
+        else {
+
+            $scope.modalemailtext = "Awesome! Your email has been subscribed";
+
+            var req = {
+                method: 'POST',
+                url: 'https://mypoolin.com/confirmation.php',
+                data: {email: '$scope.emailsubscribe'},
+                contentType: 'application/json'
+            }
+
+            $http(req).then(function (success) {
+                console.log(success); //success callback
+            }, function (failure) {
+                console.log(failure);  //failure callback
+            });
+        }
+
+        ngDialog.open({
+            template: '<div class="text-center"> <h4 style="color:white;margin-top:5%;font-size:1.1em">{{modalemailtext}}' +
+            '</h4> <button class="modalokbutton btn" ng-click="closeSelf()"> Ok</button> </div>',
+            plain: true,
+            scope: $scope
+        });
+
+    }
+
+
+    $scope.howitworksanimate = 0;
+
+    $scope.toggleAnimation = function () {
+        $scope.animationsEnabled = !$scope.animationsEnabled;
+    };
+
+
+    $rootScope.mainbody = 1;
+    $rootScope.splashbackground =0;
+
+
+});
+
+
+app.controller("splashCtrl", function ($scope, $timeout, $window, $interval, $document, $filter, $http, $location, ngDialog,$rootScope) {
+
+    $timeout(function () {
+        $timeout(function () {
+            $location.url('/main');
+        }, 2000);
+
+
+    }, 3000);
+    $rootScope.mainbody = 0;
+    $rootScope.splashbackground =1;
+
+
+
+});
+
+app.controller("indexCtrl", function ($scope, $timeout, $window, $interval, $document, $filter, $http, $location, ngDialog,$rootScope) {
+
+    /*$scope.fadesplash = 0;
+     $timeout(function () {
+     $scope.fadesplash = 1;
+
+     $timeout(function () {
+     $window.location.href = 'main.html';
+     }, 2000);
+
+
+     }, 3000);*/
+
+});

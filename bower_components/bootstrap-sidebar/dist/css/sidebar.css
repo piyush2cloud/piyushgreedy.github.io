@@ -40,7 +40,7 @@
     right: 0;
 }
 
-/* css to override hiding the sidebar according to different screen sizes */
+/* poolincss to override hiding the sidebar according to different screen sizes */
 .row .sidebar.sidebar-left.sidebar-xs-show {
     left: 0;
     -webkit-transform: translate(0,0);
