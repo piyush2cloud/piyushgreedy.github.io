@@ -2307,9 +2307,10 @@ h1, h2, h3, h4, h5, h6 {
 
 .transitionmainview {
     -webkit-animation-name: viewtransit; /* Chrome, Safari, Opera */
-    -webkit-animation-duration: 2s; /* Chrome, Safari, Opera */
+    -webkit-animation-duration: 3s; /* Chrome, Safari, Opera */
     animation-name: viewtransit;
-    animation-duration: 2s;
+    animation-duration: 3s;
+    opacity: 0;
 }
 
 /* latin-ext */

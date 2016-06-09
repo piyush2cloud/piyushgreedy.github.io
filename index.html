@@ -47,35 +47,42 @@
 
 <body scroll ng-controller="myCtrl">
 
-<div ng-if="showsplashscreen" class="splashbacklogo" ng-class="{transitionmainview:splashanimation}">
+<!--<div ng-if="showsplashscreen" class="splashbacklogo"  ng-class="{transitionmainview:splashanimation}">
+    <div class="centeringelement">
+        <img src="images/loader.gif" style="width:70px">
+    </div>
+</div>-->
+
+<div ng-class="{transitionmainview:splashanimation}" style="background-color: black;position: absolute;z-index: 200;height: 100vh;width: 100vw">
     <div class="centeringelement">
         <img src="images/loader.gif" style="width:70px">
     </div>
 </div>
 
-<div ng-if="showmainscreen">
-    <div ng-include="'html/navbar.html'"></div>
-    <!-- This is the Navbar which also includes sidebar-->
 
-    <!-- Begin page content -->
-    <div class="container-fluid containerfluidwrapper" ng-click="makebackgroundnormal()">
+<!--<div ng-if="showmainscreen">-->
+<div ng-include="'html/navbar.html'"></div>
+<!-- This is the Navbar which also includes sidebar-->
 
-        <div ng-if="showAccount" ng-include="'html/account.html'"></div>
-        <!-- This section is to toggle account section-->
-        <div ng-include="'html/section1.html'"></div>
-        <!-- This section is the topmost section which contains getlink of the app -->
-        <div ng-include="'html/section2.html'"></div>
-        <!--This section shows how thw app works-->
-        <div ng-include="'html/section3.html'"></div>
-        <!-- This section shows how to get start with mypoolin -->
-        <div ng-include="'html/section4.html'"></div>
-        <!-- This section shows the feedbacks and press -->
-        <div ng-include="'html/footer.html'"></div>
-        <!-- This is the Footer -->
-        <my-directive></my-directive>
-        <!-- This is to check the width of the screen dynamically -->
-    </div>
+<!-- Begin page content -->
+<div class="container-fluid containerfluidwrapper" ng-click="makebackgroundnormal()">
+
+    <div ng-if="showAccount" ng-include="'html/account.html'"></div>
+    <!-- This section is to toggle account section-->
+    <div ng-include="'html/section1.html'"></div>
+    <!-- This section is the topmost section which contains getlink of the app -->
+    <div ng-include="'html/section2.html'"></div>
+    <!--This section shows how thw app works-->
+    <div ng-include="'html/section3.html'"></div>
+    <!-- This section shows how to get start with mypoolin -->
+    <div ng-include="'html/section4.html'"></div>
+    <!-- This section shows the feedbacks and press -->
+    <div ng-include="'html/footer.html'"></div>
+    <!-- This is the Footer -->
+    <my-directive></my-directive>
+    <!-- This is to check the width of the screen dynamically -->
 </div>
+<!--</div>-->
 
 
 <!-- Essential for Bootstrap to work-->
