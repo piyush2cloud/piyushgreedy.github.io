@@ -59,13 +59,12 @@ app.controller("myCtrl", function ($scope, $timeout, $window, $interval, $docume
     $scope.splashanimation = 0;
 
     $timeout(function () {
-
         $scope.splashanimation = 1;
         $timeout(function () {
             $scope.showsplashscreen = 0;
             $scope.showmainscreen = 1;
-        }, 100);
-    }, 2000);
+        }, 400);
+    }, 3000);
 
     $scope.lightbackground = 1;
     $scope.iconbarchange = 1;

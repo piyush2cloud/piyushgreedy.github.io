@@ -1244,6 +1244,8 @@ button:focus {
     animation-duration: 1s;
 }
 
+
+
 /* Chrome, Safari, Opera */
 @-webkit-keyframes mymove {
     from {
@@ -2275,6 +2277,12 @@ h1, h2, h3, h4, h5, h6 {
 .iconzoominitialtextfourplay {
     zoom: 1.4;
     color: black;
+}
+
+.splashbacklogo{
+    background-color: black;
+    height: 1200px;
+    width:2000px;
 }
 
 /* Chrome, Safari, Opera */
