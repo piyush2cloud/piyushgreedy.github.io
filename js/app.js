@@ -21,6 +21,8 @@ mainApp.config(['$routeProvider', function($routeProvider) {
 mainApp.run(function($rootScope) {
     $rootScope.mainbody = 0;
     $rootScope.splashbackground =1;
+    $rootScope.mainview="";
+
 })
 
 /* This is the directive used to check the scroll height of the screen dynamically */

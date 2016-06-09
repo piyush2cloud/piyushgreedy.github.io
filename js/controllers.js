@@ -256,12 +256,6 @@ app.controller("myCtrl", function ($scope, $timeout, $window, $interval, $docume
     $scope.gotToAccounts = function () {
         $scope.showAccount = !$scope.showAccount;
         $scope.makebackgroundnormal();
-        var top = 0;
-        var duration = 2; //milliseconds
-        //Scroll to the exact position
-        $document.scrollTop(top, duration).then(function () {
-            console && console.log('You just scrolled to the top!');
-        });
     }
 
 
@@ -632,16 +626,6 @@ app.controller("myCtrl", function ($scope, $timeout, $window, $interval, $docume
     $scope.iconbarchange = 0; //Toggle the icons visibility
 
 
-    $scope.navLogoClick = function () {
-        var top = 0;
-        var duration = 2; //milliseconds
-        //Scroll to the exact position
-        $document.scrollTop(top, duration).then(function () {
-            console && console.log('You just scrolled to the top!');
-        });
-    };
-
-
     $scope.lefttorightsliderone = 0;  //sliding left to right slide one
     $scope.righttoleftsliderone = 0;  //sliding right to left slide one
     $scope.lefttorightslidertwo = 0;  //sliding left to right slide two
@@ -953,6 +937,7 @@ app.controller("myCtrl", function ($scope, $timeout, $window, $interval, $docume
         $scope.animationsEnabled = !$scope.animationsEnabled;
     };
 
+    $rootScope.mainview="transitionmainview";
 
     $rootScope.mainbody = 1;
     $rootScope.splashbackground =0;
