@@ -1,6 +1,6 @@
 var app = angular.module('poolin.controllers', [])
 
-app.controller("myCtrl", function ($scope, $timeout, $window, $interval, $document, $filter, $http, ngDialog,$rootScope) {
+app.controller("myCtrl", function ($scope, $timeout, $window, $interval, $document, $filter, $http, ngDialog, $rootScope) {
 
 
     $scope.showAccount = 0; //Used to toggle the Account section using ng-if
@@ -42,16 +42,16 @@ app.controller("myCtrl", function ($scope, $timeout, $window, $interval, $docume
     }
 
     /*$timeout(function () {            //Timeout Used to Show topsection when web page open intially after white background.
-        $scope.logozindexblue = 1;    //Toggle the value of top section
-        $scope.logozindexwhite = 0;
+     $scope.logozindexblue = 1;    //Toggle the value of top section
+     $scope.logozindexwhite = 0;
 
-        $timeout(function () {
-            $scope.showtagline = 1;
-            $scope.lightbackground = 1;
-            $scope.iconbarchange = 1;
-            $scope.navbarbackgroundcolourwhite = 1;
-        }, 300);
-    }, 800);*/
+     $timeout(function () {
+     $scope.showtagline = 1;
+     $scope.lightbackground = 1;
+     $scope.iconbarchange = 1;
+     $scope.navbarbackgroundcolourwhite = 1;
+     }, 300);
+     }, 800);*/
 
     $scope.lightbackground = 1;
     $scope.iconbarchange = 1;
@@ -937,32 +937,22 @@ app.controller("myCtrl", function ($scope, $timeout, $window, $interval, $docume
         $scope.animationsEnabled = !$scope.animationsEnabled;
     };
 
-    $rootScope.mainview=0;
-
-    $rootScope.mainbody = 1;
-    $rootScope.splashbackground =0;
-
+    $rootScope.mainview = 0;
 
 });
 
 
-app.controller("splashCtrl", function ($scope, $timeout, $window, $interval, $document, $filter, $http, $location, ngDialog,$rootScope) {
+app.controller("splashCtrl", function ($scope, $timeout, $window, $interval, $document, $filter, $http, $location, ngDialog, $rootScope) {
 
-    $rootScope.mainview=0;
+    $rootScope.mainview = 0;
 
     $timeout(function () {
-
-        $rootScope.mainview=1;
-
+        $rootScope.mainview = 1;
         $timeout(function () {
             $location.url('/main');
-        }, 1000);
-
+        }, 100);
 
     }, 2000);
-    $rootScope.mainbody = 0;
-    $rootScope.splashbackground =1;
-
 
 
 });
