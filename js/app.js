@@ -1,6 +1,6 @@
-var mainApp = angular.module("poolin", ['poolin.controllers', 'duScroll','ngDialog','ngRoute']);
+var mainApp = angular.module("poolin", ['poolin.controllers', 'duScroll', 'ngDialog', 'ngRoute']);
 
-mainApp.config(['$routeProvider', function($routeProvider) {
+mainApp.config(['$routeProvider', function ($routeProvider) {
     $routeProvider.
 
         when('/splash', {
@@ -18,10 +18,8 @@ mainApp.config(['$routeProvider', function($routeProvider) {
         });
 }]);
 
-mainApp.run(function($rootScope) {
-    $rootScope.mainbody = 0;
-    $rootScope.splashbackground =1;
-    $rootScope.mainview="";
+mainApp.run(function ($rootScope) {
+    $rootScope.mainview = 0;
 
 })
 

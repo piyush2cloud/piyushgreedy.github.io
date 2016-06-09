@@ -53,6 +53,20 @@ app.controller("myCtrl", function ($scope, $timeout, $window, $interval, $docume
      }, 300);
      }, 800);*/
 
+
+    $scope.showsplashscreen = 1;
+    $scope.showmainscreen = 0;
+    $scope.splashanimation = 0;
+
+    $timeout(function () {
+        $scope.splashanimation = 1;
+
+        $timeout(function () {
+            $scope.showsplashscreen = 0;
+            $scope.showmainscreen = 1;
+        }, 2000);
+    }, 3000);
+
     $scope.lightbackground = 1;
     $scope.iconbarchange = 1;
     $scope.navbarbackgroundcolourwhite = 1;
@@ -937,23 +951,22 @@ app.controller("myCtrl", function ($scope, $timeout, $window, $interval, $docume
         $scope.animationsEnabled = !$scope.animationsEnabled;
     };
 
-    $rootScope.mainview = 0;
 
 });
 
 
-app.controller("splashCtrl", function ($scope, $timeout, $window, $interval, $document, $filter, $http, $location, ngDialog, $rootScope) {
+/*app.controller("splashCtrl", function ($scope, $timeout, $window, $interval, $document, $filter, $http, $location, ngDialog, $rootScope) {
 
-    $rootScope.mainview = 0;
+ $rootScope.mainview = 0;
 
-    $timeout(function () {
-        $rootScope.mainview = 1;
-        $timeout(function () {
-            $location.url('/main');
-        }, 100);
+ $timeout(function () {
+ $rootScope.mainview = 1;
+ $timeout(function () {
+ $location.url('/main');
+ }, 100);
 
-    }, 2000);
+ }, 2000);
 
 
-});
+ });*/
 
