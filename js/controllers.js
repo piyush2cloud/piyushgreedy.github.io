@@ -967,17 +967,3 @@ app.controller("splashCtrl", function ($scope, $timeout, $window, $interval, $do
 
 });
 
-app.controller("indexCtrl", function ($scope, $timeout, $window, $interval, $document, $filter, $http, $location, ngDialog,$rootScope) {
-
-    /*$scope.fadesplash = 0;
-     $timeout(function () {
-     $scope.fadesplash = 1;
-
-     $timeout(function () {
-     $window.location.href = 'main.html';
-     }, 2000);
-
-
-     }, 3000);*/
-
-});
