@@ -937,7 +937,7 @@ app.controller("myCtrl", function ($scope, $timeout, $window, $interval, $docume
         $scope.animationsEnabled = !$scope.animationsEnabled;
     };
 
-    $rootScope.mainview="transitionmainview";
+    $rootScope.mainview=0;
 
     $rootScope.mainbody = 1;
     $rootScope.splashbackground =0;
@@ -948,13 +948,18 @@ app.controller("myCtrl", function ($scope, $timeout, $window, $interval, $docume
 
 app.controller("splashCtrl", function ($scope, $timeout, $window, $interval, $document, $filter, $http, $location, ngDialog,$rootScope) {
 
+    $rootScope.mainview=0;
+
     $timeout(function () {
+
+        $rootScope.mainview=1;
+
         $timeout(function () {
             $location.url('/main');
-        }, 2000);
+        }, 1000);
 
 
-    }, 3000);
+    }, 2000);
     $rootScope.mainbody = 0;
     $rootScope.splashbackground =1;
 

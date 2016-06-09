@@ -1544,6 +1544,13 @@ button:focus {
 
 }
 
+.sectionthreerow{
+    height:40px;
+    margin:0;
+}
+
+
+
 .hidelogoshow {
     opacity: 1;
 }
@@ -1902,6 +1909,8 @@ a:focus {
     margin-bottom: 1px;
     letter-spacing: 0;
     font-weight: bold;
+    z-index:80;
+    margin-top:60px
 }
 
 .paymentmadefuntext {
@@ -1910,6 +1919,10 @@ a:focus {
     line-height: 1.5em;
     font-size: 20px;
     letter-spacing: .5px;
+}
+
+.bordernone{
+    border: none;
 }
 
 .storebuttonwrapper {
@@ -1995,6 +2008,7 @@ a:focus {
 .splitsettlerightsection {
     padding-top: 145px;
     padding-left: 25px;
+    padding-right:10%;
 }
 
 .margintop50 {
@@ -2266,28 +2280,28 @@ h1, h2, h3, h4, h5, h6 {
 /* Chrome, Safari, Opera */
 @-webkit-keyframes viewtransit {
     from {
-        opacity: 0;
+        opacity: 1;
     }
     to {
-        opacity: 1;
+        opacity: 0;
     }
 }
 
 /* Standard syntax */
 @keyframes viewtransit {
     from {
-        opacity: 0;
+        opacity: 1;
     }
     to {
-        opacity: 1;
+        opacity:0;
     }
 }
 
 .transitionmainview {
     -webkit-animation-name: viewtransit; /* Chrome, Safari, Opera */
-    -webkit-animation-duration: 4s; /* Chrome, Safari, Opera */
+    -webkit-animation-duration: 3s; /* Chrome, Safari, Opera */
     animation-name: viewtransit;
-    animation-duration: 4s;
+    animation-duration: 3s;
 }
 
 /* latin-ext */
