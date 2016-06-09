@@ -1140,9 +1140,8 @@ button:focus {
 .defaultmyaccount {
     float: right;
     position: fixed;
-    width: 34px;
     top: 15px;
-    right: 120px;
+    right: 55px;
     color: #f5a623;
     cursor: pointer;
     z-index: 20;
@@ -1663,8 +1662,8 @@ a {
 
 .lefttorightsliderone {
     position: relative;
-    -webkit-animation: lefttoright 1.5s; /* Chrome, Safari, Opera */
-    animation: lefttoright 1.5s;
+    -webkit-animation: lefttoright 1s; /* Chrome, Safari, Opera */
+    animation: lefttoright 1s;
 }
 
 .righttoleftsliderone {
@@ -1676,7 +1675,7 @@ a {
 .lefttorightslidertwo {
     position: relative;
     -webkit-animation: lefttoright 1.5s; /* Chrome, Safari, Opera */
-    animation: lefttoright 1.5s;
+    animation: lefttoright 1s;
 }
 
 .righttoleftslidertwo {
@@ -1688,7 +1687,7 @@ a {
 .lefttorightsliderthree {
     position: relative;
     -webkit-animation: lefttoright 1.5s; /* Chrome, Safari, Opera */
-    animation: lefttoright 1.5s;
+    animation: lefttoright 1s;
 }
 
 .righttoleftsliderthree {
@@ -1700,7 +1699,7 @@ a {
 .lefttorightsliderfour {
     position: relative;
     -webkit-animation: lefttoright 0.8s; /* Chrome, Safari, Opera */
-    animation: lefttoright 1.5s;
+    animation: lefttoright 1s;
 }
 
 .righttoleftsliderfour {
@@ -2311,6 +2310,10 @@ h1, h2, h3, h4, h5, h6 {
     animation-name: viewtransit;
     animation-duration: 3s;
     opacity: 0;
+}
+
+.splashdisplaynone{
+    display: none;
 }
 
 /* latin-ext */

@@ -54,12 +54,17 @@ app.controller("myCtrl", function ($scope, $timeout, $window, $interval, $docume
      }, 800);*/
 
 
-    $scope.showsplashscreen = 1;
-    $scope.showmainscreen = 0;
+    $scope.splashdisplaynone = 0;
+
     $scope.splashanimation = 0;
 
     $timeout(function () {
         $scope.splashanimation = 1;
+
+        $timeout(function () {
+            $scope.splashdisplaynone = 1;
+
+        }, 2000);
 
     }, 3000);
 
@@ -720,7 +725,7 @@ app.controller("myCtrl", function ($scope, $timeout, $window, $interval, $docume
             $scope.hidesliderfourdisplay = 1;
 
 
-        }, 1000);
+        }, 700);
 
 
     }
@@ -750,7 +755,7 @@ app.controller("myCtrl", function ($scope, $timeout, $window, $interval, $docume
             $scope.showsliderfourdisplay = 0;
             $scope.hidesliderfourdisplay = 1;
 
-        }, 1000);
+        }, 700);
 
     }
 
@@ -775,7 +780,7 @@ app.controller("myCtrl", function ($scope, $timeout, $window, $interval, $docume
             $scope.lefttorightsliderthree = 0;
 
 
-        }, 1000);
+        }, 700);
 
     }
 
@@ -805,7 +810,7 @@ app.controller("myCtrl", function ($scope, $timeout, $window, $interval, $docume
             $scope.showsliderfourdisplay = 1;
             $scope.hidesliderfourdisplay = 0;
 
-        }, 1000);
+        }, 700);
 
     }
 
