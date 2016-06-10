@@ -30,14 +30,6 @@ button:focus {
     top: 50%;
     left: 50%;
     transform: translateX(-50%) translateY(-50%);
-    transition: all 5s ease-in-out;
-    -moz-transition: all 5s ease-in-out;
-    -webkit-transition: all 5s ease-in-out;
-    opacity: 1;
-}
-
-.splashlogoanimation{
-    opacity: 0;
 }
 
 .centeringbelowelement {
@@ -1251,6 +1243,8 @@ button:focus {
     animation-duration: 1s;
 }
 
+
+
 /* Chrome, Safari, Opera */
 @-webkit-keyframes mymove {
     from {
@@ -1551,10 +1545,12 @@ button:focus {
 
 }
 
-.sectionthreerow {
-    height: 40px;
-    margin: 0;
+.sectionthreerow{
+    height:40px;
+    margin:0;
 }
+
+
 
 .hidelogoshow {
     opacity: 1;
@@ -1888,7 +1884,6 @@ a {
     padding-bottom: 4%;
     background-image: url('../images/Icons.png');
     background-repeat: repeat-x;
-    background-position:0px 0%;
 }
 
 .accountsection {
@@ -1915,8 +1910,8 @@ a:focus {
     margin-bottom: 1px;
     letter-spacing: 0;
     font-weight: bold;
-    z-index: 80;
-    margin-top: 60px
+    z-index:80;
+    margin-top:60px
 }
 
 .paymentmadefuntext {
@@ -1927,7 +1922,7 @@ a:focus {
     letter-spacing: .5px;
 }
 
-.bordernone {
+.bordernone{
     border: none;
 }
 
@@ -2014,7 +2009,7 @@ a:focus {
 .splitsettlerightsection {
     padding-top: 145px;
     padding-left: 25px;
-    padding-right: 10%;
+    padding-right:10%;
 }
 
 .margintop50 {
@@ -2283,27 +2278,41 @@ h1, h2, h3, h4, h5, h6 {
     color: black;
 }
 
-.splashbacklogo {
+.splashbacklogo{
     background-color: black;
-    position: absolute;
-    z-index: 200;
-    height: 100vh;
-    width: 100%;
-    transition: all 5s ease-in-out;
-    -moz-transition: all 5s ease-in-out;
-    -webkit-transition: all 5s ease-in-out;
-    opacity: 1;
-    /*background-image: url('../images/loader.gif');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 20px;*/
+    height: 1200px;
+    width:2000px;
+}
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes viewtransit {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+/* Standard syntax */
+@keyframes viewtransit {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity:0;
+    }
 }
 
 .transitionmainview {
+    -webkit-animation-name: viewtransit; /* Chrome, Safari, Opera */
+    -webkit-animation-duration: 3s; /* Chrome, Safari, Opera */
+    animation-name: viewtransit;
+    animation-duration: 3s;
     opacity: 0;
 }
 
-.splashdisplaynone {
+.splashdisplaynone{
     display: none;
 }
 
