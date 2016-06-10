@@ -1891,6 +1891,24 @@ a {
     background-position:155px 0%;
 }
 
+
+#main{
+    position:relative;
+}
+div#first{
+    background-image: url('../images/Icons.png');
+    opacity:0.2;
+    width:300px;
+    height:300px;
+}
+div#second{
+    width:300px;
+    height:300px;
+    position:absolute;
+    top: 0;
+    left:0;
+}
+
 .accountsection {
     padding-top: 70px;
     padding-left: 12%;

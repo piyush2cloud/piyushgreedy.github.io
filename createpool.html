@@ -47,22 +47,16 @@
 
 <body scroll ng-controller="myCtrl">
 
-
-<div ng-include="'html/navbar.html'"></div>
-
-<div class="container-fluid containerfluidwrapper" ng-click="makebackgroundnormal()">
-
-    <div class="row text-center">
-        <div class="fullcircle">
-            <i class="ion-social-twitter socialcolorfooter"></i>
-        </div>
-        <div class="fullcircle">
-            <i class="ion-social-twitter socialcolorfooter"></i>
-        </div>
+<div id="main">
+    <div id="first">
     </div>
-    <my-directive></my-directive>
+    <div id="second">
+        <p id="container">
+            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+            when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+        </p>
+    </div>
 </div>
-
 
 <!-- Essential for Bootstrap to work-->
 <script src="bower_components/jquery/dist/jquery.js"></script>
