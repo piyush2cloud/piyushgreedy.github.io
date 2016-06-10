@@ -272,8 +272,18 @@ app.controller("myCtrl", function ($scope, $timeout, $window, $interval, $docume
 
     $scope.showAccount = 0;
 
+
     $scope.gotToAccounts = function () {
-        $scope.showAccount = !$scope.showAccount;
+        if ($scope.logozindexwhite === 0) {
+            $scope.showAccount = !$scope.showAccount;
+        }
+
+        if ($scope.logozindexwhite === 1) {
+            if ($scope.showAccount === 0 || $scope.showAccount === false) {
+                $scope.showAccount = 1;
+            }
+        }
+
         $scope.makebackgroundnormal();
     }
 

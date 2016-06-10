@@ -29,6 +29,8 @@ mainApp.run(function($rootScope) {
 mainApp.directive("scroll", function ($window) {
     return function (scope, element, attrs) {
         angular.element($window).bind("scroll", function () {
+
+
             if (this.pageYOffset > 350) {
 
                 scope.logozindexblue = 0;
