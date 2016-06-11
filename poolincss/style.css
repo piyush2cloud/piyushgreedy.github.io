@@ -64,6 +64,7 @@ button:focus {
     !important;
     }
 
+
     .payu-paytm {
         width: 56px;
         margin-left: 1%;
@@ -273,6 +274,8 @@ button:focus {
     !important;
     }
 
+
+
     .startnowbutton {
         background-color: #f7941d;
         border: none;
@@ -481,6 +484,8 @@ button:focus {
     !important;
     }
 
+
+
     .startnowbutton {
         background-color: #f7941d;
         border: none;
@@ -683,6 +688,10 @@ button:focus {
     !important;
     }
 
+
+
+
+
     .startnowbutton {
         background-color: #f7941d;
         border: none;
@@ -871,6 +880,9 @@ button:focus {
     .webview {
         display: none;
     }
+
+
+
 
     .startnowbutton {
         background-color: #f7941d;
@@ -1351,13 +1363,6 @@ button:focus {
     color: black;
 }
 
-.showbot{
-  display: none;
-}
-
-.hidebot{
-    display: none;
-}
 .splitsettletextdefault {
     color: white;
     -webkit-transition: all 2s;
@@ -2026,6 +2031,28 @@ a:focus {
     margin-right: 0px;
     margin-left: 0px;
     overflow-x: hidden;
+}
+
+.botstyle{
+    position: absolute;
+    left: 0;
+    top:70px;
+    width: 40px;
+    height:40px;
+    background-color: #f5a623;
+    border-radius: 5px;
+}
+
+.bottextstyle{
+    position: absolute;left: 0;top:70px;width: 200px;height:50px;background-color: #f5a623;border-radius: 5px;padding-top:12px;
+}
+
+.showbot{
+    display: none;
+}
+
+.hidebot{
+    display: none;
 }
 
 .particleJs {

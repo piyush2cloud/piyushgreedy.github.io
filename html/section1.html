@@ -1,21 +1,18 @@
-<div id="main">
+<div id="main" ng-controller="myCtrl">
 
-    <div class="row topbackground" id="section-1" ng-class="{makebodyblur:makebodyblur}" ng-controller="myCtrl">
+    <div class="row topbackground" id="section-1" ng-class="{makebodyblur:makebodyblur}" >
         <div class="main col-md-12">
-
-
+            <my-directive></my-directive>
 
             <a href="Explore/bot.html" style="text-decoration: none;">
-                <div class="text-center" ng-mouseenter="showbots()" ng-class="{showbot:showbot}"
-                     style="position: absolute;left: 0;top:70px;width: 45px;height:45px;background-color: #f5a623;border-radius: 5px">
-                    <i class="ion-chatbubble-working" style="font-size: 2.2em;color: white">
+                <div class="text-center botstyle" ng-mouseenter="showbots()" ng-class="{showbot:showbot}">
+                    <i class="ion-chatbubble-working" style="font-size: 2.1em;color: white">
                     </i>
                 </div>
 
-                <div class="text-center" ng-mouseleave="hidebots()" ng-class="{hidebot:hidebot}"
-                     style="position: absolute;left: 0;top:70px;width: 200px;height:50px;background-color: #f5a623;border-radius: 5px;padding-top:12px">
-
-                    <h4 style="font-size: 1.1em;color: white;font-weight: 600">EXPLORE OUR CHATBOTS</h4>
+                <div class="text-center bottextstyle" ng-mouseleave="hidebots()" ng-class="{hidebot:hidebot}">
+                    <h4 style="font-size: 1.1em;color: white;font-weight: 600">EXPLORE OUR CHATBOTS
+                    </h4>
                 </div>
 
             </a>

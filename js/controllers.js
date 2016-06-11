@@ -231,32 +231,38 @@ app.controller("myCtrl", function ($scope, $timeout, $window, $interval, $docume
         }
     }
 
-    $scope.showcallsymbol=0;
-    $scope.showcall =1;
+    $scope.showcallsymbol = 0;
+    $scope.showcall = 1;
 
-    $scope.showbot=0;
-    $scope.hidebot=1;
+    $scope.showbot = 0;
+    $scope.hidebot = 1;
 
-    $scope.showcallus = function(){
-        $scope.showcallsymbol=1;
-        $scope.showcall =0;
+    $scope.showcallus = function () {
+        $scope.showcallsymbol = 1;
+        $scope.showcall = 0;
     }
 
-    $scope.hidecallus = function(){
-        $scope.showcallsymbol=0;
-        $scope.showcall =1;
+    $scope.hidecallus = function () {
+        $scope.showcallsymbol = 0;
+        $scope.showcall = 1;
+
     }
 
-    $scope.showbots = function(){
-        $scope.showbot=1;
-        $scope.hidebot=0;
+    $scope.showbots = function () {
+        if ($scope.showbrowsertrue === 1) {
+            $scope.showbot = 1;
+            $scope.hidebot = 0;
+        }
+        else{
+            $scope.showbot = 0;
+            $scope.hidebot = 1;
+        }
     }
 
-    $scope.hidebots = function(){
-        $scope.showbot=0;
-        $scope.hidebot=1;
+    $scope.hidebots = function () {
+        $scope.showbot = 0;
+        $scope.hidebot = 1;
     }
-
 
 
     $scope.getlinkmobile = function () {
