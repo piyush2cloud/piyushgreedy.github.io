@@ -1,6 +1,7 @@
 <div class="defaultnvabarshow"
      ng-class="{customnavbarhide:customnavbarhide,customnavbarshow:customnavbarshow,makebodyblur:makebodyblur}"></div>
 
+
 <div ng-class="{makebodyblur:makebodyblur}">
 
     <a du-smooth-scroll="section-1" du-scrollspy offset="50" href="">
@@ -9,6 +10,17 @@
 
         <img src="images/img/Logo_Blue.png" ng-class="{logozindexblue:logozindexblue}"
              class="topleftlogo">
+    </a>
+
+    <a href="tel:+91-9599771577" style="text-decoration: none;">
+        <div class="text-center" ng-mouseenter="showcallus()" ng-class="{showcallsymbol:showcallsymbol}"
+             style="position: fixed;right: 0;top:500px;width: 55px;height:52px;background-color: #366595;border-radius: 5px;z-index: 40">
+            <i class="ion-social-whatsapp-outline" style="font-size: 2.7em;color: white">
+
+            </i>
+        </div>
+        <img src="images/Callus.png" ng-mouseleave="hidecallus()" ng-class="{showcall:showcall}"
+             style="width:200px;position: fixed;right: 0;top:500px;z-index: 40">
     </a>
 
     <i class="ion-navicon defaulticonbar"

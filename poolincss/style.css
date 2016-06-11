@@ -36,7 +36,7 @@ button:focus {
     opacity: 1;
 }
 
-.splashlogoanimation{
+.splashlogoanimation {
     opacity: 0;
 }
 
@@ -1351,6 +1351,13 @@ button:focus {
     color: black;
 }
 
+.showbot{
+  display: none;
+}
+
+.hidebot{
+    display: none;
+}
 .splitsettletextdefault {
     color: white;
     -webkit-transition: all 2s;
@@ -1890,23 +1897,23 @@ a {
     background-repeat: repeat-x;
 }
 
-
-
-#main{
-    position:relative;
+#main {
+    position: relative;
 }
-div#first{
+
+div#first {
     background-image: url('../images/Icons.png');
-    opacity:0.2;
-    width:300px;
-    height:300px;
+    opacity: 0.2;
+    width: 300px;
+    height: 300px;
 }
-div#second{
-    width:300px;
-    height:300px;
-    position:absolute;
+
+div#second {
+    width: 300px;
+    height: 300px;
+    position: absolute;
     top: 0;
-    left:0;
+    left: 0;
 }
 
 .accountsection {
@@ -1984,6 +1991,14 @@ a:focus {
     overflow-x: hidden;
     padding-top: 7%;
     border-top: 1px dotted black;
+}
+
+.showcallsymbol {
+    display: none;
+}
+
+.showcall {
+    display: none;
 }
 
 .sectionmedialogos {
