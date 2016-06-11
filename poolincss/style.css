@@ -1886,10 +1886,8 @@ a {
     margin-right: 0px;
     margin-left: 0px;
     padding-bottom: 4%;
-    background-image: url('../images/Icons.png');
-    background-repeat:repeat-x;
-    background-position: right 28px center;
-
+    background-image: url('../images/strip.png');
+    background-repeat: repeat-x,
 }
 
 
