@@ -1887,9 +1887,12 @@ a {
     margin-left: 0px;
     padding-bottom: 4%;
     background-image: url('../images/Icons.png');
-    background-repeat: repeat-x;
-    background-position:155px 0%;
+    background-repeat:repeat-x;
+    background-attachment: fixed;
+    background-position: right 28px center;
+
 }
+
 
 
 #main{
