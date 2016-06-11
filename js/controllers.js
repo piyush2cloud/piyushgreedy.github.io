@@ -233,6 +233,9 @@ app.controller("myCtrl", function ($scope, $timeout, $window, $interval, $docume
 
 
     $scope.getlinkmobile = function () {
+
+        console.log($scope.mobilenumber);
+
         if (($scope.mobilenumber).length < 10 || isNaN($scope.mobilenumber)) {
             $scope.modaltextdisplay = "Whoops.. please check the mobile number entered";
             console.log("invalid mobile");

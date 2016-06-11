@@ -1887,7 +1887,7 @@ a {
     margin-left: 0px;
     padding-bottom: 4%;
     background-image: url('../images/strip.png');
-    background-repeat: repeat-x,
+    background-repeat: repeat-x;
 }
 
 
