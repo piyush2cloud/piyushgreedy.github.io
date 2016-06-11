@@ -1,8 +1,7 @@
-<div id="main" ng-controller="myCtrl">
+<div id="main" ng-class="{makebodyblur:makebodyblur}">
 
-    <div class="row topbackground" id="section-1" ng-class="{makebodyblur:makebodyblur}" >
+    <div class="row topbackground" id="section-1" ng-class="{makebodyblur:makebodyblur}" ng-controller="myCtrl">
         <div class="main col-md-12">
-            <my-directive></my-directive>
 
             <a href="Explore/bot.html" style="text-decoration: none;">
                 <div class="text-center botstyle" ng-mouseenter="showbots()" ng-class="{showbot:showbot}">
@@ -17,6 +16,7 @@
 
             </a>
 
+            <my-directive></my-directive>
 
             <div class="row text-center">
                 <p class="mypoolintext">
