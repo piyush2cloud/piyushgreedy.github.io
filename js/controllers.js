@@ -249,6 +249,7 @@ app.controller("myCtrl", function ($scope, $timeout, $window, $interval, $docume
     }
 
     $scope.showbots = function () {
+        alert(2);
         if ($scope.showbrowsertrue === 1) {
             $scope.showbot = 1;
             $scope.hidebot = 0;
