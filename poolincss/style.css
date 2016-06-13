@@ -1939,20 +1939,7 @@ a {
     position: relative;
 }
 
-div#first {
-    background-image: url('../images/Icons.png');
-    opacity: 0.2;
-    width: 300px;
-    height: 300px;
-}
 
-div#second {
-    width: 300px;
-    height: 300px;
-    position: absolute;
-    top: 0;
-    left: 0;
-}
 
 .accountsection {
     padding-top: 70px;
@@ -2039,14 +2026,9 @@ a:focus {
     display: none;
 }
 
-.showbot {
+.hideaccountbot{
     display: none;
 }
-
-.hidebot {
-    display: none;
-}
-
 
 .sectionmedialogos {
     padding-top: 6%;

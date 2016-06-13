@@ -234,7 +234,7 @@ app.controller("myCtrl", function ($scope, $timeout, $window, $interval, $docume
     $scope.showcallsymbol = 0;
     $scope.showcall = 1;
 
-    $scope.showbot = 0;
+    $scope.showbot = 1;
     $scope.hidebot = 1;
 
     $scope.showcallus = function () {
@@ -305,11 +305,13 @@ app.controller("myCtrl", function ($scope, $timeout, $window, $interval, $docume
     }
 
     $scope.showAccount = 0;
-
+     $scope.hideaccountbot=0;
 
     $scope.gotToAccounts = function () {
         if ($scope.logozindexwhite === 0) {
             $scope.showAccount = !$scope.showAccount;
+            $scope.hideaccountbot= !$scope.hideaccountbot;
+
         }
 
         if ($scope.logozindexwhite === 1) {
