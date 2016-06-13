@@ -13,14 +13,14 @@
 
 
     <a href="Explore/bot.html" style="text-decoration: none;">
-        <div class="text-center showbot"
+        <div class="text-center" ng-mouseenter="showthebot()" ng-class="{showbot:showbot}"
              style="position: absolute;left: 0;top:76px;width: 40px;height:40px;background-color: #f5a623;border-radius: 5px;z-index: 40">
             <i class="ion-chatbubble-working " style="font-size: 2.1em;color: white">
 
             </i>
         </div>
 
-        <div class="text-center hidebot"
+        <div class="text-center" ng-mouseleave="hidethebot()" ng-class="{hidebot:hidebot}"
              style="position: absolute;left: 0;top:76px;width: 200px;height:50px;background-color: #f5a623;border-radius: 5px;z-index: 40;
              padding-top:14px;">
             <h4 style="font-size: 1.1em;color: white;font-weight: 600">
@@ -33,8 +33,8 @@
 
     <a href="tel:+91-9599771577" style="text-decoration: none;">
         <div class="text-center" ng-mouseenter="showcallus()" ng-class="{showcallsymbol:showcallsymbol}"
-             style="position: fixed;right: 0;top:74%;width: 55px;height:52px;background-color: #366595;border-radius: 5px;z-index: 40">
-            <i class="ion-social-whatsapp-outline" style="font-size: 2.7em;color: white">
+             style="position: fixed;right: 0;top:74%;width: 40px;height:40px;background-color: #366595;border-radius: 5px;z-index: 40">
+            <i class="ion-social-whatsapp-outline" style="font-size: 2.1em;color: white">
 
             </i>
         </div>

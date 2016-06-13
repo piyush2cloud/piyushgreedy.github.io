@@ -238,8 +238,10 @@ app.controller("myCtrl", function ($scope, $timeout, $window, $interval, $docume
     $scope.hidebot = 1;
 
     $scope.showcallus = function () {
-        $scope.showcallsymbol = 1;
-        $scope.showcall = 0;
+        if (!$scope.colcentered) {
+            $scope.showcallsymbol = 1;
+            $scope.showcall = 0;
+        }
     }
 
     $scope.hidecallus = function () {
@@ -248,19 +250,14 @@ app.controller("myCtrl", function ($scope, $timeout, $window, $interval, $docume
 
     }
 
-    $scope.showbots = function () {
-        alert(2);
-        if ($scope.showbrowsertrue === 1) {
+    $scope.showthebot = function () {
+        if (!$scope.colcentered) {
             $scope.showbot = 1;
             $scope.hidebot = 0;
         }
-        else{
-            $scope.showbot = 0;
-            $scope.hidebot = 1;
-        }
     }
 
-    $scope.hidebots = function () {
+    $scope.hidethebot = function () {
         $scope.showbot = 0;
         $scope.hidebot = 1;
     }

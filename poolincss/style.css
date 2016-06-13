@@ -2039,6 +2039,15 @@ a:focus {
     display: none;
 }
 
+.showbot {
+    display: none;
+}
+
+.hidebot {
+    display: none;
+}
+
+
 .sectionmedialogos {
     padding-top: 6%;
     padding-bottom: 12%;
@@ -2086,8 +2095,6 @@ a:focus {
     border-radius: 5px;
     padding-top:12px;
 }
-
-
 
 .particleJs {
     background-color: transparent;
