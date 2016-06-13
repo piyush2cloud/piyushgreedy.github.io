@@ -317,6 +317,7 @@ app.controller("myCtrl", function ($scope, $timeout, $window, $interval, $docume
         if ($scope.logozindexwhite === 1) {
             if ($scope.showAccount === 0 || $scope.showAccount === false) {
                 $scope.showAccount = 1;
+                $scope.hideaccountbot= !$scope.hideaccountbot;
             }
         }
 
