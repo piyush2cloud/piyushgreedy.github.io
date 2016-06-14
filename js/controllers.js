@@ -337,6 +337,10 @@ app.controller("myCtrl", function ($scope, $timeout, $window, $interval, $docume
             }
         }
 
+        $document.scrollTopAnimated(0).then(function () {
+            console && console.log('You just scrolled to the top!');
+        });
+
         $scope.makebackgroundnormal();
     }
 
