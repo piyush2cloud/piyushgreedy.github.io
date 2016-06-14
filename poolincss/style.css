@@ -16,6 +16,14 @@
     visibility: visible;
 }
 
+.togglesidebar{
+    -webkit-transform: translate(100%,0);
+    -moz-transform: translate(100%,0);
+    -ms-transform: translate(100%,0);
+    -o-transform: translate(100%,0);
+    transform: translate(100%,0);
+}
+
 .fadesplash {
     visibility: hidden;
     background-color: white;
@@ -24,6 +32,8 @@
 button:focus {
     outline: 0;
 }
+
+
 
 .centeringelement {
     position: absolute;
@@ -67,6 +77,12 @@ button:focus {
     .showbot{
         display: none;
     }
+
+    .nav li .myaccountsidebar{
+        display: none;
+    }
+
+
 
     .hidebot{
     }
@@ -271,6 +287,10 @@ button:focus {
 @media (min-width: 992px) and (max-width: 1199px) {
 
     .mobileview {
+        display: none;
+    }
+
+    .nav li .myaccountsidebar{
         display: none;
     }
 
@@ -494,6 +514,10 @@ button:focus {
         margin-top: 2%;
     }
 
+    .nav li .myaccountsidebar{
+        display: none;
+    }
+
     .paddingleftinput {
         padding-left: 3%;
     !important;
@@ -698,6 +722,10 @@ button:focus {
 @media (max-width: 767px) {
 
     .webview {
+        display: none;
+    }
+
+    .nav li .myaccountsidebar{
         display: none;
     }
 
@@ -907,6 +935,18 @@ button:focus {
     .webview {
         display: none;
     }
+
+    .showaccountbrowser{
+        display: none;
+    }
+
+    .nav li .myaccountsidebar{
+        display: block;
+    }
+
+
+
+
 
     .showbot{
     }
@@ -1366,6 +1406,17 @@ button:focus {
 !important;
     padding-left: 15%;
     cursor: pointer;
+}
+
+.myaccountsidebar{
+    color: white;
+!important;
+    padding-left: 15%;
+    cursor: pointer;
+}
+
+.myaccountsidebar:hover{
+    color: black;
 }
 
 .linebreakersidebar {
@@ -1938,6 +1989,7 @@ a {
 #main {
     position: relative;
 }
+
 
 
 

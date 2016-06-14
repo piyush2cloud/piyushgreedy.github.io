@@ -31,6 +31,7 @@ app.controller("myCtrl", function ($scope, $timeout, $window, $interval, $docume
         $scope.mobiletextaligncenter = 0;
         $scope.colcentered = 0;
 
+
     } else {
         $scope.mobiletextaligncenter = 1;
         $scope.colcentered = 1;
@@ -39,6 +40,27 @@ app.controller("myCtrl", function ($scope, $timeout, $window, $interval, $docume
         $scope.martop8 = 1;
         $scope.showseperatorlarge = 0;
         $scope.showseperatorsmall = 1;
+    }
+
+    $scope.hideaccountbrowser=1;
+
+
+
+
+    if ($window.innerWidth > 500) {  //Checks If screen width is greater than 993px
+         $scope.showaccountbrowser =0;
+         $scope.hideaccountbrowser=1;
+
+    } else {
+        $scope.showaccountbrowser =1;
+        $scope.hideaccountbrowser=0;
+    }
+
+    $scope.togglesidebar = 0;
+
+    $scope.togglesidebarlogic = function(){
+        alert(2);
+        $scope.togglesidebar = 1;
     }
 
     /*$timeout(function () {            //Timeout Used to Show topsection when web page open intially after white background.
@@ -346,6 +368,8 @@ app.controller("myCtrl", function ($scope, $timeout, $window, $interval, $docume
      }
 
      });*/
+
+
 
     $scope.showtagline = 0;
     $scope.starttimerlogo = 1;

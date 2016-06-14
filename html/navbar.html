@@ -50,15 +50,16 @@
        ng-click="makebackgroundblur()" ng-class="{changeiconbar:changenavicon}">
     </i>
 
-    <h4 class="defaultmyaccount" ng-click="gotToAccounts()"
-        du-smooth-scroll="section-1" du-scrollspy offset="550" ng-class="{changemyaccountcol:changemyaccountcol}">
+    <h4 class="defaultmyaccount showaccountbrowser" ng-click="gotToAccounts()"
+        du-smooth-scroll="section-1" du-scrollspy offset="550"
+        ng-class="{changemyaccountcol:changemyaccountcol}">
         <b>MY ACCOUNT</b>
     </h4>
 
 </div>
 
 
-<div class="col-xs-7 col-sm-3 col-md-3 sidebar sidebar-right sidebar-animate">
+<div class="col-xs-7 col-sm-3 col-md-3 sidebar sidebar-right sidebar-animate" ng-class="{togglesidebar:togglesidebar}">
 
             <span class="ion-ios-close-empty" ng-click="makebackgroundnormal()"
                   ng-class="{howitworksanimate:howitworksanimate}"
@@ -98,10 +99,13 @@
             </a>
         </li>
 
-        <li class="getstarted" ng-class="{howitworksanimate:howitworksanimate}">
+        <li class="getstarted" ng-class="{howitworksanimate:howitworksanimate}"  data-toggle="sidebar"
+            data-target=".sidebar-right">
             <a class="getstarted" style="font-family: 'Titillium Web', sans-serif"
-               ng-click="makebackgroundnormal()" data-toggle="sidebar"
-               data-target=".sidebar-right" du-smooth-scroll="section-3" du-scrollspy offset="-160">
+               ng-click="makebackgroundnormal()"
+               du-smooth-scroll="section-3"
+               du-scrollspy offset="-160"
+              >
                 GET STARTED
             </a>
         </li>
@@ -121,6 +125,15 @@
                data-toggle="sidebar"
                data-target=".sidebar-right">
                 BUSINESSES
+            </a>
+        </li>
+
+        <li class="myaccountsidebar" ng-click="gotToAccounts()"
+            ng-class="{howitworksanimate:howitworksanimate,showaccountbrowser:!showaccountbrowser}">
+            <a class="myaccountsidebar fontsidebartags"
+               data-toggle="sidebar"
+               data-target=".sidebar-right">
+                MY ACCOUNT
             </a>
         </li>
 
