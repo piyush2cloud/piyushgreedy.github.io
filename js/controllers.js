@@ -42,26 +42,20 @@ app.controller("myCtrl", function ($scope, $timeout, $window, $interval, $docume
         $scope.showseperatorsmall = 1;
     }
 
-    $scope.hideaccountbrowser=1;
-
-
+    $scope.hideaccountbrowser = 1;
 
 
     if ($window.innerWidth > 500) {  //Checks If screen width is greater than 993px
-         $scope.showaccountbrowser =0;
-         $scope.hideaccountbrowser=1;
+        $scope.showaccountbrowser = 0;
+        $scope.hideaccountbrowser = 1;
 
     } else {
-        $scope.showaccountbrowser =1;
-        $scope.hideaccountbrowser=0;
+        $scope.showaccountbrowser = 1;
+        $scope.hideaccountbrowser = 0;
     }
 
     $scope.togglesidebar = 0;
 
-    $scope.togglesidebarlogic = function(){
-        alert(2);
-        $scope.togglesidebar = 1;
-    }
 
     /*$timeout(function () {            //Timeout Used to Show topsection when web page open intially after white background.
      $scope.logozindexblue = 1;    //Toggle the value of top section
@@ -327,19 +321,19 @@ app.controller("myCtrl", function ($scope, $timeout, $window, $interval, $docume
     }
 
     $scope.showAccount = 0;
-     $scope.hideaccountbot=0;
+    $scope.hideaccountbot = 0;
 
     $scope.gotToAccounts = function () {
         if ($scope.logozindexwhite === 0) {
             $scope.showAccount = !$scope.showAccount;
-            $scope.hideaccountbot= !$scope.hideaccountbot;
+            $scope.hideaccountbot = !$scope.hideaccountbot;
 
         }
 
         if ($scope.logozindexwhite === 1) {
             if ($scope.showAccount === 0 || $scope.showAccount === false) {
                 $scope.showAccount = 1;
-                $scope.hideaccountbot= !$scope.hideaccountbot;
+                $scope.hideaccountbot = !$scope.hideaccountbot;
             }
         }
 
@@ -370,7 +364,6 @@ app.controller("myCtrl", function ($scope, $timeout, $window, $interval, $docume
      });*/
 
 
-
     $scope.showtagline = 0;
     $scope.starttimerlogo = 1;
     $scope.endtimerlogo = 0;
@@ -392,6 +385,35 @@ app.controller("myCtrl", function ($scope, $timeout, $window, $interval, $docume
     $scope.makebackgroundnormal = function () {
         $scope.makebodyblur = 0;
         $scope.howitworksanimate = 0;
+
+    }
+
+    $scope.scrolltogetstarted = function () {
+
+        var someElement = angular.element(document.getElementById('section-3'));
+        $document.scrollToElement(someElement, -220, 1000);
+        $scope.makebackgroundnormal();
+    }
+
+    $scope.scrolltoworking = function () {
+
+        $document.scrollTopAnimated(520).then(function () {
+            console && console.log('You just scrolled to the working!');
+        });
+
+        $scope.makebackgroundnormal();
+    }
+
+    $scope.scrolltohome = function () {
+
+        $document.scrollTopAnimated(0).then(function () {
+            console && console.log('You just scrolled to the top!');
+        });
+
+
+
+        $scope.makebackgroundnormal();
+
 
     }
 

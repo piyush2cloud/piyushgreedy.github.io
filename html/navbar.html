@@ -76,8 +76,8 @@
                data-toggle="sidebar"
                data-target=".sidebar-right"
                ng-class="{howitworksanimate:howitworksanimate}"
-               ng-click="makebackgroundnormal()"
-               du-smooth-scroll="section-1" du-scrollspy offset="50">
+               ng-click="scrolltohome()"
+               >
                 HOME
             </a>
         </li>
@@ -85,8 +85,9 @@
 
         <li class="howitworks" ng-class="{howitworksanimate:howitworksanimate}">
             <a class="howitworks" style="font-family: 'Titillium Web', sans-serif"
-               ng-click="makebackgroundnormal()" data-toggle="sidebar"
-               data-target=".sidebar-right" du-smooth-scroll="section-1" du-scrollspy offset="-520">
+               ng-click="scrolltoworking()" data-toggle="sidebar"
+               data-target=".sidebar-right"
+                    >
                 HOW IT WORKS
             </a>
         </li>
@@ -99,13 +100,11 @@
             </a>
         </li>
 
+
         <li class="getstarted" ng-class="{howitworksanimate:howitworksanimate}"  data-toggle="sidebar"
             data-target=".sidebar-right">
             <a class="getstarted" style="font-family: 'Titillium Web', sans-serif"
-               ng-click="makebackgroundnormal()"
-               du-smooth-scroll="section-3"
-               du-scrollspy offset="-160"
-              >
+               ng-click="scrolltogetstarted()">
                 GET STARTED
             </a>
         </li>
