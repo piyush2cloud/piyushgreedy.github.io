@@ -101,7 +101,11 @@ app.controller("myCtrl", function ($scope, $timeout, $window, $interval, $docume
 
         console.log($scope.user);            //Check the User Data From Phone
 
-        if (($scope.user.emailaddress).length === 0 || ($scope.user.phonenumber).length === 0) {
+        console.log(($scope.user.emailaddress).length);
+        console.log(($scope.user.phonenumber).length);
+
+
+        if (($scope.user.emailaddress).length === 0 && ($scope.user.phonenumber).length === 0) {
 
             ngDialog.open({
                 template: '<div class="text-center"> <h4 style="color:white;margin-top:5%;font-size:1.1em"> Please Enter All the Details !' +
@@ -112,8 +116,10 @@ app.controller("myCtrl", function ($scope, $timeout, $window, $interval, $docume
 
         }
 
+
         else {
 
+            console.log("Postingdata to server");
             $http.post('Organize/MyPools', $scope.user)
                 .success(function (data, status, headers, config) {
                     console.log(data);
