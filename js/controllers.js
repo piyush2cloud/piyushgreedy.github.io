@@ -14,7 +14,10 @@ app.controller("myCtrl", function ($scope, $timeout, $window, $interval, $docume
     $scope.user = {             //Store the User account details when entered/
         emailaddress: "",
         phonenumber: "",
-        password: ""
+        password: "",
+        fbId: null,
+        fbEmail:null,
+        csrf: "7cf00f4ce6bf0d5158312f2955288c6e"
     };
 
     $scope.customnavbarshow = 0;
@@ -249,7 +252,12 @@ app.controller("myCtrl", function ($scope, $timeout, $window, $interval, $docume
             $scope.new_password1 = newpassword;
             $scope.oldPassword = oldpassword;
 
-            $http.post('flexpool/Forpass', {'email':$scope.email, 'isEmail': true, 'old': $scope.oldPassword, 'pass': $scope.new_password1})
+            $http.post('flexpool/Forpass', {
+                'email': $scope.email,
+                'isEmail': true,
+                'old': $scope.oldPassword,
+                'pass': $scope.new_password1
+            })
 
                 .success(function (data, status, headers, config) {
                     console.log(data);
@@ -261,17 +269,17 @@ app.controller("myCtrl", function ($scope, $timeout, $window, $interval, $docume
 
 
             /*var req = {
-                method: 'POST',
-                url: 'https://mypoolin.com/flexpool/Forpass',
-                data: {email: '$scope.email', isEmail: '', old: '$scope.oldPassword', pass: '$scope.new_password1'},
-                contentType: 'application/json'
-            }
+             method: 'POST',
+             url: 'https://mypoolin.com/flexpool/Forpass',
+             data: {email: '$scope.email', isEmail: '', old: '$scope.oldPassword', pass: '$scope.new_password1'},
+             contentType: 'application/json'
+             }
 
-            $http(req).then(function (success) {
-                console.log(success); //success callback
-            }, function (failure) {
-                console.log(failure);  //failure callback
-            });*/
+             $http(req).then(function (success) {
+             console.log(success); //success callback
+             }, function (failure) {
+             console.log(failure);  //failure callback
+             });*/
 
         }
         else {
