@@ -96,6 +96,7 @@ app.controller("myCtrl", function ($scope, $timeout, $window, $interval, $docume
 
     $scope.autoscrollmobile = 0;  //When user see the section than only autoscroll
 
+
     $scope.formsubmitted = function () {
 
         console.log($scope.user);            //Check the User Data From Phone
@@ -113,18 +114,27 @@ app.controller("myCtrl", function ($scope, $timeout, $window, $interval, $docume
 
         else {
 
-            var req = {
-                method: 'POST',
-                url: 'https://mypoolin.com/Organize/MyPools',
-                data: $scope.user,
-                contentType: 'application/json'
-            }
+            $http.post('Organize/MyPools', $scope.user)
+                .success(function (data, status, headers, config) {
+                    console.log(data);
+                })
+                .error(function (data, status) { // called asynchronously if an error occurs
+                    console.log(data);
+                });
 
-            $http(req).then(function (success) {
-                console.log(success);//success callback
-            }, function (failure) {
-                console.log(failure);//failure callback
-            });
+
+            /* var req = {
+             method: 'POST',
+             url: 'https://mypoolin.com/Organize/MyPools',
+             data: $scope.user,
+             contentType: 'application/json'
+             }
+
+             $http(req).then(function (success) {
+             console.log(success);//success callback
+             }, function (failure) {
+             console.log(failure);//failure callback
+             });*/
         }
 
     }
@@ -162,18 +172,29 @@ app.controller("myCtrl", function ($scope, $timeout, $window, $interval, $docume
 
         else {
 
-            var req = {
-                method: 'POST',
-                url: 'https://mypoolin.com/flexpool/Forpass',
-                data: {email: '$scope.emailidfrommodal', isEmail: ''},
-                contentType: 'application/json'
-            }
 
-            $http(req).then(function (success) {
-                console.log(success); //success callback
-            }, function (failure) {
-                console.log(failure);  //failure callback
-            });
+            $http.post('flexpool/Forpass', {'email': $scope.emailidfrommodal, 'isEmail': true})
+
+                .success(function (data, status, headers, config) {
+                    console.log(data);
+                })
+
+                .error(function (data, status) { // called asynchronously if an error occurs
+                    console.log(data);
+                });
+
+            /* var req = {
+             method: 'POST',
+             url: 'https://mypoolin.com/flexpool/Forpass',
+             data: {email: '$scope.emailidfrommodal', isEmail: ''},
+             contentType: 'application/json'
+             }
+
+             $http(req).then(function (success) {
+             console.log(success); //success callback
+             }, function (failure) {
+             console.log(failure);  //failure callback
+             });*/
         }
 
     }
@@ -222,7 +243,18 @@ app.controller("myCtrl", function ($scope, $timeout, $window, $interval, $docume
             $scope.new_password1 = newpassword;
             $scope.oldPassword = oldpassword;
 
-            var req = {
+            $http.post('flexpool/Forpass', {'email':$scope.email, 'isEmail': true, 'old': $scope.oldPassword, 'pass': $scope.new_password1})
+
+                .success(function (data, status, headers, config) {
+                    console.log(data);
+                })
+
+                .error(function (data, status) { // called asynchronously if an error occurs
+                    console.log(data);
+                });
+
+
+            /*var req = {
                 method: 'POST',
                 url: 'https://mypoolin.com/flexpool/Forpass',
                 data: {email: '$scope.email', isEmail: '', old: '$scope.oldPassword', pass: '$scope.new_password1'},
@@ -233,7 +265,7 @@ app.controller("myCtrl", function ($scope, $timeout, $window, $interval, $docume
                 console.log(success); //success callback
             }, function (failure) {
                 console.log(failure);  //failure callback
-            });
+            });*/
 
         }
         else {
@@ -290,20 +322,34 @@ app.controller("myCtrl", function ($scope, $timeout, $window, $interval, $docume
         else {
 
             console.log("valid mobile");
+            console.log($scope.mobilenumber);
+
             $scope.modaltextdisplay = "Awesome! The app download link is being sent to your phone";
 
-            var req = {
-                method: 'POST',
-                url: 'https://mypoolin.com/confirmation.php',
-                data: {mobile: '9711593119'},
-                contentType: 'application/json'
-            }
 
-            $http(req).then(function (success) {
-                console.log(success); //success callback
-            }, function (failure) {
-                console.log(failure);  //failure callback
-            });
+            $http.post('confirmation.php', {'mobile': $scope.mobilenumber})
+
+                .success(function (data, status, headers, config) {
+                    console.log(data);
+                })
+
+                .error(function (data, status) { // called asynchronously if an error occurs
+                    console.log(data);
+                });
+
+
+            /* var req = {
+             method: 'POST',
+             url: 'https://mypoolin.com/confirmation.php',
+             data: {mobile: '$scope.mobilenumber'},
+             contentType: 'application/json'
+             }
+
+             $http(req).then(function (success) {
+             console.log(success); //success callback
+             }, function (failure) {
+             console.log(failure);  //failure callback
+             });*/
         }
 
         ngDialog.open({
@@ -413,7 +459,6 @@ app.controller("myCtrl", function ($scope, $timeout, $window, $interval, $docume
         $document.scrollTopAnimated(0).then(function () {
             console && console.log('You just scrolled to the top!');
         });
-
 
 
         $scope.makebackgroundnormal();
@@ -1012,29 +1057,40 @@ app.controller("myCtrl", function ($scope, $timeout, $window, $interval, $docume
     $scope.submitemail = function () {
 
         $scope.isemailvalid = $scope.validateEmail($scope.emailsubscribe);
-        console.log(($scope.isemailvalid === false));
 
 
         if (($scope.isemailvalid === false)) {
+            console.log("invalid email");
             $scope.modalemailtext = "Whoops! Please Enter the valid Email address !";
         }
 
         else {
 
+            console.log($scope.emailsubscribe);
+            console.log("valid email");
+
             $scope.modalemailtext = "Awesome! Your email has been subscribed";
 
-            var req = {
-                method: 'POST',
-                url: 'https://mypoolin.com/confirmation.php',
-                data: {email: '$scope.emailsubscribe'},
-                contentType: 'application/json'
-            }
+            $http.post('confirmation.php', {'email': $scope.emailsubscribe})
+                .success(function (data, status, headers, config) {
+                    console.log(data);
+                })
+                .error(function (data, status) { // called asynchronously if an error occurs
+                    console.log(data);
+                });
 
-            $http(req).then(function (success) {
-                console.log(success); //success callback
-            }, function (failure) {
-                console.log(failure);  //failure callback
-            });
+            /* var req = {
+             method: 'POST',
+             url: 'https://mypoolin.com/confirmation.php',
+             data: {email: '$scope.emailsubscribe'},
+             contentType: 'application/json'
+             }
+
+             $http(req).then(function (success) {
+             console.log(success); //success callback
+             }, function (failure) {
+             console.log(failure);  //failure callback
+             });*/
         }
 
         ngDialog.open({
