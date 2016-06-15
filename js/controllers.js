@@ -16,7 +16,7 @@ app.controller("myCtrl", function ($scope, $timeout, $window, $interval, $docume
         phonenumber: "",
         password: "",
         fbId: null,
-        fbEmail:null,
+        fbEmail: null,
         csrf: "7cf00f4ce6bf0d5158312f2955288c6e"
     };
 
@@ -108,6 +108,7 @@ app.controller("myCtrl", function ($scope, $timeout, $window, $interval, $docume
         console.log(($scope.user.phonenumber).length);
 
 
+
         if (($scope.user.emailaddress).length === 0 && ($scope.user.phonenumber).length === 0) {
 
             ngDialog.open({
@@ -145,6 +146,20 @@ app.controller("myCtrl", function ($scope, $timeout, $window, $interval, $docume
              console.log(failure);//failure callback
              });*/
         }
+
+
+        if (($scope.user.emailaddress).length === 1 && ($scope.user.phonenumber).length === 1) {
+
+            ngDialog.open({
+                template: '<div class="text-center"> <h4 style="color:white;margin-top:5%;font-size:1.1em"> ' +
+                'Please Enter Either Email Address or Mobile Number !' +
+                '</h4> <button class="modalokbutton btn" ng-click="closeSelf()"> Ok</button> </div>',
+                plain: true,
+                scope: $scope
+            });
+
+        }
+
 
     }
 
