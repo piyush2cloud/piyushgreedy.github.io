@@ -102,63 +102,71 @@ app.controller("myCtrl", function ($scope, $timeout, $window, $interval, $docume
 
     $scope.formsubmitted = function () {
 
-        console.log($scope.user);            //Check the User Data From Phone
+        console.log($scope.user);            //Check the User Data From cpnsole
 
-        console.log(($scope.user.emailaddress).length);
-        console.log(($scope.user.phonenumber).length);
+        $scope.isformemailvalid = $scope.validateEmail($scope.user.emailaddress);
+        $scope.isformnumbervalid = !(isNaN($scope.user.phonenumber));
+        $scope.formpasswordlength = ($scope.user.password).length;
+        $scope.formemaillength = ($scope.user.emailaddress).length;
+        $scope.formnumberlength = ($scope.user.phonenumber).length;
 
+        if ($scope.formemaillength > 0 && $scope.formnumberlength === 0 && $scope.formpasswordlength > 0) {
 
+            if ($scope.isformemailvalid) {
+                document.getElementById('login-form').submit();
+            }
 
-        if (($scope.user.emailaddress).length === 0 && ($scope.user.phonenumber).length === 0) {
-
-            ngDialog.open({
-                template: '<div class="text-center"> <h4 style="color:white;margin-top:5%;font-size:1.1em"> Please Enter All the Details !' +
-                '</h4> <button class="modalokbutton btn" ng-click="closeSelf()"> Ok</button> </div>',
-                plain: true,
-                scope: $scope
-            });
-
-        }
-
-
-        else {
-
-            console.log("Postingdata to server");
-            $http.post('Organize/MyPools', $scope.user)
-                .success(function (data, status, headers, config) {
-                    console.log(data);
-                })
-                .error(function (data, status) { // called asynchronously if an error occurs
-                    console.log(data);
+            else {
+                ngDialog.open({
+                    template: '<div class="text-center"> <h4 style="color:white;margin-top:5%;font-size:1.1em"> Please Enter valid Email Address !' +
+                    '</h4> <button class="modalokbutton btn" ng-click="closeSelf()"> Ok</button> </div>',
+                    plain: true,
+                    scope: $scope
                 });
-
-
-            /* var req = {
-             method: 'POST',
-             url: 'https://mypoolin.com/Organize/MyPools',
-             data: $scope.user,
-             contentType: 'application/json'
-             }
-
-             $http(req).then(function (success) {
-             console.log(success);//success callback
-             }, function (failure) {
-             console.log(failure);//failure callback
-             });*/
+            }
         }
 
 
-        if (($scope.user.emailaddress).length === 1 && ($scope.user.phonenumber).length === 1) {
+        if ($scope.formemaillength === 0 && $scope.formnumberlength > 0 && $scope.formpasswordlength > 0) {
 
+            if($scope.isformnumbervalid && $scope.formnumberlength ===10){
+                document.getElementById('login-form').submit();
+            }
+
+            else{
+                ngDialog.open({
+                    template: '<div class="text-center"> <h4 style="color:white;margin-top:5%;font-size:1.1em"> Please Enter Correct Number !' +
+                    '</h4> <button class="modalokbutton btn" ng-click="closeSelf()"> Ok</button> </div>',
+                    plain: true,
+                    scope: $scope
+                });
+            }
+
+        }
+
+
+
+        if(($scope.formemaillength===0 && $scope.formpasswordlength===0) || ($scope.formnumberlength===0 && $scope.formpasswordlength===0) ){
             ngDialog.open({
-                template: '<div class="text-center"> <h4 style="color:white;margin-top:5%;font-size:1.1em"> ' +
-                'Please Enter Either Email Address or Mobile Number !' +
+                template: '<div class="text-center"> <h4 style="color:white;margin-top:5%;font-size:1.1em"> Please Enter Correct Details !' +
                 '</h4> <button class="modalokbutton btn" ng-click="closeSelf()"> Ok</button> </div>',
                 plain: true,
                 scope: $scope
             });
-
         }
+
+        if($scope.formnumberlength>0 && $scope.formemaillength>0){
+            ngDialog.open({
+                template: '<div class="text-center"> <h4 style="color:white;margin-top:5%;font-size:1.1em">' +
+                ' Please Enter Either Email address or Mobile Number !' +
+                '</h4> <button class="modalokbutton btn" ng-click="closeSelf()"> Ok</button> </div>',
+                plain: true,
+                scope: $scope
+            });
+        }
+
+
+
 
 
     }
@@ -197,7 +205,7 @@ app.controller("myCtrl", function ($scope, $timeout, $window, $interval, $docume
         else {
 
 
-            $http.post('flexpool/Forpass', {'email': $scope.emailidfrommodal, 'isEmail': true})
+            $http.post('https://mypoolin.com/flexpool/Forpass', {'email': $scope.emailidfrommodal, 'isEmail': true})
 
                 .success(function (data, status, headers, config) {
                     console.log(data);
@@ -267,7 +275,7 @@ app.controller("myCtrl", function ($scope, $timeout, $window, $interval, $docume
             $scope.new_password1 = newpassword;
             $scope.oldPassword = oldpassword;
 
-            $http.post('flexpool/Forpass', {
+            $http.post('https://mypoolin.com/flexpool/Forpass', {
                 'email': $scope.email,
                 'isEmail': true,
                 'old': $scope.oldPassword,
@@ -356,7 +364,7 @@ app.controller("myCtrl", function ($scope, $timeout, $window, $interval, $docume
             $scope.modaltextdisplay = "Awesome! The app download link is being sent to your phone";
 
 
-            $http.post('confirmation.php', {'mobile': $scope.mobilenumber})
+            $http.post('https://mypoolin.com/confirmation.php', {'mobile': $scope.mobilenumber})
 
                 .success(function (data, status, headers, config) {
                     console.log(data);
@@ -1100,7 +1108,7 @@ app.controller("myCtrl", function ($scope, $timeout, $window, $interval, $docume
 
             $scope.modalemailtext = "Awesome! Your email has been subscribed";
 
-            $http.post('confirmation.php', {'email': $scope.emailsubscribe})
+            $http.post('https://mypoolin.com/confirmation.php', {'email': $scope.emailsubscribe})
                 .success(function (data, status, headers, config) {
                     console.log(data);
                 })

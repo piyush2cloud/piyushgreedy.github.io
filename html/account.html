@@ -4,36 +4,32 @@
     <div class="row">
 
         <div class="col-lg-6 col-md-12 col-xs-12 col-sm-12">
-            <form id="login-form" class="login-form" method="post" ng-submit="formsubmitted()">
 
-                <input type="email" class="input-email"
-                       name="email" id="email" placeholder="Email" value=""
-                       ng-model="user.emailaddress">
 
+            <form id="login-form" class="login-form" method="POST" action="https://mypoolin.com/Organize/MyPools">
+
+                <input type="text" class="input-email" name="email" id="email" placeholder="Email" value="" ng-model="user.emailaddress">
                 Or
-
-                <input type="tel" class="input-phone" name="phone" maxlength="10" id="phone"
-                       placeholder="Phone number" value="" ng-model="user.phonenumber">
+                <input type="tel" class="input-phone" name="phone" maxlength="10" id="phone" placeholder="Phone number" value=""
+                       ng-model="user.phonenumber">
                 <br><br>
-
 
                 <input type="password" name="password" id="password" class="input-password" placeholder="Password"
                        ng-model="user.password" style="display: block">
                 <br>
 
-                <a href="#"
-                   ng-click="openforgotmodal()"
-                   style="color: black;text-decoration: none;font-size: 1.2em;margin-top: 3%;padding-bottom: 3%">
+                <a href="#" ng-click="openforgotmodal()" style="color: black;text-decoration: none;font-size: 1.2em;margin-top: 3%;padding-bottom: 3%">
                     Forgot / Change password?
-                    <br><br> </a>
+                    <br><br>
+                </a>
 
-                <input type="hidden" name="csrf" id="csrf"  value="7cf00f4ce6bf0d5158312f2955288c6e">
+                <input type="hidden" name="csrf" id="csrf" value="7cf00f4ce6bf0d5158312f2955288c6e">
 
                 <input type="hidden" name="fbID" id="fbID" value="null">
 
-                <input type="hidden" name="fbEmail"  id="fbEmail" value="null">
+                <input type="hidden" name="fbEmail" id="fbEmail" value="null">
 
-                <input type="submit" class="submit formsubmitbutton" value="Go!" style="display: block">
+                <input type="button" ng-click="formsubmitted()" class="submit formsubmitbutton"  value="Go!" style="display: block">
 
             </form>
         </div>
