@@ -129,11 +129,11 @@ app.controller("myCtrl", function ($scope, $timeout, $window, $interval, $docume
 
         if ($scope.formemaillength === 0 && $scope.formnumberlength > 0 && $scope.formpasswordlength > 0) {
 
-            if($scope.isformnumbervalid && $scope.formnumberlength ===10){
+            if ($scope.isformnumbervalid && $scope.formnumberlength === 10) {
                 document.getElementById('login-form').submit();
             }
 
-            else{
+            else {
                 ngDialog.open({
                     template: '<div class="text-center"> <h4 style="color:white;margin-top:5%;font-size:1.1em"> Please Enter Correct Number !' +
                     '</h4> <button class="modalokbutton btn" ng-click="closeSelf()"> Ok</button> </div>',
@@ -145,8 +145,7 @@ app.controller("myCtrl", function ($scope, $timeout, $window, $interval, $docume
         }
 
 
-
-        if(($scope.formemaillength===0 && $scope.formpasswordlength===0) || ($scope.formnumberlength===0 && $scope.formpasswordlength===0) ){
+        if (($scope.formemaillength === 0 && $scope.formpasswordlength === 0) || ($scope.formnumberlength === 0 && $scope.formpasswordlength === 0)) {
             ngDialog.open({
                 template: '<div class="text-center"> <h4 style="color:white;margin-top:5%;font-size:1.1em"> Please Enter Correct Details !' +
                 '</h4> <button class="modalokbutton btn" ng-click="closeSelf()"> Ok</button> </div>',
@@ -155,7 +154,7 @@ app.controller("myCtrl", function ($scope, $timeout, $window, $interval, $docume
             });
         }
 
-        if($scope.formnumberlength>0 && $scope.formemaillength>0){
+        if ($scope.formnumberlength > 0 && $scope.formemaillength > 0) {
             ngDialog.open({
                 template: '<div class="text-center"> <h4 style="color:white;margin-top:5%;font-size:1.1em">' +
                 ' Please Enter Either Email address or Mobile Number !' +
@@ -164,9 +163,6 @@ app.controller("myCtrl", function ($scope, $timeout, $window, $interval, $docume
                 scope: $scope
             });
         }
-
-
-
 
 
     }
@@ -190,6 +186,7 @@ app.controller("myCtrl", function ($scope, $timeout, $window, $interval, $docume
     $scope.openSelfParamsold = function (gettext) {
 
         $scope.emailidfrommodal = gettext;
+
         $scope.closeSelf();
 
 
@@ -204,8 +201,10 @@ app.controller("myCtrl", function ($scope, $timeout, $window, $interval, $docume
 
         else {
 
+            var isEmail = isNaN($scope.emailidfrommodal);
+            console.log("isEmail" + isEmail);
 
-            $http.post('https://mypoolin.com/flexpool/Forpass', {'email': $scope.emailidfrommodal, 'isEmail': true})
+            $http.post('https://mypoolin.com/flexpool/Forpass', {'email': $scope.emailidfrommodal, 'isEmail': isEmail})
 
                 .success(function (data, status, headers, config) {
                     console.log(data);
@@ -275,9 +274,12 @@ app.controller("myCtrl", function ($scope, $timeout, $window, $interval, $docume
             $scope.new_password1 = newpassword;
             $scope.oldPassword = oldpassword;
 
+            var isEmail = isNaN($scope.emailidfrommodal);
+            console.log("isEmail:" + isEmail);
+
             $http.post('https://mypoolin.com/flexpool/Forpass', {
                 'email': $scope.email,
-                'isEmail': true,
+                'isEmail': isEmail,
                 'old': $scope.oldPassword,
                 'pass': $scope.new_password1
             })
@@ -1150,18 +1152,5 @@ app.controller("myCtrl", function ($scope, $timeout, $window, $interval, $docume
 });
 
 
-/*app.controller("splashCtrl", function ($scope, $timeout, $window, $interval, $document, $filter, $http, $location, ngDialog, $rootScope) {
 
- $rootScope.mainview = 0;
-
- $timeout(function () {
- $rootScope.mainview = 1;
- $timeout(function () {
- $location.url('/main');
- }, 100);
-
- }, 2000);
-
-
- });*/
 

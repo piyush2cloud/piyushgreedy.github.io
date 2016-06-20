@@ -15,9 +15,7 @@
     <a href="Explore/bot.html" style="text-decoration: none;" ng-class="{hideaccountbot:hideaccountbot}">
         <div class="text-center showbot"
              style="position: absolute;left: 0;top:76px;width: 40px;height:40px;background-color: #f5a623;border-radius: 5px;z-index: 40">
-            <i class="ion-chatbubble-working " style="font-size: 2.1em;color: white">
-
-            </i>
+            <i class="ion-chatbubble-working " style="font-size: 2.1em;color: white"></i>
         </div>
 
         <div class="text-center hidebot"
@@ -33,12 +31,23 @@
 
 
     <a href="tel:+91-9599771577" style="text-decoration: none;">
-        <div class="text-center" ng-mouseenter="showcallus()" ng-class="{showcallsymbol:showcallsymbol}"
-             style="position: fixed;right: 0;bottom:0;width: 54px;height:52px;background-color: #366595;border-radius: 5px;z-index: 40">
-            <i class="ion-social-whatsapp-outline" style="font-size: 2.7em;color: white">
 
+        <div class="text-center" ng-mouseenter="showcallus()" ng-class="{showcallsymbol:showcallsymbol}"
+             style="position: fixed;
+             right: 0;
+             bottom:0;
+             width: 54px;
+             height:50px;
+             background-color: #366595;
+             border-radius: 5px;
+             z-index: 40;
+             text-align: center;
+             padding-top: 1px">
+
+            <i class="ion-social-whatsapp-outline" style="font-size: 2.7em;color: white;">
             </i>
         </div>
+
         <img src="images/Callus.png" ng-mouseleave="hidecallus()" ng-class="{showcall:showcall}"
              style="width:200px;position: fixed;right: 0;bottom:0;border-top-right-radius:0px;border-bottom-right-radius:0px;z-index: 40">
     </a>
@@ -77,7 +86,7 @@
                data-target=".sidebar-right"
                ng-class="{howitworksanimate:howitworksanimate}"
                ng-click="scrolltohome()"
-               >
+                    >
                 HOME
             </a>
         </li>
@@ -101,7 +110,7 @@
         </li>
 
 
-        <li class="getstarted" ng-class="{howitworksanimate:howitworksanimate}"  data-toggle="sidebar"
+        <li class="getstarted" ng-class="{howitworksanimate:howitworksanimate}" data-toggle="sidebar"
             data-target=".sidebar-right">
             <a class="getstarted" style="font-family: 'Titillium Web', sans-serif"
                ng-click="scrolltogetstarted()">

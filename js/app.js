@@ -1,26 +1,7 @@
 var mainApp = angular.module("poolin", ['poolin.controllers', 'duScroll', 'ngDialog', 'ngRoute']);
 
-mainApp.config(['$routeProvider', function ($routeProvider) {
-    $routeProvider.
-
-        when('/splash', {
-            templateUrl: 'splash.html',
-            controller: 'splashCtrl'
-        }).
-
-        when('/main', {
-            templateUrl: 'main.html',
-            controller: 'myCtrl'
-        }).
-
-        otherwise({
-            redirectTo: '/splash'
-        });
-}]);
-
 mainApp.run(function ($rootScope) {
     $rootScope.mainview = 0;
-
 })
 
 /* This is the directive used to check the scroll height of the screen dynamically */
