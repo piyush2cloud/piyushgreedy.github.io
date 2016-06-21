@@ -45,29 +45,53 @@
 
 <body scroll ng-controller="secureCtrl">
 
-<h1 parallax parallax-ratio="1.22" class="parallax">
-    <img src="images/Logo_Mypoolin_white.png" style="width: 130px">
-</h1>
 
-<div parallax-background class="photo nature" parallax-ratio="0.2">
+<div parallax-background class="photo nature" parallax-ratio="0.5" style="z-index: 5">
 
     <div class="sectionone row text-center nature">
 
         <h3 style="color: white;margin-top:2%;z-index: 100"> Introducing MyPoolin Security</h3>
 
-        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 text-center" style="padding-top:100px;padding-bottom:50px">
-            <img src="devices.png" style="width: 280px">
+        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 text-center" style="padding-top:50px;">
+            <img parallax parallax-ratio="0.5" src="devices.png" style="width: 280px;">
         </div>
 
-        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 text-center" style="padding-top:100px;padding-bottom:50px">
+        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 text-center" style="padding-top:100px;padding-bottom:50px;">
             <h3 style="color: white">Bank grade security for transferring money</h3>
             <h4 style="color: white">
                 Based on UPI, running on IMPS
             </h4>
             <h4 style="color: white">
-                Major private banks as partners
+                Major private banks as partners{{sectiontwophonehide}}{{sectiontwophoneshow}}
             </h4>
         </div>
+
+    </div>
+
+</div>
+
+
+
+
+
+
+<div parallax-background class="photo food row" parallax-ratio="0.8">
+
+    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" style="padding-top:100px;padding-bottom:50px">
+        <h3>Payment application level secure</h3>
+        <h4 style="color: white">
+            Handled by major trusted and approved payment gateways in the country
+        </h4>
+        <h4 style="color: white">
+            Partners in the form of Payumoney, Mobikwik, PayPal and more.
+        </h4>
+    </div>
+
+
+    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 text-center">
+        <img parallax parallax-ratio="0.7"
+
+             src="devices.png" style="width: 280px;margin-top:-420px;">
     </div>
 
 
@@ -76,61 +100,36 @@
 
 
 
-    <div parallax-background class="photo food" parallax-ratio="0.8" parallax-vertical-offset="100">
-
-        <div class="sectionone row text-center">
-
-            <h3 style="color: white;margin-top:2%;z-index: 100"></h3>
-
-            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 text-center" style="padding-top:100px;padding-bottom:50px">
-                <img src="devices.png" style="width: 280px">
-            </div>
-
-            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 text-center" style="padding-top:100px;padding-bottom:50px">
-                <h3>Payment application level secure</h3>
-                <h4 style="color: white">
-                    Handled by major trusted and approved payment gateways in the country
-                </h4>
-                <h4 style="color: white">
-                    Partners in the form of Payumoney, Mobikwik, PayPal and more.
-                </h4>
-            </div>
-        </div>
 
 
 
-    </div>
 
 
-    <div parallax-background class="photo animals" parallax-ratio="0.7">
 
-        <div class="sectionone row text-center">
+
+
+
+
+<div parallax-background class="photo animals" parallax-ratio="0.7">
+
+    <div class="sectionone row">
 
         <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 text-center" style="padding-top: 100px;padding-bottom:50px">
-            <img src="devices.png" style="width: 280px">
         </div>
 
-        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 text-center" style="padding-top: 100px;padding-bottom:50px">
+        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 "
+             style="padding-top: 100px;padding-bottom:50px">
             <h3>Best in class server frameworks with secure logic flow</h3>
             <h4 style="color: white">Three times resilient data (as compared to any general system) </h4>
             <h4 style="color: white">Major private banks as partners</h4>
             <h4 style="color: white">Class 3 encryption on all data stored in databases (all private)</h4>
         </div>
 
-            </div>
     </div>
 
-
-    <div parallax-background class="photo cats" parallax-ratio="1">
-
-        <div class="row text-center" style="padding-top: 2%">
-            <img src="images/Logo_Mypoolin_white.png" style="width: 130px">
-        </div>
-    </div>
 
 
 </div>
-
 
 <!--<div class="container-fluid containerfluidwrapper">
 

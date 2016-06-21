@@ -26,19 +26,17 @@ h1 {
 }
 
 .parallax {
-    position:absolute;
+    position: absolute;
     left: 0;
     top: 0;
 }
 
 .photo {
     background-attachment: fixed;
-    background-repeat: no-repeat;
-    height: 550px;
+    background-repeat: repeat;
+    height: 500px;
     position: relative;
 }
-
-
 
 .food {
     background-image: url(../images/back2.jpg);
@@ -47,6 +45,7 @@ h1 {
 .animals {
     background-image: url(../images/back1.jpg);
 }
+
 .nature {
     background-image: url(../images/back1.jpg);
 }
@@ -56,8 +55,23 @@ h1 {
     height: 100px;
 }
 
+.sectiononeleftzindexup {
+    z-index: 2;
+}
 
+.sectiononeleftzindexdown {
+    z-index: -2;
+}
 
+.sectiononerightzindexup {
+    z-index: 2;
+
+}
+
+.sectiononerightzindexdown {
+    z-index: 2;
+
+}
 
 /* latin-ext */
 @font-face {

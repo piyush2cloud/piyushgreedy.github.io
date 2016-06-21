@@ -1,0 +1,78 @@
+/* Set all parents to full height */
+html, body, 
+.container,
+.cbp-fbscroller,
+.cbp-fbscroller section { 
+	height: 100%; 
+}
+
+h1,h2,h3,h4,h5,h6{
+	font-family: "Titillium Web",sans-serif;
+	font-weight: 100;
+}
+
+/* The nav is fixed on the right side  and we center it by translating it 50% 
+(we don't know it's height so we can't use the negative margin trick) */
+.cbp-fbscroller > nav {
+	position: fixed;
+	z-index: 9999;
+	right:40px;
+	top: 50%;
+	width: 20px;
+	-webkit-transform: translateY(-50%);
+	-moz-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	transform: translateY(-50%);
+}
+
+.cbp-fbscroller > nav a {
+	display: block;
+	position: relative;
+	z-index: 9999;
+	color: transparent;
+	width: 20px;
+	height: 20px;
+	outline: none;
+	margin: 25px 0;
+	border-radius: 50%;
+	border: 3px solid #fff;
+}
+
+.no-touch .cbp-fbscroller > nav a:hover {
+	background: rgba(255,255,255,0.6);
+}
+
+.cbp-fbscroller > nav a.cbp-fbcurrent {
+	background: #fff;
+}
+
+/* background-attachment does the trick */
+.cbp-fbscroller section {
+	position: relative;
+	background-position: top center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.no-touch .cbp-fbscroller section {
+	background-attachment: fixed;
+}
+
+@media (min-width: 768px){
+	#fbsection1 {
+		background-image: url(./images/1.png);
+	}
+
+	#fbsection2 {
+		background-image: url(./images/2.png);
+	}
+
+	#fbsection3 {
+		background-image: url(./images/3.png);
+	}
+
+	#fbsection4 {
+		background-image: url(./images/4.png);
+	}
+}	
+
