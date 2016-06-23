@@ -19,16 +19,20 @@ body, html { font-size: 100%; padding: 0; margin: 0;}
 .clearfix:after { clear: both; }
 
 body {
-    font-family: 'titillium web',sans-serif;
+    font-family: 'Titillium Web',sans-serif;
     color: #fff;
     background: #7DA1C6;
-	padding-bottom: 0px;
-	margin-bottom: 0px;
+	font-weight: 100;
 }
 
 a {
 	color: #f0f0f0;
 	text-decoration: none;
+}
+
+h1,h2,h3,h4,h5,h6{
+	font-family: "Titillium Web",sans-serif;
+	font-weight: 200;
 }
 
 a:hover {

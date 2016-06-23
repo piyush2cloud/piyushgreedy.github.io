@@ -3,22 +3,7 @@ html, body,
 .container,
 .cbp-fbscroller,
 .cbp-fbscroller section { 
-	width: 100%;
-}
-
-h1,h2,h3,h4,h5,h6{
-	font-family: "Titillium Web",sans-serif;
-	font-weight: 100;
-}
-
-.textfooter {
-	color: white;
-	text-decoration: none;
-}
-
-.textfooter:hover {
-	color: #f5a623;
-	text-decoration: none;
+	height: 100%; 
 }
 
 /* The nav is fixed on the right side  and we center it by translating it 50% 
@@ -56,21 +41,33 @@ h1,h2,h3,h4,h5,h6{
 	background: #fff;
 }
 
+/* background-attachment does the trick */
+.cbp-fbscroller section {
+	position: relative;
+	background-position: top center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
 
-
-
+.no-touch .cbp-fbscroller section {
+	background-attachment: fixed;
+}
 
 @media (min-width: 768px){
 	#fbsection1 {
+		background-image: url(./images/1.png);
 	}
 
 	#fbsection2 {
+		background-image: url(./images/2.png);
 	}
 
 	#fbsection3 {
+		background-image: url(./images/3.png);
 	}
 
 	#fbsection4 {
+		background-image: url(./images/4.png);
 	}
 }	
 
