@@ -2,7 +2,38 @@
 html, body, 
 .container,
 .cbp-fbscroller,
-.cbp-fbscroller section { 
+.cbp-fbscroller section {
+	height: 100%;
+	width: 100%;
+	margin-left: 0px;
+	margin-right: 0px;
+}
+
+.container{
+	padding-left: 0px;
+	padding-right: 0px;
+}
+
+.textfooter {
+	color: white;
+	text-decoration: none;
+}
+
+.textfooter:hover {
+	color: #f5a623;
+	text-decoration: none;
+}
+
+.poolininfo {
+	background-color: #2E3842;
+	padding-top: 5%;
+	padding-bottom: 3%;
+	width: 100%;
+	margin-right: 0px;
+	margin-left: 0px;
+	border-bottom: 1px solid #2E3842;
+	padding-left: 5%;
+	padding-right: 2%;
 }
 
 /* The nav is fixed on the right side  and we center it by translating it 50% 
