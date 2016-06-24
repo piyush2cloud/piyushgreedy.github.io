@@ -3,10 +3,10 @@ html, body,
 .container,
 .cbp-fbscroller,
 .cbp-fbscroller section {
-	height: 100%;
 	width: 100%;
 	margin-left: 0px;
 	margin-right: 0px;
+	height: 100%;
 }
 
 .container{
@@ -83,7 +83,7 @@ html, body,
 	background-attachment: fixed;
 }
 
-@media (min-width: 768px){
+@media (min-width: 980px){
 	#fbsection1 {
 		background-image: url(./images/1.png);
 	}

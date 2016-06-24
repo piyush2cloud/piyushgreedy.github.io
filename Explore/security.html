@@ -40,16 +40,19 @@
 
         @media (min-width: 768px) and (max-width: 979px) {
             #fbsection1, #fbsection3 {
-                text-align: right;
-                padding-right: 4em;
+                text-align: center;
                 font-size: x-large;
                 color: black;
                 padding-top: 15%;
+
+            }
+
+            .text-center-footer{
+                text-align: center;
             }
 
             #fbsection2, #fbsection4 {
-                text-align: left;
-                padding-left: 4em;
+                text-align: center;
                 font-size: x-large;
                 color: black;
                 padding-top: 15%;
@@ -64,6 +67,10 @@
                 padding-top: 10%;
             }
 
+            .gol{
+                background-color: red;
+            }
+
             #fbsection2, #fbsection4 {
                 text-align: left;
                 padding-left: 4em;
@@ -76,18 +83,26 @@
         @media (max-width: 767px) {
             #fbsection1, #fbsection3 {
                 text-align: center;
-                font-size: x-large;
-                margin: 8%;
                 color: white;
                 padding-top: 20%;
+                font-size: xx-small;
+            }
+
+            .small-screen-font{
+                font-size: 2em;
+            }
+
+
+            .text-center-footer{
+                text-align: center;
             }
 
             #fbsection2, #fbsection4 {
                 text-align: center;
-                font-size: x-large;
-                margin: 8%;
                 color: white;
                 padding-top: 20%;
+                font-size: xx-small;
+
             }
         }
 
@@ -164,52 +179,53 @@
         </nav>
         <section id="fbsection1">
 
+
             <h2>Strong base system</h2>
-            <h3>
+            <h3 class="small-screen-font">
                 <span class="glyphicon glyphicon-home" style="font-size:1em;color:#2e4965"></span>
                 Major private banks in the country as partners
             </h3>
-            <h3>
+            <h3 class="small-screen-font">
                 <span class="glyphicon glyphicon-credit-card" style="font-size:1em;color:#2e4965"></span>
                 Peer to peer transfers running on IMPS, approved by RBI
             </h3>
         </section>
         <section id="fbsection2">
             <h2>Secure application level</h2>
-            <h3>
+            <h3 class="small-screen-font">
                 <span class="glyphicon glyphicon-check" style="font-size:1em;color:#2e4965"></span>
                 Handled by trusted and popular payment gateways<br> in the country </h3>
-            <h3>
+            <h3 class="small-screen-font">
                 <span class="glyphicon glyphicon-globe" style="font-size:1em;color:#2e4965"></span>
                 Payment processors in the form of Payumoney, Paytm,<br> PayPal and more.
             </h3>
         </section>
         <section id="fbsection3">
             <h2> Encryption and Resilience</h2>
-            <h3>
+            <h3 class="small-screen-font" >
                 <span class="glyphicon glyphicon-align-justify" style="font-size:1em;color:#2e4965"></span>
                 Best in class servers and frameworks with<br> solid logic flow </h3>
-            <h3>
+            <h3 class="small-screen-font">
                 <span class="glyphicon glyphicon-floppy-save" style="font-size:1em;color:#2e4965"></span>
                 Three times resilient data (as compared to<br> any generic system)
             </h3>
-            <h3>
+            <h3 class="small-screen-font">
                 <span class="glyphicon glyphicon-qrcode" style="font-size:1em;color:#2e4965"></span>
                 256-bit level encryption on all data stored in our databases
             </h3>
         </section>
-        <section id="fbsection4">
+        <section id="fbsection4" class="small-screen-font">
             <h2> More safeguards</h2>
-            <h3>
+            <h3 class="small-screen-font">
                 <span class="glyphicon glyphicon-user" style="font-size:1em;color:#2e4965"></span>
                 Mypoolin is meant for transacting and planning<br> with friends / acquaintances </h3>
-            <h3>
+            <h3 class="small-screen-font">
                 <span class="glyphicon glyphicon-flag" style="font-size:1em;color:#2e4965"></span>
                 Avoid dealing with unknown people. In case of any <br>doubts, ping us on hello@mypoolin.com
             </h3>
         </section>
 
-        <div class="poolininfo row" style="overflow-x: hidden">
+        <div class="poolininfo row" style="overflow-x: hidden" text-center-footer>
 
             <div class="col-lg-2 col-md-2 col-xs-12 col-sm-12 text-center">
                 <h4>
@@ -219,7 +235,7 @@
                 <h6 style="color: white;margin-top:4px">Copyright &copy; 2016 <br> All rights reserved.</h6>
             </div>
 
-            <div class="col-lg-2 col-md-2 col-xs-12 col-sm-12">
+            <div class="col-lg-2 col-md-2 col-xs-12 col-sm-12 text-center-footer">
 
                 <h4 style="color:white;"><b>About</b></h4>
                 <h5 style="color:white;margin-top:0px">
@@ -231,7 +247,7 @@
 
             </div>
 
-            <div class="col-lg-2 col-md-2 col-xs-12 col-sm-12">
+            <div class="col-lg-2 col-md-2 col-xs-12 col-sm-12 text-center-footer">
 
                 <h4 style="color:white"><b>Buzz</b></h4>
                 <h5 style="color:white;margin-top:0px">
@@ -242,7 +258,7 @@
 
             </div>
 
-            <div class="col-lg-2 col-md-2 col-xs-12 col-sm-12">
+            <div class="col-lg-2 col-md-2 col-xs-12 col-sm-12 text-center-footer">
                 <h4 style="color:white"><b>Social</b></h4>
 
                 <a class="iconfooter" href="http://www.facebook.com/share.php?u=https://mypoolin.com/Explore/bot.html"
@@ -263,7 +279,7 @@
             </div>
 
 
-            <div class="col-lg-4 col-md-4 col-xs-12 col-sm-12 martop3per">
+            <div class="col-lg-4 col-md-4 col-xs-12 col-sm-12 martop3per text-center-footer">
 
                 <h4 style="color:white;"><b>Stay Connected</b></h4>
                 <h5 style="color:white;margin-top:0px">
@@ -295,9 +311,7 @@
 </script>
 
 <script src="./bot_files/modules.min.js"></script>
-</script>
-<
-script
+<script
 type = "text/javascript"
 src = "./bot_files/l.js" ></script>
 <script type="text/javascript" src="./bot_files/gteamrs.js"></script>
@@ -305,10 +319,8 @@ src = "./bot_files/l.js" ></script>
 
 <script src="./bot_files/SharedApp.js"></script>
 <script src="./bot_files/json3.js"></script>
-</script>
-<
-script
-src = "./bot_files/nlp_compromise.min.js" ></script>
+
+<script src = "./bot_files/nlp_compromise.min.js" ></script>
 <script src="./bot_files/jquery.dotdotdot.js"></script>
 
 </body>
