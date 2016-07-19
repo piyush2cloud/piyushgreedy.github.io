@@ -16,7 +16,7 @@ function loadDoc() {
       document.getElementById("demo").innerHTML = xhttp.responseText;
     }
   };
-  xhttp.open("GET", "maps.googleapis.com/maps/api/distancematrix/json?units=imperial&origins=28.732225799999995,77.13442549999999&destinations=28.6328800%2C77.2184360%7C28.5245790%2C77.2066150&mode=driving&traffic_model=best_guess&departure_time=now&key=AIzaSyAb-c-NXCYvTrU72hqhygxm_wnYhW5VOM0", true);
+  xhttp.open("GET", "https://maps.googleapis.com/maps/api/distancematrix/json?units=imperial&origins=28.732225799999995,77.13442549999999&destinations=28.6328800%2C77.2184360%7C28.5245790%2C77.2066150&mode=driving&traffic_model=best_guess&departure_time=now&key=AIzaSyAb-c-NXCYvTrU72hqhygxm_wnYhW5VOM0", true);
   xhttp.send();
 }
 </script>
